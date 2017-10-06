@@ -5,6 +5,7 @@ import Express from 'express'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
+import { ServerStyleSheet } from 'styled-components'
 
 import App from '../src/App'
 
@@ -25,14 +26,19 @@ app.use((req, res, next) => {
 app.get('*', (req, res) => {
   const staticContext = {}
 
-  const appHtml = renderToString(
+  const sheet = new ServerStyleSheet()
+
+  const appHtml = renderToString(sheet.collectStyles(
     <StaticRouter location={req.url} context={staticContext}>
       <App />
     </StaticRouter>
-  )
+  ))
+  const styleTags = sheet.getStyleTags()
 
   const indexHtml = fs.readFileSync(path.join(__dirname, '..', 'build', 'index.html'), 'utf8')
-  const html = indexHtml.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+  const html = indexHtml
+    .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
+    .replace('</head>', `${styleTags}</head>`)
 
   res.status(staticContext.statusCode ||  200).send(html)
 });
