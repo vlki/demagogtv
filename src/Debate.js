@@ -13,14 +13,67 @@ import {
 } from './metadata'
 import { formatTime, parseTime, convertNewlinesToBr } from './utils'
 
+const CHECK_PLAYER_TIME_INTERVAL_MS = 100
+
 class Debate extends Component {
+  checkInterval = null
   player = null
+  statementContainers = {}
   state = {
-    shownExplanations: []
+    shownExplanations: [],
+    highlightStatement: null
+  }
+
+  componentDidMount() {
+    this.checkInterval = setInterval(this.checkPlayerTime, CHECK_PLAYER_TIME_INTERVAL_MS)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.checkInterval)
+    this.checkInterval = null
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { match } = this.props
+    const debate = DEBATES_BY_PATH[match.path]
+
+    if (prevState.time !== this.state.time && this.state.time !== null) {
+      const checkIndex = debate.checks.findIndex(check =>
+        this.state.time >= parseTime(check.highlightStart) &&
+        this.state.time <= parseTime(check.highlightEnd)
+      )
+
+      this.setState({
+        highlightStatement: checkIndex !== -1 ? checkIndex : null
+      })
+    }
+
+    if (
+      prevState.highlightStatement !== this.state.highlightStatement &&
+      this.state.highlightStatement !== null
+    ) {
+      window.scroll({
+        top: this.statementContainers[this.state.highlightStatement].offsetTop,
+        left: 0,
+        behavior: 'smooth'
+      })
+    }
   }
 
   handlePlayerReady = event => {
     this.player = event.target
+  }
+
+  checkPlayerTime = () => {
+    if (this.player !== null) {
+      this.setState({ time: this.player.getCurrentTime() })
+    }
+  }
+
+  playerGoToCheck = check => {
+    if (this.player !== null) {
+      this.player.seekTo(parseTime(check.highlightStart), true)
+    }
   }
 
   toggleExplanation = index => {
@@ -41,7 +94,7 @@ class Debate extends Component {
 
   render() {
     const { match } = this.props
-    const { shownExplanations } = this.state
+    const { shownExplanations, highlightStatement } = this.state
 
     const debate = DEBATES_BY_PATH[match.path]
 
@@ -64,7 +117,10 @@ class Debate extends Component {
                   videoId={debate.videoId}
                   opts={{
                     width: 750,
-                    height: 457
+                    height: 457,
+                    playerVars: {
+                      rel: 0
+                    }
                   }}
                   onReady={this.handlePlayerReady}
                 />
@@ -75,11 +131,16 @@ class Debate extends Component {
                 {debate.checks.map((check, index) =>
                   <StatementContainer
                     key={index}
-                    className="clearfix"
+                    innerRef={container => this.statementContainers[index] = container}
                     showingExplanation={shownExplanations.indexOf(index) !== -1}
+                    higlighted={highlightStatement === index}
+                    className="clearfix"
                   >
                     <StatementTime>
-                      <StatementTimeButton className="btn btn-link">{formatTime(parseTime(check.highlightStart))}</StatementTimeButton>
+                      <StatementTimeButton
+                        className="btn btn-link"
+                        onClick={() => this.playerGoToCheck(check)}
+                      >{formatTime(parseTime(check.highlightStart))}</StatementTimeButton>
                       {index < (debate.checks.length - 1) && <StatementTimeline />}
                     </StatementTime>
                     <StatementContent>
@@ -165,17 +226,20 @@ const VideoAndLabelsContainer = styled.div`
 `
 
 const StatementsContainer = styled.div`
-  padding-bottom: 300px;
+  padding-bottom: 400px;
 `
 
 const StatementContainer = styled.div`
   display: flex;
   padding: 13px 15px 18px 0;
-  /* background-color: #FDEAE6; */
   margin-bottom: 15px;
 
   ${props => props.showingExplanation && css`
     background-color: #F5F5F5;
+  `}
+
+  ${props => props.higlighted && css`
+    background-color: #FDEAE6;
   `}
 `
 
