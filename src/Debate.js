@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import YouTube from 'react-youtube'
 import ReactTooltip from 'react-tooltip'
 import styled, { css } from 'styled-components'
+import debounce from 'lodash/debounce'
 
 import { DEBATES_BY_PATH } from './data'
 import {
@@ -15,23 +16,34 @@ import {
 import { formatTime, parseTime, convertNewlinesToBr } from './utils'
 
 const CHECK_PLAYER_TIME_INTERVAL_MS = 100
+const VIDEO_ASPECT_RATIO = 3/4
 
 class Debate extends Component {
   checkInterval = null
   player = null
   statementContainers = {}
+  videoContainer = null
   state = {
     shownExplanations: [],
-    highlightStatement: null
+    highlightStatement: null,
+    videoWidth: 657
   }
 
   componentDidMount() {
     this.checkInterval = setInterval(this.checkPlayerTime, CHECK_PLAYER_TIME_INTERVAL_MS)
+
+    if (window) {
+      window.addEventListener('resize', this.updateVideoSizeDebounced)
+    }
   }
 
   componentWillUnmount() {
     clearInterval(this.checkInterval)
     this.checkInterval = null
+
+    if (window) {
+      window.removeEventListener('resize', this.updateVideoSizeDebounced)
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -59,10 +71,15 @@ class Debate extends Component {
         behavior: 'smooth'
       })
     }
+
+    if (prevState.videoWidth !== this.state.videoWidth && this.player !== null) {
+      this.player.setSize(this.state.videoWidth, this.state.videoWidth * VIDEO_ASPECT_RATIO)
+    }
   }
 
   handlePlayerReady = event => {
     this.player = event.target
+    this.updateVideoSize()
   }
 
   checkPlayerTime = () => {
@@ -93,9 +110,19 @@ class Debate extends Component {
     }
   }
 
+  updateVideoSize = () => {
+    if (this.videoContainer) {
+      this.setState({
+        videoWidth: this.videoContainer.offsetWidth - 30 // 30 = gutter
+      })
+    }
+  }
+
+  updateVideoSizeDebounced = debounce(this.updateVideoSize, 1000)
+
   render() {
     const { match } = this.props
-    const { shownExplanations, highlightStatement } = this.state
+    const { shownExplanations, highlightStatement, videoWidth } = this.state
 
     const debate = DEBATES_BY_PATH[match.path]
 
@@ -112,13 +139,13 @@ class Debate extends Component {
 
         <Container className="container-fluid">
           <div className="row">
-            <div className="col-xs-8">
+            <div className="col-xs-6 col-lg-7" ref={container => this.videoContainer = container}>
               <VideoAndLabelsContainer>
                 <YouTube
                   videoId={debate.videoId}
                   opts={{
-                    width: 750,
-                    height: 457,
+                    width: videoWidth,
+                    height: videoWidth * VIDEO_ASPECT_RATIO,
                     playerVars: {
                       rel: 0
                     }
@@ -127,7 +154,7 @@ class Debate extends Component {
                 />
               </VideoAndLabelsContainer>
             </div>
-            <div className="col-xs-4">
+            <div className="col-xs-6 col-lg-5">
               <StatementsContainer>
                 {debate.checks.map((check, index) =>
                   <StatementContainer
@@ -156,9 +183,7 @@ class Debate extends Component {
                         {shownExplanations.indexOf(index) === -1
                           ? (
                             <StatementExpanderButton className="btn btn-link" onClick={() => this.toggleExplanation(index)}>
-                              {(check.result === RESULT_MISLEADING || check.result === RESULT_UNVERIFIABLE)
-                                ? 'zobr. odůvodnění'
-                                : 'zobrazit odůvodnění'}
+                              zobrazit odůvodnění
                             </StatementExpanderButton>
                           ) : (
                             <StatementExpanderButton className="btn btn-link" onClick={() => this.toggleExplanation(index)}>
@@ -312,8 +337,7 @@ const StatementExpanderButton = styled.button`
   font-size: 16px;
   color: #EC4F2F;
   text-decoration: none;
-  margin-left: 7px;
-  margin-right: -10px;
+  margin-left: 10px;
 
   &:focus {
     text-decoration: none;
