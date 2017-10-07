@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import YouTube from 'react-youtube'
+import ReactTooltip from 'react-tooltip'
 import styled, { css } from 'styled-components'
 
 import { DEBATES_BY_PATH } from './data'
@@ -140,7 +141,12 @@ class Debate extends Component {
                       <StatementTimeButton
                         className="btn btn-link"
                         onClick={() => this.playerGoToCheck(check)}
+                        data-tip={`Kliknutím skočte na čas ${formatTime(parseTime(check.highlightStart))}`}
+                        data-for={`statement-${index}`}
                       >{formatTime(parseTime(check.highlightStart))}</StatementTimeButton>
+
+                      <ReactTooltip place="top" id={`statement-${index}`} effect="solid" />
+
                       {index < (debate.checks.length - 1) && <StatementTimeline />}
                     </StatementTime>
                     <StatementContent>
@@ -226,7 +232,7 @@ const VideoAndLabelsContainer = styled.div`
 `
 
 const StatementsContainer = styled.div`
-  padding-bottom: 400px;
+  padding-bottom: 500px;
 `
 
 const StatementContainer = styled.div`
