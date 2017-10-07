@@ -16,3 +16,10 @@ export const RESULT_ICON = {
   [RESULT_MISLEADING]: 'exclamation-sign',
   [RESULT_UNVERIFIABLE]: 'question-sign'
 }
+
+export const RESULT_LABEL = {
+  [RESULT_TRUTH]: 'Pravda',
+  [RESULT_UNTRUTH]: 'Nepravda',
+  [RESULT_MISLEADING]: 'Zavádějící',
+  [RESULT_UNVERIFIABLE]: 'Neověřitelné'
+}

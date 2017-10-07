@@ -1,19 +1,49 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import YouTube from 'react-youtube'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { DEBATES_BY_PATH } from './data'
+import {
+  RESULT_MISLEADING,
+  RESULT_UNVERIFIABLE,
+  RESULT_COLOR,
+  RESULT_ICON,
+  RESULT_LABEL
+} from './metadata'
+import { formatTime, parseTime, convertNewlinesToBr } from './utils'
 
 class Debate extends Component {
   player = null
+  state = {
+    shownExplanations: []
+  }
 
   handlePlayerReady = event => {
     this.player = event.target
   }
 
+  toggleExplanation = index => {
+    const { shownExplanations } = this.state
+
+    if (shownExplanations.indexOf(index) === -1) {
+      // hidden, show
+      this.setState({
+        shownExplanations: [...shownExplanations, index]
+      })
+    } else {
+      // shown, hide
+      this.setState({
+        shownExplanations: shownExplanations.filter(i => i !== index)
+      })
+    }
+  }
+
   render() {
-    const debate = DEBATES_BY_PATH[this.props.match.path]
+    const { match } = this.props
+    const { shownExplanations } = this.state
+
+    const debate = DEBATES_BY_PATH[match.path]
 
     return (
       <div>
@@ -28,18 +58,57 @@ class Debate extends Component {
 
         <Container className="container-fluid">
           <div className="row">
-            <VideoSideContainer className="col-xs-8">
-              <YouTube
-                videoId={debate.videoId}
-                opts={{
-                  width: 750,
-                  height: 457
-                }}
-                onReady={this.handlePlayerReady}
-              />
-            </VideoSideContainer>
+            <div className="col-xs-8">
+              <VideoAndLabelsContainer>
+                <YouTube
+                  videoId={debate.videoId}
+                  opts={{
+                    width: 750,
+                    height: 457
+                  }}
+                  onReady={this.handlePlayerReady}
+                />
+              </VideoAndLabelsContainer>
+            </div>
             <div className="col-xs-4">
-
+              <StatementsContainer>
+                {debate.checks.map((check, index) =>
+                  <StatementContainer
+                    key={index}
+                    className="clearfix"
+                    showingExplanation={shownExplanations.indexOf(index) !== -1}
+                  >
+                    <StatementTime>
+                      <StatementTimeButton className="btn btn-link">{formatTime(parseTime(check.highlightStart))}</StatementTimeButton>
+                      {index < (debate.checks.length - 1) && <StatementTimeline />}
+                    </StatementTime>
+                    <StatementContent>
+                      <p><em>„{check.statement}“</em></p>
+                      <StatementResultExpanderWrapper>
+                        <StatementResultBadge result={check.result} />
+                        {shownExplanations.indexOf(index) === -1
+                          ? (
+                            <StatementExpanderButton className="btn btn-link" onClick={() => this.toggleExplanation(index)}>
+                              {(check.result === RESULT_MISLEADING || check.result === RESULT_UNVERIFIABLE)
+                                ? 'zobr. odůvodnění'
+                                : 'zobrazit odůvodnění'}
+                            </StatementExpanderButton>
+                          ) : (
+                            <StatementExpanderButton className="btn btn-link" onClick={() => this.toggleExplanation(index)}>
+                              skrýt odůvodnění
+                            </StatementExpanderButton>
+                          )
+                        }
+                      </StatementResultExpanderWrapper>
+                      {shownExplanations.indexOf(index) !== -1 &&
+                        <StatementExplanation
+                          dangerouslySetInnerHTML={{ __html: convertNewlinesToBr(check.explanation) }}
+                        />
+                      }
+                    </StatementContent>
+                  </StatementContainer>
+                )}
+              </StatementsContainer>
             </div>
           </div>
         </Container>
@@ -49,6 +118,7 @@ class Debate extends Component {
 }
 
 const TopBar = styled.div`
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
@@ -90,8 +160,111 @@ const Container = styled.div`
   margin-top: 72px;
 `
 
-const VideoSideContainer = styled.div`
+const VideoAndLabelsContainer = styled.div`
   position: fixed;
+`
+
+const StatementsContainer = styled.div`
+  padding-bottom: 300px;
+`
+
+const StatementContainer = styled.div`
+  display: flex;
+  padding: 13px 15px 18px 0;
+  /* background-color: #FDEAE6; */
+  margin-bottom: 15px;
+
+  ${props => props.showingExplanation && css`
+    background-color: #F5F5F5;
+  `}
+`
+
+const StatementTime = styled.div`
+  position: relative;
+  flex: 0 0 65px;
+  padding: 0 5px;
+`
+
+const StatementTimeButton = styled.button`
+  width: 100%;
+  padding: 0;
+  font-size: 16px;
+  color: #EC4F2F;
+  text-decoration: none;
+
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+  }
+`
+
+const StatementTimeline = styled.div`
+  position: absolute;
+  top: 30px;
+  bottom: -40px;
+  left: 50%;
+  margin-left: -1px;
+  border-left: 2px solid #E6E6E6;
+`
+
+const StatementContent = styled.div`
+  flex: 1;
+`
+
+const StatementResultBadge = ({ result }) =>
+  <StatementResultBadgeWrapper color={RESULT_COLOR[result]}>
+    <StatementResultBadgeIcon className={`glyphicon glyphicon-${RESULT_ICON[result]}`} />
+    {' '}
+    {RESULT_LABEL[result]}
+  </StatementResultBadgeWrapper>
+
+const StatementResultBadgeWrapper = styled.span`
+  display: inline-block;
+  background-color: ${props => props.color};
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 10px 7px 10px;
+`
+
+const StatementResultBadgeIcon = styled.span`
+  font-size: 20px;
+  line-height: 17px;
+  top: 4px;
+`
+
+const StatementResultExpanderWrapper = styled.div`
+  margin-top: 15px;
+`
+
+const StatementExpanderButton = styled.button`
+  padding: 5px;
+  vertical-align: top;
+  font-size: 16px;
+  color: #EC4F2F;
+  text-decoration: none;
+  margin-left: 7px;
+  margin-right: -10px;
+
+  &:focus {
+    text-decoration: none;
+    outline: 0;
+    color: #EC4F2F;
+  }
+
+  &:hover, &:active {
+    text-decoration: none;
+    outline: 0;
+  }
+`
+
+const StatementExplanation = styled.p`
+  margin: 15px 0 0 0;
+  font-size: 14px !important;
+
+  & p {
+    font-size: 14px !important;
+    margin: 15px 0;
+  }
 `
 
 export default Debate
