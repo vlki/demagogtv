@@ -7,16 +7,15 @@ import debounce from 'lodash/debounce'
 
 import { DEBATES_BY_PATH } from './data'
 import {
-  RESULT_MISLEADING,
-  RESULT_UNVERIFIABLE,
   RESULT_COLOR,
   RESULT_ICON,
   RESULT_LABEL
 } from './metadata'
 import { formatTime, parseTime, convertNewlinesToBr } from './utils'
+import PersonResultBadge from './PersonResultBadge'
 
 const CHECK_PLAYER_TIME_INTERVAL_MS = 100
-const VIDEO_ASPECT_RATIO = 3/4
+const VIDEO_ASPECT_RATIO = 9/16
 
 class Debate extends Component {
   checkInterval = null
@@ -140,7 +139,7 @@ class Debate extends Component {
         <Container className="container-fluid">
           <div className="row">
             <div className="col-xs-6 col-lg-7" ref={container => this.videoContainer = container}>
-              <VideoAndLabelsContainer>
+              <VideoAndLabelsContainer videoWidth={videoWidth} >
                 <YouTube
                   videoId={debate.videoId}
                   opts={{
@@ -152,6 +151,23 @@ class Debate extends Component {
                   }}
                   onReady={this.handlePlayerReady}
                 />
+
+                <LabelsContainer videoHeight={videoWidth * VIDEO_ASPECT_RATIO}>
+                  <DebateTitle>Volby 2017: Lídr Pirátů v ČRo</DebateTitle>
+
+                  <DebateSubtitle>{debate.subtitle}</DebateSubtitle>
+
+                  <DebatePersonResultBadge>
+                    <PersonResultBadge debate={debate} />
+                  </DebatePersonResultBadge>
+
+                  <DebateSummary>{debate.summary}</DebateSummary>
+
+                  <DebateLinks>
+                    <DebateLink href={debate.demagogUrl}>Rozbor debaty na Demagog.cz</DebateLink>
+                    <DebateLink href={debate.youtubeUrl}>Videozáznam debaty na YouTube</DebateLink>
+                  </DebateLinks>
+                </LabelsContainer>
               </VideoAndLabelsContainer>
             </div>
             <div className="col-xs-6 col-lg-5">
@@ -254,6 +270,18 @@ const Container = styled.div`
 
 const VideoAndLabelsContainer = styled.div`
   position: fixed;
+  top: 72px;
+  bottom: 0;
+  width: ${props => `${props.videoWidth}px`};
+`
+
+const LabelsContainer = styled.div`
+  position: absolute;
+  top: ${props => `${props.videoHeight}px`};
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
 `
 
 const StatementsContainer = styled.div`
@@ -359,6 +387,36 @@ const StatementExplanation = styled.p`
     font-size: 14px !important;
     margin: 15px 0;
   }
+`
+
+const DebateTitle = styled.h2`
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  font-size: 37px;
+  margin: 15px 0 0 0;
+`
+
+const DebateSubtitle = styled.p`
+  margin: 10px 0 0 0;
+`
+
+const DebatePersonResultBadge = styled.div`
+  margin-top: 20px;
+`
+
+const DebateSummary = styled.p`
+  margin-top: 20px;
+`
+
+const DebateLinks = styled.div`
+  margin-top: 20px;
+  margin-bottom: 50px;
+`
+
+const DebateLink = styled.a`
+  display: block;
+  font-size: 16px;
+  margin-top: 2px;
 `
 
 export default Debate
