@@ -4,6 +4,7 @@ import YouTube from 'react-youtube'
 import ReactTooltip from 'react-tooltip'
 import styled, { css } from 'styled-components'
 import debounce from 'lodash/debounce'
+import DocumentTitle from 'react-document-title'
 
 import { DEBATES_BY_PATH } from './data'
 import {
@@ -126,101 +127,103 @@ class Debate extends Component {
     const debate = DEBATES_BY_PATH[match.path]
 
     return (
-      <div>
-        <TopBar>
-          <TopBarContainer className="container-fluid">
-            <Link to="/">
-              <TopBarTitle>Demagog TV</TopBarTitle>
-            </Link>
-            <TopBarLink to="/">Přehled všech debat</TopBarLink>
-          </TopBarContainer>
-        </TopBar>
+      <DocumentTitle title={`${debate.title} – Demagog TV`}>
+        <div>
+          <TopBar>
+            <TopBarContainer className="container-fluid">
+              <Link to="/">
+                <TopBarTitle>Demagog TV</TopBarTitle>
+              </Link>
+              <TopBarLink to="/">Přehled všech debat</TopBarLink>
+            </TopBarContainer>
+          </TopBar>
 
-        <Container className="container-fluid">
-          <div className="row">
-            <div className="col-xs-6 col-lg-7" ref={container => this.videoContainer = container}>
-              <VideoAndLabelsContainer videoWidth={videoWidth} >
-                <YouTube
-                  videoId={debate.videoId}
-                  opts={{
-                    width: videoWidth,
-                    height: videoWidth * VIDEO_ASPECT_RATIO,
-                    playerVars: {
-                      rel: 0
-                    }
-                  }}
-                  onReady={this.handlePlayerReady}
-                />
-
-                <LabelsContainer videoHeight={videoWidth * VIDEO_ASPECT_RATIO}>
-                  <DebateTitle>Volby 2017: Lídr Pirátů v ČRo</DebateTitle>
-
-                  <DebateSubtitle>{debate.subtitle}</DebateSubtitle>
-
-                  <DebatePersonResultBadge>
-                    <PersonResultBadge debate={debate} />
-                  </DebatePersonResultBadge>
-
-                  <DebateSummary>{debate.summary}</DebateSummary>
-
-                  <DebateLinks>
-                    <DebateLink href={debate.demagogUrl}>Rozbor debaty na Demagog.cz</DebateLink>
-                    <DebateLink href={debate.youtubeUrl}>Videozáznam debaty na YouTube</DebateLink>
-                  </DebateLinks>
-                </LabelsContainer>
-              </VideoAndLabelsContainer>
-            </div>
-            <div className="col-xs-6 col-lg-5">
-              <StatementsContainer>
-                {debate.checks.map((check, index) =>
-                  <StatementContainer
-                    key={index}
-                    innerRef={container => this.statementContainers[index] = container}
-                    showingExplanation={shownExplanations.indexOf(index) !== -1}
-                    higlighted={highlightStatement === index}
-                    className="clearfix"
-                  >
-                    <StatementTime>
-                      <StatementTimeButton
-                        className="btn btn-link"
-                        onClick={() => this.playerGoToCheck(check)}
-                        data-tip={`Kliknutím skočte na čas ${formatTime(parseTime(check.highlightStart))}`}
-                        data-for={`statement-${index}`}
-                      >{formatTime(parseTime(check.highlightStart))}</StatementTimeButton>
-
-                      <ReactTooltip place="top" id={`statement-${index}`} effect="solid" />
-
-                      {index < (debate.checks.length - 1) && <StatementTimeline />}
-                    </StatementTime>
-                    <StatementContent>
-                      <p><em>„{check.statement}“</em></p>
-                      <StatementResultExpanderWrapper>
-                        <StatementResultBadge result={check.result} />
-                        {shownExplanations.indexOf(index) === -1
-                          ? (
-                            <StatementExpanderButton className="btn btn-link" onClick={() => this.toggleExplanation(index)}>
-                              zobrazit odůvodnění
-                            </StatementExpanderButton>
-                          ) : (
-                            <StatementExpanderButton className="btn btn-link" onClick={() => this.toggleExplanation(index)}>
-                              skrýt odůvodnění
-                            </StatementExpanderButton>
-                          )
-                        }
-                      </StatementResultExpanderWrapper>
-                      {shownExplanations.indexOf(index) !== -1 &&
-                        <StatementExplanation
-                          dangerouslySetInnerHTML={{ __html: convertNewlinesToBr(check.explanation) }}
-                        />
+          <Container className="container-fluid">
+            <div className="row">
+              <div className="col-xs-6 col-lg-7" ref={container => this.videoContainer = container}>
+                <VideoAndLabelsContainer videoWidth={videoWidth} >
+                  <YouTube
+                    videoId={debate.videoId}
+                    opts={{
+                      width: videoWidth,
+                      height: videoWidth * VIDEO_ASPECT_RATIO,
+                      playerVars: {
+                        rel: 0
                       }
-                    </StatementContent>
-                  </StatementContainer>
-                )}
-              </StatementsContainer>
+                    }}
+                    onReady={this.handlePlayerReady}
+                  />
+
+                  <LabelsContainer videoHeight={videoWidth * VIDEO_ASPECT_RATIO}>
+                    <DebateTitle>{debate.title}</DebateTitle>
+
+                    <DebateSubtitle>{debate.subtitle}</DebateSubtitle>
+
+                    <DebatePersonResultBadge>
+                      <PersonResultBadge debate={debate} />
+                    </DebatePersonResultBadge>
+
+                    <DebateSummary>{debate.summary}</DebateSummary>
+
+                    <DebateLinks>
+                      <DebateLink href={debate.demagogUrl}>Rozbor debaty na Demagog.cz</DebateLink>
+                      <DebateLink href={debate.youtubeUrl}>Videozáznam debaty na YouTube</DebateLink>
+                    </DebateLinks>
+                  </LabelsContainer>
+                </VideoAndLabelsContainer>
+              </div>
+              <div className="col-xs-6 col-lg-5">
+                <StatementsContainer>
+                  {debate.checks.map((check, index) =>
+                    <StatementContainer
+                      key={index}
+                      innerRef={container => this.statementContainers[index] = container}
+                      showingExplanation={shownExplanations.indexOf(index) !== -1}
+                      higlighted={highlightStatement === index}
+                      className="clearfix"
+                    >
+                      <StatementTime>
+                        <StatementTimeButton
+                          className="btn btn-link"
+                          onClick={() => this.playerGoToCheck(check)}
+                          data-tip={`Kliknutím skočte na čas ${formatTime(parseTime(check.highlightStart))}`}
+                          data-for={`statement-${index}`}
+                        >{formatTime(parseTime(check.highlightStart))}</StatementTimeButton>
+
+                        <ReactTooltip place="top" id={`statement-${index}`} effect="solid" />
+
+                        {index < (debate.checks.length - 1) && <StatementTimeline />}
+                      </StatementTime>
+                      <StatementContent>
+                        <p><em>„{check.statement}“</em></p>
+                        <StatementResultExpanderWrapper>
+                          <StatementResultBadge result={check.result} />
+                          {shownExplanations.indexOf(index) === -1
+                            ? (
+                              <StatementExpanderButton className="btn btn-link" onClick={() => this.toggleExplanation(index)}>
+                                zobrazit odůvodnění
+                              </StatementExpanderButton>
+                            ) : (
+                              <StatementExpanderButton className="btn btn-link" onClick={() => this.toggleExplanation(index)}>
+                                skrýt odůvodnění
+                              </StatementExpanderButton>
+                            )
+                          }
+                        </StatementResultExpanderWrapper>
+                        {shownExplanations.indexOf(index) !== -1 &&
+                          <StatementExplanation
+                            dangerouslySetInnerHTML={{ __html: convertNewlinesToBr(check.explanation) }}
+                          />
+                        }
+                      </StatementContent>
+                    </StatementContainer>
+                  )}
+                </StatementsContainer>
+              </div>
             </div>
-          </div>
-        </Container>
-      </div>
+          </Container>
+        </div>
+      </DocumentTitle>
     )
   }
 }

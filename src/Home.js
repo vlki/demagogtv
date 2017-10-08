@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import DocumentTitle from 'react-document-title'
 
 import PersonResultBadge from './PersonResultBadge'
 import { DEBATES_LIST } from './data'
@@ -8,56 +9,58 @@ import { DEBATES_LIST } from './data'
 class Home extends Component {
   render() {
     return (
-      <Container className="container-fluid">
-        <div className="row">
-          <div className="col-xs-4">
-            <MainTitle>Demagog TV</MainTitle>
-          </div>
-          <div className="col-xs-8">
-            <MainSummary>
-              Shlédněte politické debaty propojené s ověřenými výroky z projektu
-              {' '}<a href="http://demagog.cz/">Demagog.cz</a>. Aktuálně tu
-              {' '}najdete debaty ze série
-              {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem">Rozhovor s lídrem Českého rozhlasu</a>.
-            </MainSummary>
-          </div>
-        </div>
-
-        {DEBATES_LIST.map(debate =>
-          <DebateContainer key={debate.path} className="row">
+      <DocumentTitle title="Demagog TV">
+        <Container className="container-fluid">
+          <div className="row">
             <div className="col-xs-4">
-              <Link to={debate.path}>
-                <DebateImg src={debate.debateImageSrc} alt="" />
-              </Link>
+              <MainTitle>Demagog TV</MainTitle>
             </div>
             <div className="col-xs-8">
-              <Link to={debate.path}>
-                <DebateTitle>{debate.title}</DebateTitle>
-              </Link>
-
-              <DebateSubtitle>{debate.subtitle}</DebateSubtitle>
-
-              <DebatePersonResultBadge>
-                <PersonResultBadge debate={debate} />
-              </DebatePersonResultBadge>
-
-              <DebateSummary>{debate.summary}</DebateSummary>
-
-              <DebateOpenLink>
-                <Link to={debate.path}>Shlédnout debatu</Link>
-              </DebateOpenLink>
+              <MainSummary>
+                Shlédněte politické debaty propojené s ověřenými výroky z projektu
+                {' '}<a href="http://demagog.cz/">Demagog.cz</a>. Aktuálně tu
+                {' '}najdete debaty ze série
+                {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem">Rozhovor s lídrem Českého rozhlasu</a>.
+              </MainSummary>
             </div>
-          </DebateContainer>
-        )}
-
-        <FooterContainer className="row">
-          <div className="col-xs-8 col-xs-offset-4">
-            <FooterText>
-              ⓒ 2017 Jan Vlček, data dodal <FooterLink href="http://demagog.cz">Demagog.cz</FooterLink>
-            </FooterText>
           </div>
-        </FooterContainer>
-      </Container>
+
+          {DEBATES_LIST.map(debate =>
+            <DebateContainer key={debate.path} className="row">
+              <div className="col-xs-4">
+                <Link to={debate.path}>
+                  <DebateImg src={debate.debateImageSrc} alt="" />
+                </Link>
+              </div>
+              <div className="col-xs-8">
+                <Link to={debate.path}>
+                  <DebateTitle>{debate.title}</DebateTitle>
+                </Link>
+
+                <DebateSubtitle>{debate.subtitle}</DebateSubtitle>
+
+                <DebatePersonResultBadge>
+                  <PersonResultBadge debate={debate} />
+                </DebatePersonResultBadge>
+
+                <DebateSummary>{debate.summary}</DebateSummary>
+
+                <DebateOpenLink>
+                  <Link to={debate.path}>Shlédnout debatu</Link>
+                </DebateOpenLink>
+              </div>
+            </DebateContainer>
+          )}
+
+          <FooterContainer className="row">
+            <div className="col-xs-8 col-xs-offset-4">
+              <FooterText>
+                ⓒ 2017 Jan Vlček, data dodal <FooterLink href="http://demagog.cz">Demagog.cz</FooterLink>
+              </FooterText>
+            </div>
+          </FooterContainer>
+        </Container>
+      </DocumentTitle>
     )
   }
 }
