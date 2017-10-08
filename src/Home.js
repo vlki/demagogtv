@@ -12,10 +12,10 @@ class Home extends Component {
       <DocumentTitle title="Demagog TV">
         <Container className="container-fluid">
           <div className="row">
-            <div className="col-xs-4">
+            <div className="col-xs-12 col-sm-4">
               <MainTitle>Demagog TV</MainTitle>
             </div>
-            <div className="col-xs-8">
+            <div className="col-xs-12 col-sm-8">
               <MainSummary>
                 Shlédněte politické debaty propojené s ověřenými výroky z projektu
                 {' '}<a href="http://demagog.cz/">Demagog.cz</a>. Aktuálně tu
@@ -27,12 +27,12 @@ class Home extends Component {
 
           {DEBATES_LIST.map(debate =>
             <DebateContainer key={debate.path} className="row">
-              <div className="col-xs-4">
+              <div className="col-xs-12 col-sm-4">
                 <Link to={debate.path}>
                   <DebateImg src={debate.debateImageSrc} alt="" />
                 </Link>
               </div>
-              <div className="col-xs-8">
+              <div className="col-xs-12 col-sm-8">
                 <Link to={debate.path}>
                   <DebateTitle>{debate.title}</DebateTitle>
                 </Link>
@@ -53,7 +53,7 @@ class Home extends Component {
           )}
 
           <FooterContainer className="row">
-            <div className="col-xs-8 col-xs-offset-4">
+            <div className="col-xs-12 col-sm-8 col-sm-offset-4">
               <FooterText>
                 ⓒ 2017 Jan Vlček, data dodal <FooterLink href="http://demagog.cz">Demagog.cz</FooterLink>
               </FooterText>
