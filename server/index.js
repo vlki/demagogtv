@@ -5,8 +5,9 @@ require('babel-register')({
       // We need this to ignore the css when requiring the React app on server
       // for server side rendering
       // @see http://stackoverflow.com/questions/30347722/importing-css-files-in-isomorphic-react-components
-      'babel-plugin-transform-require-ignore', { 'extensions': ['.css'] }
-    ]
+      'babel-plugin-transform-require-ignore', { 'extensions': ['.css'] },
+    ],
+    ['babel-plugin-transform-class-properties']
   ]
 });
 require('babel-polyfill');
