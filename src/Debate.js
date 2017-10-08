@@ -396,7 +396,7 @@ const DebateTitle = styled.h2`
   font-family: 'Oswald', sans-serif;
   font-weight: bold;
   font-size: 37px;
-  margin: 15px 0 0 0;
+  margin: 20px 0 0 0;
 `
 
 const DebateSubtitle = styled.p`
