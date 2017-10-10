@@ -6,6 +6,7 @@ import farsky from './farsky'
 import filip from './filip'
 import kalousek from './kalousek'
 import mach from './mach'
+import stropnicky from './stropnicky'
 
 export const DEBATES_LIST = [
   cech,
@@ -14,6 +15,7 @@ export const DEBATES_LIST = [
   kalousek,
   mach,
   belobradek,
+  stropnicky,
   babis,
   filip
 ]
