@@ -390,6 +390,14 @@ const StatementExplanation = styled.p`
     font-size: 14px !important;
     margin: 15px 0;
   }
+
+  & img {
+    width: 100%;
+  }
+
+  & iframe {
+    width: 100%;
+  }
 `
 
 const DebateTitle = styled.h2`

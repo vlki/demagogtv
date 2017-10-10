@@ -1,9 +1,11 @@
-import pirati from './pirati'
-import svobodni from './svobodni'
+import babis from './babis'
+import bartos from './bartos'
+import mach from './mach'
 
 export const DEBATES_LIST = [
-  pirati,
-  svobodni
+  bartos,
+  mach,
+  babis
 ]
 
 export const DEBATES_BY_PATH = DEBATES_LIST.reduce(
