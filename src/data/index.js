@@ -7,11 +7,13 @@ import fiala from './fiala'
 import filip from './filip'
 import kalousek from './kalousek'
 import mach from './mach'
+import robejsek from './robejsek'
 import stropnicky from './stropnicky'
 
 export const DEBATES_LIST = [
   cech, // 6. rijna
   farsky, // 5. rijna
+  robejsek, // 1. rijna
   bartos, // 29. zari
   kalousek, // 28. zari
   mach, // 27. zari
