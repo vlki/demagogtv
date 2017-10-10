@@ -1,10 +1,12 @@
 import babis from './babis'
 import bartos from './bartos'
+import belobradek from './belobradek'
 import mach from './mach'
 
 export const DEBATES_LIST = [
   bartos,
   mach,
+  belobradek,
   babis
 ]
 
