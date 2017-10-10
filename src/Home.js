@@ -17,7 +17,7 @@ class Home extends Component {
             </div>
             <div className="col-xs-12 col-sm-8">
               <MainSummary>
-                Shlédněte politické debaty propojené s ověřenými výroky z projektu
+                Zhlédněte politické debaty propojené s ověřenými výroky z projektu
                 {' '}<a href="http://demagog.cz/">Demagog.cz</a>. Aktuálně tu
                 {' '}najdete debaty ze série
                 {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem">Rozhovor s lídrem Českého rozhlasu</a>.
@@ -46,7 +46,7 @@ class Home extends Component {
                 <DebateSummary>{debate.summary}</DebateSummary>
 
                 <DebateOpenLink>
-                  <Link to={debate.path}>Shlédnout debatu</Link>
+                  <Link to={debate.path}>Zhlédnout debatu</Link>
                 </DebateOpenLink>
               </div>
             </DebateContainer>
