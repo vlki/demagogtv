@@ -127,12 +127,12 @@ class Debate extends Component {
     const debate = DEBATES_BY_PATH[match.path]
 
     return (
-      <DocumentTitle title={`${debate.title} – Demagog TV`}>
+      <DocumentTitle title={`${debate.title} – DemagogTV`}>
         <div>
           <TopBar>
             <TopBarContainer className="container-fluid">
               <Link to="/">
-                <TopBarTitle>Demagog TV</TopBarTitle>
+                <TopBarTitle>DemagogTV</TopBarTitle>
               </Link>
               <TopBarLink to="/">Přehled všech debat</TopBarLink>
             </TopBarContainer>

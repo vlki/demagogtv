@@ -9,11 +9,11 @@ import { DEBATES_LIST } from './data'
 class Home extends Component {
   render() {
     return (
-      <DocumentTitle title="Demagog TV">
+      <DocumentTitle title="DemagogTV">
         <Container className="container-fluid">
           <div className="row">
             <div className="col-xs-12 col-sm-4">
-              <MainTitle>Demagog TV</MainTitle>
+              <MainTitle>DemagogTV</MainTitle>
             </div>
             <div className="col-xs-12 col-sm-8">
               <MainSummary>
