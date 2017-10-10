@@ -10,6 +10,7 @@ import mach from './mach'
 import okamura from './okamura'
 import robejsek from './robejsek'
 import stropnicky from './stropnicky'
+import zaoralek from './zaoralek'
 
 export const DEBATES_LIST = [
   cech, // 6. rijna
@@ -21,6 +22,7 @@ export const DEBATES_LIST = [
   mach, // 27. zari
   belobradek, // 24. zari
   stropnicky, // 20. zari
+  zaoralek, // 15. zari
   fiala, // 12. zari
   babis, // 10. zari
   filip // 8. zari
