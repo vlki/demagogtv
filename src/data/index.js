@@ -4,12 +4,14 @@ import belobradek from './belobradek'
 import cech from './cech'
 import farsky from './farsky'
 import filip from './filip'
+import kalousek from './kalousek'
 import mach from './mach'
 
 export const DEBATES_LIST = [
   cech,
   farsky,
   bartos,
+  kalousek,
   mach,
   belobradek,
   babis,
