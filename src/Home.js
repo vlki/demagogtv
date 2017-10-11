@@ -18,7 +18,7 @@ class Home extends Component {
               <MainSummary>
                 Sledujete rozhovor a zároveň vidíte, zda je vyslovené pravda či ne.
                 Propojili jsme videozáznamy debat s výroky tak, že v čase vyřčení
-                naskočí hodnocení od <a href="http://demagog.cz/" target="_blank" rel="noopener noreferrer">Demagog.cz</a>.
+                naskočí hodnocení od <a href="http://demagog.cz/">Demagog.cz</a>.
               </MainSummary>
 
               <MainSummary>
@@ -33,9 +33,9 @@ class Home extends Component {
 
               <SectionSummary>
                 Debaty ze série
-                {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem" target="_blank" rel="noopener noreferrer">Rozhovor s lídrem Českého rozhlasu</a>.
+                {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem">Rozhovor s lídrem Českého rozhlasu</a>.
                 Řazené dle volebního potenciálu
-                {' '}<a href="http://www.ceskatelevize.cz/ct24/2268226-volebni-potencial-ano-klesl-na-325-procenta-pirati-a-spd-posilili" target="_blank" rel="noopener noreferrer">z&nbsp;průzkumu 9. října 2017</a>
+                {' '}<a href="http://www.ceskatelevize.cz/ct24/2268226-volebni-potencial-ano-klesl-na-325-procenta-pirati-a-spd-posilili">z&nbsp;průzkumu 9. října 2017</a>
                 {' '}agentur Median a Kantar TNS pro Českou televizi.
               </SectionSummary>
             </div>
@@ -59,9 +59,9 @@ class Home extends Component {
 
           <FooterText>
             Vytvořeno v říjnu 2017. Společný projekt
-            {' '}<a href="http://demagog.cz" target="_blank" rel="noopener noreferrer">Demagog.cz</a>
+            {' '}<a href="http://demagog.cz">Demagog.cz</a>
             {' '}a
-            {' '}<a href="http://vlki.cz" target="_blank" rel="noopener noreferrer">Jana Vlčka</a>.
+            {' '}<a href="http://vlki.cz">Jana Vlčka</a>.
             {/* Kód je dostupný na GitHubu. */}
           </FooterText>
         </Container>
@@ -99,6 +99,7 @@ const SectionSummary = styled.p`
 
 const DebateContainer = styled.div`
   margin-top: 30px;
+  margin-bottom: 15px;
 `
 
 const DebateImgWrapper = styled.div`
