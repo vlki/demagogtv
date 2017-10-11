@@ -8,8 +8,8 @@ export default {
   youtubeUrl: 'https://www.youtube.com/watch?v=RpZWGukrOXA',
   guestName: 'Matěj Stropnický',
   partyName: 'Zelení',
-  guestImageSrc: 'http://demagog.cz/data/politik/t/1506416101,4245.jpg',
-  debateImageSrc: 'http://demagog.cz/data/diskusia/s/1506416065,7907.jpg',
+  guestImageSrc: '/politik/matej-stropnicky.jpg',
+  debateImageSrc: '/cro/matej-stropnicky.jpg',
   checks: [
     {
       statement: 'Zejména jako nastupujícím učitelům, všichni mluví o učitelích, ale je důležité zaměřit se na ty nastupující učitele. Ty mají dneska velmi často okolo 22, 23 tisíc.',

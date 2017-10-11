@@ -8,8 +8,8 @@ export default {
   youtubeUrl: 'https://www.youtube.com/watch?v=bWBuu23A6LE',
   guestName: 'Ivan Bartoš',
   partyName: 'Piráti',
-  guestImageSrc: 'http://demagog.cz/data/politik/t/13412126152197.jpg',
-  debateImageSrc: 'http://demagog.cz/data/diskusia/s/1506727280,9755.jpg',
+  guestImageSrc: '/politik/ivan-bartos.jpg',
+  debateImageSrc: '/cro/ivan-bartos.jpg',
   checks: [
     {
       highlightStart: '1:03',

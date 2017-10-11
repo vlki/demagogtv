@@ -8,8 +8,8 @@ export default {
   youtubeUrl: 'https://www.youtube.com/watch?v=FbRHlr5Fuzc',
   guestName: 'František Čech',
   partyName: 'SPO',
-  guestImageSrc: 'http://demagog.cz/data/politik/t/1507294067,0194.jpg',
-  debateImageSrc: 'http://demagog.cz/data/diskusia/s/1507544077,2005.jpg',
+  guestImageSrc: '/politik/frantisek-cech.jpg',
+  debateImageSrc: '/cro/frantisek-cech.jpg',
   checks: [
     {
       statement: 'Já nejsem proti Evropský unii, nakonec jsem pro ni hlasoval jako poslanec.',

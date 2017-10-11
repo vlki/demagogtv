@@ -8,8 +8,8 @@ export default {
   youtubeUrl: 'https://www.youtube.com/watch?v=E_rzZhbc-6k',
   guestName: 'Petr Fiala',
   partyName: 'ODS',
-  guestImageSrc: 'http://demagog.cz/data/politik/t/13866987779742.jpg',
-  debateImageSrc: 'http://demagog.cz/data/diskusia/s/1505732613,3554.jpg',
+  guestImageSrc: '/politik/petr-fiala.jpg',
+  debateImageSrc: '/cro/petr-fiala.jpg',
   checks: [
     {
       statement: 'Podívejme se, jakou tady máme dneska situaci. Vysoké školy doteď nevědí, kolik dostanou. Jak máme po nich chtít špičkovou kvalitu a excelentní výzkum, když nemají ani takové peníze, jaké měly před několika lety v době ekonomické krize.',

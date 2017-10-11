@@ -8,8 +8,8 @@ export default {
   youtubeUrl: 'https://www.youtube.com/watch?v=bWVhWpBT16Y',
   guestName: 'Pavel Bělobrádek',
   partyName: 'KDU-ČSL',
-  guestImageSrc: 'http://demagog.cz/data/politik/t/1390989566,197.jpg',
-  debateImageSrc: 'http://demagog.cz/data/diskusia/s/1506423408,7307.jpg',
+  guestImageSrc: '/politik/pavel-belobradek.jpg',
+  debateImageSrc: '/cro/pavel-belobradek.jpg',
   checks: [
     {
       statement: 'Česká republika je nejprůmyslovější zemí Evropské unie, my máme přes 36 % HDP v průmyslu, Německo má, myslím, 23, takže z toho je vidět, jak je to robustní základna.',

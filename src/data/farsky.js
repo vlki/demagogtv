@@ -8,8 +8,8 @@ export default {
   youtubeUrl: 'https://www.youtube.com/watch?v=G9HXKJZNnWs',
   guestName: 'Jan Farský',
   partyName: 'STAN',
-  guestImageSrc: 'http://demagog.cz/data/politik/t/1507547931,5332.jpg',
-  debateImageSrc: 'http://demagog.cz/data/diskusia/s/1507579476,4372.jpg',
+  guestImageSrc: '/politik/jan-farsky.jpg',
+  debateImageSrc: '/cro/jan-farsky.jpg',
   checks: [
     {
       statement: '…je rozmístěno (zdravotnický materiál, pozn. Demagog.cz) hrozně neefektivně. Jsou oblasti, který díky síle politiků je několik rezonancí a gama nožů, a jsou oblasti, kde se na ně čeká hrozně dlouho.',

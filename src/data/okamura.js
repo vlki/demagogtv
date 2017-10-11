@@ -8,8 +8,8 @@ export default {
   youtubeUrl: 'https://www.youtube.com/watch?v=bg-hJQxZDNQ',
   guestName: 'Tomio Okamura',
   partyName: 'SPD',
-  guestImageSrc: 'http://demagog.cz/data/politik/t/138919155211.jpg',
-  debateImageSrc: 'http://demagog.cz/data/diskusia/s/1506961614,2309.jpg',
+  guestImageSrc: '/politik/tomio-okamura.jpg',
+  debateImageSrc: '/cro/tomio-okamura.jpg',
   checks: [
     {
       statement: 'HDP České republiky již překonalo některé západní země. Například Portugalsko, Řecko a další. Nicméně peníze v České republice nezůstávají. Důchody jsou násobně nižší než v těchto zemích. Stejně tak jako průměrný plat.',

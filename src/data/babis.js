@@ -8,8 +8,8 @@ export default {
   youtubeUrl: 'https://www.youtube.com/watch?v=GnjRm3luhSg',
   guestName: 'Andrej Babiš',
   partyName: 'ANO',
-  guestImageSrc: 'http://demagog.cz/data/politik/t/1420203409,021.jpg',
-  debateImageSrc: 'http://demagog.cz/data/diskusia/s/1505306980,475.jpg',
+  guestImageSrc: '/politik/andrej-babis.jpg',
+  debateImageSrc: '/cro/andrej-babis.jpg',
   checks: [
     {
       highlightStart: '0:31',

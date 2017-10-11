@@ -8,8 +8,8 @@ export default {
   "youtubeUrl": "https://www.youtube.com/watch?v=wA_lu6pYE6Y",
   guestName: 'Petr Mach',
   partyName: 'Svobodní',
-  guestImageSrc: 'http://demagog.cz/data/politik/t/1416762823,9454.jpg',
-  debateImageSrc: 'http://demagog.cz/data/diskusia/s/1506624495,8152.jpg',
+  guestImageSrc: '/politik/petr-mach.jpg',
+  debateImageSrc: '/cro/petr-mach.jpg',
   "checks": [
     {
       "highlightStart": '1:31',

@@ -8,8 +8,8 @@ export default {
   youtubeUrl: 'https://www.youtube.com/watch?v=U2CcUXpac10',
   guestName: 'Petr Robejšek',
   partyName: 'Realisté',
-  guestImageSrc: 'http://demagog.cz/data/politik/t/1506574110,7862.jpg',
-  debateImageSrc: 'http://demagog.cz/data/diskusia/s/1507544142,5863.jpg',
+  guestImageSrc: '/politik/petr-robejsek.jpg',
+  debateImageSrc: '/cro/petr-robejsek.jpg',
   checks: [
     {
       statement: 'Někteří naši konkurenti něco takového plánovali již v minulosti (15% rovnou daň — pozn. Demagog.cz). Byli pak u vlády, neuskutečnili.',

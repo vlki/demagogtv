@@ -8,8 +8,8 @@ export default {
   youtubeUrl: 'https://www.youtube.com/watch?v=oiajSLdXpfY',
   guestName: 'Miroslav Kalousek',
   partyName: 'TOP 09',
-  guestImageSrc: 'http://demagog.cz/data/politik/t/13856667484209.jpg',
-  debateImageSrc: 'http://demagog.cz/data/diskusia/s/1506841334,6081.jpg',
+  guestImageSrc: '/politik/miroslav-kalousek.jpg',
+  debateImageSrc: '/cro/miroslav-kalousek.jpg',
   checks: [
     {
       statement: 'My jsme už kdysi prosadili nadstandardy. Možnost připlatit si nadstandard přináší do zdravotnictví více peněz. Současné vládní strany to zrušily.',

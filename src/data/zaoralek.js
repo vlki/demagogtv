@@ -8,8 +8,8 @@ export default {
   youtubeUrl: 'https://www.youtube.com/watch?v=ziZ9z1b3DJM',
   guestName: 'Lubomír Zaorálek',
   partyName: 'ČSSD',
-  guestImageSrc: 'http://demagog.cz/data/politik/t/1445187584,0199.jpg',
-  debateImageSrc: 'http://demagog.cz/data/diskusia/s/1505754807,885.jpg',
+  guestImageSrc: '/politik/lubomir-zaoralek.jpg',
+  debateImageSrc: '/cro/lubomir-zaoralek.jpg',
   checks: [
     {
       statement: 'A samozřejmě že jsem rád, že za čtyři roky se zvýšila průměrná mzda o tři tisíce a že nám se zvýšila minimální mzda už skoro na těch 40 % průměrné mzdy.',

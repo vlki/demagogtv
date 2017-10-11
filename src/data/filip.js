@@ -8,8 +8,8 @@ export default {
   youtubeUrl: 'https://www.youtube.com/watch?v=MUpceuwTOkg',
   guestName: 'Vojtěch Filip',
   partyName: 'KSČM',
-  guestImageSrc: 'http://demagog.cz/data/politik/t/1449396106,5826.jpg',
-  debateImageSrc: 'http://demagog.cz/data/diskusia/s/1505306995,4472.jpg',
+  guestImageSrc: '/politik/vojtech-filip.jpg',
+  debateImageSrc: '/cro/vojtech-filip.jpg',
   checks: [
     {
       statement: 'Ale pokud jde o současnou situaci, je evidentní, že pro českou ekonomiku jsou rozhodující exporty a potom vnitřní poptávka.',
