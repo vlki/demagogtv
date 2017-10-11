@@ -16,13 +16,13 @@ class Home extends Component {
               <MainTitle>DemagogTV</MainTitle>
 
               <MainSummary>
-                Sledujte rozhovor a zároveň, zda politik říká pravdu či ne.
-                Propojili jsme videozáznamy debat s výroky tak, že v čase vyřčení
+                Sledujte rozhovor a&nbsp;zároveň, zda politik říká pravdu či ne.
+                Propojili jsme videozáznamy debat s&nbsp;výroky tak, že v&nbsp;čase vyřčení
                 naskočí hodnocení od <a href="http://demagog.cz/">Demagog.cz</a>.
               </MainSummary>
 
               <MainSummary>
-                Přejděte na libovolnou debatu z níže uvedených a zhlédněte výsledek v praxi!
+                Přejděte na libovolnou debatu z&nbsp;níže uvedených a&nbsp;zhlédněte výsledek v&nbsp;praxi!
               </MainSummary>
             </div>
           </div>
@@ -33,10 +33,10 @@ class Home extends Component {
 
               <SectionSummary>
                 Debaty ze série
-                {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem">Rozhovor s lídrem Českého rozhlasu</a>,
+                {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem">Rozhovor s&nbsp;lídrem Českého rozhlasu</a>,
                 řazené dle volebního potenciálu
                 {' '}<a href="http://www.ceskatelevize.cz/ct24/2268226-volebni-potencial-ano-klesl-na-325-procenta-pirati-a-spd-posilili">z&nbsp;průzkumu 9. října 2017</a>
-                {' '}agentur Median a Kantar TNS pro Českou televizi.
+                {' '}agentur Median a&nbsp;Kantar TNS pro Českou televizi.
               </SectionSummary>
             </div>
           </div>
@@ -58,7 +58,7 @@ class Home extends Component {
           </div>
 
           <FooterText>
-            Projekt DemagogTV vytvořili v říjnu 2017
+            Projekt DemagogTV vytvořili v&nbsp;říjnu 2017
             {' '}<a href="http://demagog.cz">Demagog.cz</a>
             {' '}a
             {' '}<a href="http://vlki.cz">Jan Vlček</a>.
