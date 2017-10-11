@@ -58,10 +58,10 @@ class Home extends Component {
           </div>
 
           <FooterText>
-            Vytvořeno v říjnu 2017. Společný projekt
+            Projekt DemagogTV vytvořili v říjnu 2017
             {' '}<a href="http://demagog.cz">Demagog.cz</a>
             {' '}a
-            {' '}<a href="http://vlki.cz">Jana Vlčka</a>.
+            {' '}<a href="http://vlki.cz">Jan Vlček</a>.
             {/* Kód je dostupný na GitHubu. */}
           </FooterText>
         </Container>

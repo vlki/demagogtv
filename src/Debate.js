@@ -175,6 +175,14 @@ class Debate extends Component {
                       <DebateLink href={debate.demagogUrl}>Rozbor debaty na Demagog.cz</DebateLink>
                       <DebateLink href={debate.youtubeUrl}>Videozáznam debaty na YouTube</DebateLink>
                     </DebateLinks>
+
+                    <FooterText>
+                      Projekt DemagogTV vytvořili v říjnu 2017
+                      {' '}<a href="http://demagog.cz">Demagog.cz</a>
+                      {' '}a
+                      {' '}<a href="http://vlki.cz">Jan Vlček</a>.
+                      {/* Kód je dostupný na GitHubu. */}
+                    </FooterText>
                   </LabelsContainer>
                 </VideoAndLabelsContainer>
               </div>
@@ -459,13 +467,28 @@ const DebateSummary = styled.p`
 
 const DebateLinks = styled.div`
   margin-top: 20px;
-  margin-bottom: 50px;
 `
 
 const DebateLink = styled.a`
   display: block;
   font-size: 16px;
   margin-top: 2px;
+`
+
+const FooterText = styled.p`
+  color: #888 !important;
+  font-size: 16px !important;
+  margin-top: 40px;
+  margin-bottom: 50px;
+
+  a {
+    color: #888 !important;
+    text-decoration: underline !important;
+
+    &:hover {
+      color: #EC4F2F !important;
+    }
+  }
 `
 
 export default Debate
