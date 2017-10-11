@@ -11,9 +11,7 @@ import App from './App'
 
 smoothscrollPolyfill.polyfill()
 
-if (process.env.NODE_ENV === 'production') {
-  ReactGA.initialize('UA-107985925-1')
-}
+ReactGA.initialize('UA-107985925-1')
 
 class GAListener extends React.Component {
   static contextTypes = {
