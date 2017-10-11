@@ -7,6 +7,7 @@ export default {
   demagogUrl: 'http://demagog.cz/diskusie/462/volby-2017-lidr-stan-v-cro',
   youtubeUrl: 'https://www.youtube.com/watch?v=G9HXKJZNnWs',
   guestName: 'Jan Farský',
+  partyName: 'STAN',
   guestImageSrc: 'http://demagog.cz/data/politik/t/1507547931,5332.jpg',
   debateImageSrc: 'http://demagog.cz/data/diskusia/s/1507579476,4372.jpg',
   checks: [

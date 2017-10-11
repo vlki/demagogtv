@@ -7,6 +7,7 @@ export default {
   demagogUrl: 'http://demagog.cz/diskusie/453/volby-2017-lidr-cssd-v-cro',
   youtubeUrl: 'https://www.youtube.com/watch?v=ziZ9z1b3DJM',
   guestName: 'Lubomír Zaorálek',
+  partyName: 'ČSSD',
   guestImageSrc: 'http://demagog.cz/data/politik/t/1445187584,0199.jpg',
   debateImageSrc: 'http://demagog.cz/data/diskusia/s/1505754807,885.jpg',
   checks: [

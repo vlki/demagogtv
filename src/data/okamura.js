@@ -7,6 +7,7 @@ export default {
   demagogUrl: 'http://demagog.cz/diskusie/460/volby-2017-lidr-spd-v-cro',
   youtubeUrl: 'https://www.youtube.com/watch?v=bg-hJQxZDNQ',
   guestName: 'Tomio Okamura',
+  partyName: 'SPD',
   guestImageSrc: 'http://demagog.cz/data/politik/t/138919155211.jpg',
   debateImageSrc: 'http://demagog.cz/data/diskusia/s/1506961614,2309.jpg',
   checks: [

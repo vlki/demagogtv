@@ -32,22 +32,6 @@ export const DEBATES_LIST = [
   cech
 ]
 
-// export const DEBATES_LIST = [
-//   cech, // 6. rijna
-//   farsky, // 5. rijna
-//   robejsek, // 1. rijna
-//   okamura, // 1. rijna
-//   bartos, // 29. zari
-//   kalousek, // 28. zari
-//   mach, // 27. zari
-//   belobradek, // 24. zari
-//   stropnicky, // 20. zari
-//   zaoralek, // 15. zari
-//   fiala, // 12. zari
-//   babis, // 10. zari
-//   filip // 8. zari
-// ]
-
 export const DEBATES_BY_PATH = DEBATES_LIST.reduce(
   (carry, debate) => Object.assign(carry, {
     [debate.path]: debate

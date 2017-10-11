@@ -7,6 +7,7 @@ export default {
   demagogUrl: 'http://demagog.cz/diskusie/449/volby-2017-lidr-kscm-v-cro',
   youtubeUrl: 'https://www.youtube.com/watch?v=MUpceuwTOkg',
   guestName: 'Vojtěch Filip',
+  partyName: 'KSČM',
   guestImageSrc: 'http://demagog.cz/data/politik/t/1449396106,5826.jpg',
   debateImageSrc: 'http://demagog.cz/data/diskusia/s/1505306995,4472.jpg',
   checks: [

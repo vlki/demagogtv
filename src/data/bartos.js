@@ -7,6 +7,7 @@ export default {
   demagogUrl: 'http://demagog.cz/diskusie/458/volby-2017-lidr-piratu-v-cro',
   youtubeUrl: 'https://www.youtube.com/watch?v=bWBuu23A6LE',
   guestName: 'Ivan Bartoš',
+  partyName: 'Piráti',
   guestImageSrc: 'http://demagog.cz/data/politik/t/13412126152197.jpg',
   debateImageSrc: 'http://demagog.cz/data/diskusia/s/1506727280,9755.jpg',
   checks: [

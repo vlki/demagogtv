@@ -7,6 +7,7 @@ export default {
   demagogUrl: 'http://demagog.cz/diskusie/452/volby-2017-lidr-ods-v-cro',
   youtubeUrl: 'https://www.youtube.com/watch?v=E_rzZhbc-6k',
   guestName: 'Petr Fiala',
+  partyName: 'ODS',
   guestImageSrc: 'http://demagog.cz/data/politik/t/13866987779742.jpg',
   debateImageSrc: 'http://demagog.cz/data/diskusia/s/1505732613,3554.jpg',
   checks: [

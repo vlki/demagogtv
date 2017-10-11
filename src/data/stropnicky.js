@@ -7,6 +7,7 @@ export default {
   demagogUrl: 'http://demagog.cz/diskusie/455/volby-2017-lidr-zelenych-v-cro',
   youtubeUrl: 'https://www.youtube.com/watch?v=RpZWGukrOXA',
   guestName: 'Matěj Stropnický',
+  partyName: 'Zelení',
   guestImageSrc: 'http://demagog.cz/data/politik/t/1506416101,4245.jpg',
   debateImageSrc: 'http://demagog.cz/data/diskusia/s/1506416065,7907.jpg',
   checks: [

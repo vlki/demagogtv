@@ -7,6 +7,7 @@ export default {
   demagogUrl: 'http://demagog.cz/diskusie/459/volby-2017-lidr-realistu-v-cro',
   youtubeUrl: 'https://www.youtube.com/watch?v=U2CcUXpac10',
   guestName: 'Petr Robejšek',
+  partyName: 'Realisté',
   guestImageSrc: 'http://demagog.cz/data/politik/t/1506574110,7862.jpg',
   debateImageSrc: 'http://demagog.cz/data/diskusia/s/1507544142,5863.jpg',
   checks: [

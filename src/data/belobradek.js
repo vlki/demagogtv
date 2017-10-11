@@ -7,6 +7,7 @@ export default {
   demagogUrl: 'http://demagog.cz/diskusie/454/volby-2017-lidr-kdu-csl-v-cro',
   youtubeUrl: 'https://www.youtube.com/watch?v=bWVhWpBT16Y',
   guestName: 'Pavel Bělobrádek',
+  partyName: 'KDU-ČSL',
   guestImageSrc: 'http://demagog.cz/data/politik/t/1390989566,197.jpg',
   debateImageSrc: 'http://demagog.cz/data/diskusia/s/1506423408,7307.jpg',
   checks: [

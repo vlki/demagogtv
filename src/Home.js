@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import DocumentTitle from 'react-document-title'
 
-import PersonResultBadge from './PersonResultBadge'
+import { ResultsRow } from './PersonResultBadge'
 import { DEBATES_LIST } from './data'
 
 class Home extends Component {
@@ -12,53 +12,58 @@ class Home extends Component {
       <DocumentTitle title="DemagogTV">
         <Container className="container-fluid">
           <div className="row">
-            <div className="col-xs-12 col-sm-4">
+            <div className="col-xs-12 col-sm-10">
               <MainTitle>DemagogTV</MainTitle>
-            </div>
-            <div className="col-xs-12 col-sm-8">
+
               <MainSummary>
-                Zhlédněte politické debaty propojené s ověřenými výroky z projektu
-                {' '}<a href="http://demagog.cz/">Demagog.cz</a>. Aktuálně tu
-                {' '}najdete debaty ze série
-                {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem">Rozhovor s lídrem Českého rozhlasu</a>.
+                Sledujete rozhovor a zároveň vidíte, zda je vyslovené pravda či ne.
+                Propojili jsme videozáznamy debat s výroky tak, že v čase vyřčení
+                naskočí hodnocení od <a href="http://demagog.cz/" target="_blank">Demagog.cz</a>.
+              </MainSummary>
+
+              <MainSummary>
+                Přejděte na libovolnou z debat níže a zhlédněte výsledek v praxi!
               </MainSummary>
             </div>
           </div>
 
-          {DEBATES_LIST.map(debate =>
-            <DebateContainer key={debate.path} className="row">
-              <div className="col-xs-12 col-sm-4">
-                <Link to={debate.path}>
-                  <DebateImg src={debate.debateImageSrc} alt="" />
-                </Link>
-              </div>
-              <div className="col-xs-12 col-sm-8">
-                <Link to={debate.path}>
-                  <DebateTitle>{debate.title}</DebateTitle>
-                </Link>
+          <div className="row">
+            <div className="col-xs-12 col-sm-10">
+              <SectionTitle>Rozhovory s lídry v ČRo</SectionTitle>
 
-                <DebateSubtitle>{debate.subtitle}</DebateSubtitle>
-
-                <DebatePersonResultBadge>
-                  <PersonResultBadge debate={debate} />
-                </DebatePersonResultBadge>
-
-                <DebateSummary>{debate.summary}</DebateSummary>
-
-                <DebateOpenLink>
-                  <Link to={debate.path}>Zhlédnout debatu</Link>
-                </DebateOpenLink>
-              </div>
-            </DebateContainer>
-          )}
-
-          <FooterContainer className="row">
-            <div className="col-xs-12 col-sm-8 col-sm-offset-4">
-              <FooterText>
-                ⓒ 2017 Jan Vlček, data dodal <FooterLink href="http://demagog.cz">Demagog.cz</FooterLink>
-              </FooterText>
+              <SectionSummary>
+                Debaty ze série
+                {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem" target="_blank">Rozhovor s lídrem Českého rozhlasu</a>.
+                Řazené dle volebního potenciálu
+                {' '}<a href="http://www.ceskatelevize.cz/ct24/2268226-volebni-potencial-ano-klesl-na-325-procenta-pirati-a-spd-posilili" target="_blank">z&nbsp;průzkumu 9. října 2017</a>
+                {' '}agentur Median a Kantar TNS pro Českou televizi.
+              </SectionSummary>
             </div>
-          </FooterContainer>
+          </div>
+
+          <div className="row">
+            {DEBATES_LIST.map(debate =>
+              <div className="col-xs-12 col-sm-6 col-md-4">
+                <DebateContainer>
+                  <Link to={debate.path}>
+                    <DebateImgWrapper>
+                      <DebateImg src={debate.debateImageSrc} alt={debate.title} />
+                    </DebateImgWrapper>
+                    <DebateTitle>{debate.guestName}, {debate.partyName}</DebateTitle>
+                    <ResultsRow debate={debate} />
+                  </Link>
+                </DebateContainer>
+              </div>
+            )}
+          </div>
+
+          <FooterText>
+            Vytvořeno v říjnu 2017. Společný projekt
+            {' '}<a href="http://demagog.cz" target="_blank">Demagog.cz</a>
+            {' '}a
+            {' '}<a href="http://vlki.cz" target="_blank">Jana Vlčka</a>.
+            {/* Kód je dostupný na GitHubu. */}
+          </FooterText>
         </Container>
       </DocumentTitle>
     )
@@ -74,63 +79,49 @@ const MainTitle = styled.h1`
   font-family: 'Oswald', sans-serif;
   font-weight: bold;
   font-size: 55px;
-  margin: 0;
+  margin: 0 0 25px 0;
 `
 
 const MainSummary = styled.p`
-  margin-top: 8px;
+  margin-top: 15px;
+`
+
+const SectionTitle = styled.h2`
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  font-size: 37px;
+  margin: 40px 0 0 0;
+`
+
+const SectionSummary = styled.p`
+  margin-top: 15px;
 `
 
 const DebateContainer = styled.div`
-  margin-top: 80px;
+  margin-top: 30px;
+`
+
+const DebateImgWrapper = styled.div`
+  height: 170px;
+  overflow: hidden;
 `
 
 const DebateImg = styled.img`
   width: 100%;
-  height: auto;
 `
 
-const DebateTitle = styled.h2`
+const DebateTitle = styled.h3`
   font-family: 'Oswald', sans-serif;
   font-weight: bold;
-  font-size: 37px;
-  margin: 7px 0 0 0;
-`
-
-const DebateSubtitle = styled.p`
+  color: #585859;
+  font-size: 23px;
   margin: 10px 0 0 0;
 `
 
-const DebatePersonResultBadge = styled.div`
-  margin-top: 13px;
-`
-
-const DebateSummary = styled.p`
-  margin-top: 12px;
-`
-
-const DebateOpenLink = styled.p`
-`
-
-const FooterContainer = styled.div`
-  margin-top: 80px;
-  border-top: 1px solid #E0E0E0;
-  padding-top: 10px;
-  margin-bottom: 80px;
-`
-
-const FooterText = styled.span`
-  color: #8C8C8C;
+const FooterText = styled.p`
   font-size: 16px !important;
-`
-
-const FooterLink = styled.a`
-  color: #8C8C8C !important;
-  text-decoration: underline !important;
-
-  &:hover, &:focus, &:active {
-    color: #EC4F2F !important;
-  }
+  margin-top: 50px;
+  margin-bottom: 100px;
 `
 
 export default Home

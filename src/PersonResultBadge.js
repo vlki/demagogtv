@@ -10,31 +10,16 @@ import {
   RESULT_ICON
 } from './metadata'
 
-const PersonResultBadge = ({ debate }) => {
-  const checks = debate.checks
-
-  const truths = checks.filter(({ result }) => result === RESULT_TRUTH)
-  const untruths = checks.filter(({ result }) => result === RESULT_UNTRUTH)
-  const misleadings = checks.filter(({ result }) => result === RESULT_MISLEADING)
-  const unverifiables = checks.filter(({ result }) => result === RESULT_UNVERIFIABLE)
-
-  return (
-    <div className="clearfix">
-      <PictureWrapper>
-        <img src={debate.guestImageSrc} alt={debate.guestName} />
-      </PictureWrapper>
-      <DetailWrapper>
-        <GuestName>{debate.guestName}</GuestName>
-        <ResultsWrapper>
-          <Result result="pravda" count={truths.length} />
-          <Result result="nepravda" count={untruths.length} />
-          <Result result="zavadejici" count={misleadings.length} />
-          <Result result="neoveritelne" count={unverifiables.length} />
-        </ResultsWrapper>
-      </DetailWrapper>
-    </div>
-  )
-}
+const PersonResultBadge = ({ debate }) =>
+  <div className="clearfix">
+    <PictureWrapper>
+      <img src={debate.guestImageSrc} alt={debate.guestName} />
+    </PictureWrapper>
+    <DetailWrapper>
+      <GuestName>{debate.guestName}</GuestName>
+      <ResultsRow debate={debate} />
+    </DetailWrapper>
+  </div>
 
 const PictureWrapper = styled.div`
   float: left;
@@ -57,7 +42,7 @@ const GuestName = styled.h3`
   font-family: 'Oswald', sans-serif;
   font-weight: bold;
   color: #585859;
-  font-size: 23;
+  font-size: 23px;
   margin: 4px 0 0 0;
 `
 
@@ -92,5 +77,23 @@ const ResultLabel = styled.span`
   margin-left: 5px;
   margin-right: 10px;
 `
+
+export const ResultsRow = ({ debate }) => {
+  const checks = debate.checks
+
+  const truths = checks.filter(({ result }) => result === RESULT_TRUTH)
+  const untruths = checks.filter(({ result }) => result === RESULT_UNTRUTH)
+  const misleadings = checks.filter(({ result }) => result === RESULT_MISLEADING)
+  const unverifiables = checks.filter(({ result }) => result === RESULT_UNVERIFIABLE)
+
+  return (
+    <ResultsWrapper>
+      <Result result="pravda" count={truths.length} />
+      <Result result="nepravda" count={untruths.length} />
+      <Result result="zavadejici" count={misleadings.length} />
+      <Result result="neoveritelne" count={unverifiables.length} />
+    </ResultsWrapper>
+  )
+}
 
 export default PersonResultBadge

@@ -7,6 +7,7 @@ export default {
   demagogUrl: 'http://demagog.cz/diskusie/463/volby-2017-lidr-spo-v-cro',
   youtubeUrl: 'https://www.youtube.com/watch?v=FbRHlr5Fuzc',
   guestName: 'František Čech',
+  partyName: 'SPO',
   guestImageSrc: 'http://demagog.cz/data/politik/t/1507294067,0194.jpg',
   debateImageSrc: 'http://demagog.cz/data/diskusia/s/1507544077,2005.jpg',
   checks: [

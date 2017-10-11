@@ -7,6 +7,7 @@ export default {
   "demagogUrl": "http://demagog.cz/diskusie/456/volby-2017-lidr-svobodnych-v-cro",
   "youtubeUrl": "https://www.youtube.com/watch?v=wA_lu6pYE6Y",
   guestName: 'Petr Mach',
+  partyName: 'Svobodní',
   guestImageSrc: 'http://demagog.cz/data/politik/t/1416762823,9454.jpg',
   debateImageSrc: 'http://demagog.cz/data/diskusia/s/1506624495,8152.jpg',
   "checks": [
