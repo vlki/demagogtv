@@ -135,6 +135,7 @@ class Debate extends Component {
                 <TopBarTitle>DemagogTV</TopBarTitle>
               </Link>
               <TopBarLink to="/">Přehled všech debat</TopBarLink>
+              <TopBarOuterLink href="http://demagog.cz/jak-hodnotime-metodika" target="_blank" rel="noopener noreferrer">Jak hodnotíme?</TopBarOuterLink>
             </TopBarContainer>
           </TopBar>
 
@@ -254,6 +255,18 @@ const TopBarTitle = styled.h1`
 `
 
 const TopBarLink = styled(Link)`
+  float: left;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  color: #585859 !important;
+  padding: 14px 15px 15px;
+
+  &:hover {
+    background-color: #F4F4F4;
+  }
+`
+
+const TopBarOuterLink = styled.a`
   float: left;
   font-size: 16px !important;
   line-height: 22px !important;
