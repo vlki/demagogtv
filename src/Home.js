@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import DocumentTitle from 'react-document-title'
+import { Helmet } from "react-helmet"
 
 import { ResultsRow } from './PersonResultBadge'
 import { DEBATES_LIST } from './data'
@@ -9,63 +9,67 @@ import { DEBATES_LIST } from './data'
 class Home extends Component {
   render() {
     return (
-      <DocumentTitle title="DemagogTV">
-        <Container className="container-fluid">
-          <div className="row">
-            <div className="col-xs-12 col-sm-10">
-              <MainTitle>DemagogTV</MainTitle>
+      <Container className="container-fluid">
+        <Helmet>
+          <title>DemagogTV</title>
+          <meta property="og:image" content="https://demagogtv.cz/demagogtv.png" />
+          <meta property="og:image:alt" content="DemagogTV" />
+        </Helmet>
 
-              <MainSummary>
-                Sledujte rozhovor a&nbsp;zároveň, zda politik říká pravdu či ne.
-                Propojili jsme videozáznamy debat s&nbsp;výroky tak, že v&nbsp;čase vyřčení
-                naskočí hodnocení od <a href="http://demagog.cz/">Demagog.cz</a>.
-              </MainSummary>
+        <div className="row">
+          <div className="col-xs-12 col-sm-10">
+            <MainTitle>DemagogTV</MainTitle>
 
-              <MainSummary>
-                Přejděte na libovolnou debatu z&nbsp;níže uvedených a&nbsp;zhlédněte výsledek v&nbsp;praxi!
-              </MainSummary>
+            <MainSummary>
+              Sledujte rozhovor a&nbsp;zároveň, zda politik říká pravdu či ne.
+              Propojili jsme videozáznamy debat s&nbsp;výroky tak, že v&nbsp;čase vyřčení
+              naskočí hodnocení od <a href="http://demagog.cz/">Demagog.cz</a>.
+            </MainSummary>
+
+            <MainSummary>
+              Přejděte na libovolnou debatu z&nbsp;níže uvedených a&nbsp;zhlédněte výsledek v&nbsp;praxi!
+            </MainSummary>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-xs-12 col-sm-10">
+            <SectionTitle>Rozhovory s lídry v ČRo</SectionTitle>
+
+            <SectionSummary>
+              Debaty ze série
+              {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem">Rozhovor s&nbsp;lídrem Českého rozhlasu</a>,
+              řazené dle volebního potenciálu
+              {' '}<a href="http://www.ceskatelevize.cz/ct24/2268226-volebni-potencial-ano-klesl-na-325-procenta-pirati-a-spd-posilili">z&nbsp;průzkumu 9.&nbsp;října&nbsp;2017</a>
+              {' '}agentur Median a&nbsp;Kantar TNS pro Českou televizi.
+            </SectionSummary>
+          </div>
+        </div>
+
+        <div className="row">
+          {DEBATES_LIST.map(debate =>
+            <div key={debate.path} className="col-xs-12 col-sm-6 col-md-4">
+              <DebateContainer>
+                <Link to={debate.path}>
+                  <DebateImgWrapper>
+                    <DebateImg src={debate.debateImageSrc} alt={debate.title} />
+                  </DebateImgWrapper>
+                  <DebateTitle>{debate.guestName}, {debate.partyName}</DebateTitle>
+                  <ResultsRow debate={debate} />
+                </Link>
+              </DebateContainer>
             </div>
-          </div>
+          )}
+        </div>
 
-          <div className="row">
-            <div className="col-xs-12 col-sm-10">
-              <SectionTitle>Rozhovory s lídry v ČRo</SectionTitle>
-
-              <SectionSummary>
-                Debaty ze série
-                {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem">Rozhovor s&nbsp;lídrem Českého rozhlasu</a>,
-                řazené dle volebního potenciálu
-                {' '}<a href="http://www.ceskatelevize.cz/ct24/2268226-volebni-potencial-ano-klesl-na-325-procenta-pirati-a-spd-posilili">z&nbsp;průzkumu 9.&nbsp;října&nbsp;2017</a>
-                {' '}agentur Median a&nbsp;Kantar TNS pro Českou televizi.
-              </SectionSummary>
-            </div>
-          </div>
-
-          <div className="row">
-            {DEBATES_LIST.map(debate =>
-              <div key={debate.path} className="col-xs-12 col-sm-6 col-md-4">
-                <DebateContainer>
-                  <Link to={debate.path}>
-                    <DebateImgWrapper>
-                      <DebateImg src={debate.debateImageSrc} alt={debate.title} />
-                    </DebateImgWrapper>
-                    <DebateTitle>{debate.guestName}, {debate.partyName}</DebateTitle>
-                    <ResultsRow debate={debate} />
-                  </Link>
-                </DebateContainer>
-              </div>
-            )}
-          </div>
-
-          <FooterText>
-            Projekt DemagogTV vytvořili v&nbsp;říjnu 2017
-            {' '}<a href="http://demagog.cz">Demagog.cz</a>
-            {' '}a
-            {' '}<a href="http://vlki.cz">Jan Vlček</a>.
-            {/* Kód je dostupný na GitHubu. */}
-          </FooterText>
-        </Container>
-      </DocumentTitle>
+        <FooterText>
+          Projekt DemagogTV vytvořili v&nbsp;říjnu 2017
+          {' '}<a href="http://demagog.cz">Demagog.cz</a>
+          {' '}a
+          {' '}<a href="http://vlki.cz">Jan Vlček</a>.
+          {/* Kód je dostupný na GitHubu. */}
+        </FooterText>
+      </Container>
     )
   }
 }

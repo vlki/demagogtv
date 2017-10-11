@@ -4,7 +4,7 @@ import YouTube from 'react-youtube'
 import ReactTooltip from 'react-tooltip'
 import styled, { css } from 'styled-components'
 import debounce from 'lodash/debounce'
-import DocumentTitle from 'react-document-title'
+import { Helmet } from 'react-helmet'
 
 import { DEBATES_BY_PATH } from './data'
 import {
@@ -127,117 +127,121 @@ class Debate extends Component {
     const debate = DEBATES_BY_PATH[match.path]
 
     return (
-      <DocumentTitle title={`${debate.title} – DemagogTV`}>
-        <div>
-          <TopBar>
-            <TopBarContainer className="container-fluid">
-              <Link to="/">
-                <TopBarTitle>DemagogTV</TopBarTitle>
-              </Link>
-              <TopBarLink to="/">Přehled všech debat</TopBarLink>
-              <TopBarOuterLink href="http://demagog.cz/jak-hodnotime-metodika">Jak hodnotíme?</TopBarOuterLink>
+      <div>
+        <Helmet>
+          <title>{debate.title} – DemagogTV</title>
+          <meta property="og:image" content={`https://demagogtv.cz${debate.debateImageSrc}`} />
+          <meta property="og:image:alt" content={debate.title} />
+        </Helmet>
 
-              <SupportLinkWrapper>
-                Líbí se vám co děláme?
-                <SupportLink href="https://www.darujme.cz/projekt/1200037">Podpořte Demagog.cz</SupportLink>
-              </SupportLinkWrapper>
-            </TopBarContainer>
-          </TopBar>
+        <TopBar>
+          <TopBarContainer className="container-fluid">
+            <Link to="/">
+              <TopBarTitle>DemagogTV</TopBarTitle>
+            </Link>
+            <TopBarLink to="/">Přehled všech debat</TopBarLink>
+            <TopBarOuterLink href="http://demagog.cz/jak-hodnotime-metodika">Jak hodnotíme?</TopBarOuterLink>
 
-          <Container className="container-fluid">
-            <div className="row">
-              <div className="col-xs-6 col-lg-7" ref={container => this.videoContainer = container}>
-                <VideoAndLabelsContainer videoWidth={videoWidth} >
-                  <YouTube
-                    videoId={debate.videoId}
-                    opts={{
-                      width: videoWidth,
-                      height: videoWidth * VIDEO_ASPECT_RATIO,
-                      playerVars: {
-                        rel: 0
-                      }
-                    }}
-                    onReady={this.handlePlayerReady}
-                  />
+            <SupportLinkWrapper>
+              Líbí se vám co děláme?
+              <SupportLink href="https://www.darujme.cz/projekt/1200037">Podpořte Demagog.cz</SupportLink>
+            </SupportLinkWrapper>
+          </TopBarContainer>
+        </TopBar>
 
-                  <LabelsContainer videoHeight={videoWidth * VIDEO_ASPECT_RATIO}>
-                    <DebateTitle>{debate.title}</DebateTitle>
+        <Container className="container-fluid">
+          <div className="row">
+            <div className="col-xs-6 col-lg-7" ref={container => this.videoContainer = container}>
+              <VideoAndLabelsContainer videoWidth={videoWidth} >
+                <YouTube
+                  videoId={debate.videoId}
+                  opts={{
+                    width: videoWidth,
+                    height: videoWidth * VIDEO_ASPECT_RATIO,
+                    playerVars: {
+                      rel: 0
+                    }
+                  }}
+                  onReady={this.handlePlayerReady}
+                />
 
-                    <DebateSubtitle>{debate.subtitle}</DebateSubtitle>
+                <LabelsContainer videoHeight={videoWidth * VIDEO_ASPECT_RATIO}>
+                  <DebateTitle>{debate.title}</DebateTitle>
 
-                    <DebatePersonResultBadge>
-                      <PersonResultBadge debate={debate} />
-                    </DebatePersonResultBadge>
+                  <DebateSubtitle>{debate.subtitle}</DebateSubtitle>
 
-                    <DebateSummary>{debate.summary}</DebateSummary>
+                  <DebatePersonResultBadge>
+                    <PersonResultBadge debate={debate} />
+                  </DebatePersonResultBadge>
 
-                    <DebateLinks>
-                      <DebateLink href={debate.demagogUrl}>Rozbor debaty na Demagog.cz</DebateLink>
-                      <DebateLink href={debate.youtubeUrl}>Videozáznam debaty na YouTube</DebateLink>
-                    </DebateLinks>
+                  <DebateSummary>{debate.summary}</DebateSummary>
 
-                    <FooterText>
-                      Projekt DemagogTV vytvořili v říjnu 2017
-                      {' '}<a href="http://demagog.cz">Demagog.cz</a>
-                      {' '}a
-                      {' '}<a href="http://vlki.cz">Jan Vlček</a>.
-                      {/* Kód je dostupný na GitHubu. */}
-                    </FooterText>
-                  </LabelsContainer>
-                </VideoAndLabelsContainer>
-              </div>
-              <div className="col-xs-6 col-lg-5">
-                <StatementsContainer>
-                  {debate.checks.map((check, index) =>
-                    <StatementContainer
-                      key={index}
-                      innerRef={container => this.statementContainers[index] = container}
-                      showingExplanation={shownExplanations.indexOf(index) !== -1}
-                      higlighted={highlightStatement === index}
-                      className="clearfix"
-                    >
-                      <StatementTime>
-                        <StatementTimeButton
-                          className="btn btn-link"
-                          onClick={() => this.playerGoToCheck(check)}
-                          data-tip={`Kliknutím skočte na čas ${formatTime(parseTime(check.highlightStart))}`}
-                          data-for={`statement-${index}`}
-                        >{formatTime(parseTime(check.highlightStart))}</StatementTimeButton>
+                  <DebateLinks>
+                    <DebateLink href={debate.demagogUrl}>Rozbor debaty na Demagog.cz</DebateLink>
+                    <DebateLink href={debate.youtubeUrl}>Videozáznam debaty na YouTube</DebateLink>
+                  </DebateLinks>
 
-                        <ReactTooltip place="top" id={`statement-${index}`} effect="solid" />
-
-                        {index < (debate.checks.length - 1) && <StatementTimeline />}
-                      </StatementTime>
-                      <StatementContent>
-                        <p><em>„{check.statement}“</em></p>
-                        <StatementResultExpanderWrapper>
-                          <StatementResultBadge result={check.result} />
-                          {shownExplanations.indexOf(index) === -1
-                            ? (
-                              <StatementExpanderButton className="btn btn-link" onClick={() => this.toggleExplanation(index)}>
-                                zobrazit odůvodnění
-                              </StatementExpanderButton>
-                            ) : (
-                              <StatementExpanderButton className="btn btn-link" onClick={() => this.toggleExplanation(index)}>
-                                skrýt odůvodnění
-                              </StatementExpanderButton>
-                            )
-                          }
-                        </StatementResultExpanderWrapper>
-                        {shownExplanations.indexOf(index) !== -1 &&
-                          <StatementExplanation
-                            dangerouslySetInnerHTML={{ __html: convertNewlinesToBr(check.explanation) }}
-                          />
-                        }
-                      </StatementContent>
-                    </StatementContainer>
-                  )}
-                </StatementsContainer>
-              </div>
+                  <FooterText>
+                    Projekt DemagogTV vytvořili v říjnu 2017
+                    {' '}<a href="http://demagog.cz">Demagog.cz</a>
+                    {' '}a
+                    {' '}<a href="http://vlki.cz">Jan Vlček</a>.
+                    {/* Kód je dostupný na GitHubu. */}
+                  </FooterText>
+                </LabelsContainer>
+              </VideoAndLabelsContainer>
             </div>
-          </Container>
-        </div>
-      </DocumentTitle>
+            <div className="col-xs-6 col-lg-5">
+              <StatementsContainer>
+                {debate.checks.map((check, index) =>
+                  <StatementContainer
+                    key={index}
+                    innerRef={container => this.statementContainers[index] = container}
+                    showingExplanation={shownExplanations.indexOf(index) !== -1}
+                    higlighted={highlightStatement === index}
+                    className="clearfix"
+                  >
+                    <StatementTime>
+                      <StatementTimeButton
+                        className="btn btn-link"
+                        onClick={() => this.playerGoToCheck(check)}
+                        data-tip={`Kliknutím skočte na čas ${formatTime(parseTime(check.highlightStart))}`}
+                        data-for={`statement-${index}`}
+                      >{formatTime(parseTime(check.highlightStart))}</StatementTimeButton>
+
+                      <ReactTooltip place="top" id={`statement-${index}`} effect="solid" />
+
+                      {index < (debate.checks.length - 1) && <StatementTimeline />}
+                    </StatementTime>
+                    <StatementContent>
+                      <p><em>„{check.statement}“</em></p>
+                      <StatementResultExpanderWrapper>
+                        <StatementResultBadge result={check.result} />
+                        {shownExplanations.indexOf(index) === -1
+                          ? (
+                            <StatementExpanderButton className="btn btn-link" onClick={() => this.toggleExplanation(index)}>
+                              zobrazit odůvodnění
+                            </StatementExpanderButton>
+                          ) : (
+                            <StatementExpanderButton className="btn btn-link" onClick={() => this.toggleExplanation(index)}>
+                              skrýt odůvodnění
+                            </StatementExpanderButton>
+                          )
+                        }
+                      </StatementResultExpanderWrapper>
+                      {shownExplanations.indexOf(index) !== -1 &&
+                        <StatementExplanation
+                          dangerouslySetInnerHTML={{ __html: convertNewlinesToBr(check.explanation) }}
+                        />
+                      }
+                    </StatementContent>
+                  </StatementContainer>
+                )}
+              </StatementsContainer>
+            </div>
+          </div>
+        </Container>
+      </div>
     )
   }
 }

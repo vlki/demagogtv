@@ -5,6 +5,7 @@ import Express from 'express'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 import { ServerStyleSheet } from 'styled-components'
 
 import App from '../src/App'
@@ -50,11 +51,14 @@ app.get('*', (req, res) => {
     </StaticRouter>
   ))
   const styleTags = sheet.getStyleTags()
+  const helmet = Helmet.renderStatic()
 
   const indexHtml = fs.readFileSync(path.join(__dirname, '..', 'build', 'index.html'), 'utf8')
   const html = indexHtml
-    .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
+    .replace('<title>DemagogTV</title>', `<title>${helmet.title.toString()}</title>`)
+    .replace('</head>', `${helmet.meta.toString()}</head>`)
     .replace('</head>', `${styleTags}</head>`)
+    .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
 
   res.status(staticContext.statusCode ||  200).send(html)
 });
