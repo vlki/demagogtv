@@ -35,7 +35,7 @@ class Home extends Component {
                 Debaty ze série
                 {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem">Rozhovor s&nbsp;lídrem Českého rozhlasu</a>,
                 řazené dle volebního potenciálu
-                {' '}<a href="http://www.ceskatelevize.cz/ct24/2268226-volebni-potencial-ano-klesl-na-325-procenta-pirati-a-spd-posilili">z&nbsp;průzkumu 9. října 2017</a>
+                {' '}<a href="http://www.ceskatelevize.cz/ct24/2268226-volebni-potencial-ano-klesl-na-325-procenta-pirati-a-spd-posilili">z&nbsp;průzkumu 9.&nbsp;října&nbsp;2017</a>
                 {' '}agentur Median a&nbsp;Kantar TNS pro Českou televizi.
               </SectionSummary>
             </div>
