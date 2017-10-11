@@ -55,7 +55,7 @@ app.get('*', (req, res) => {
 
   const indexHtml = fs.readFileSync(path.join(__dirname, '..', 'build', 'index.html'), 'utf8')
   const html = indexHtml
-    .replace('<title>DemagogTV</title>', `<title>${helmet.title.toString()}</title>`)
+    .replace('<title>DemagogTV</title>', helmet.title.toString())
     .replace('</head>', `${helmet.meta.toString()}</head>`)
     .replace('</head>', `${styleTags}</head>`)
     .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
