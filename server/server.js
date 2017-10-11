@@ -9,10 +9,22 @@ import { ServerStyleSheet } from 'styled-components'
 
 import App from '../src/App'
 
+const FORCE_PROTOCOL = 'https'
+const FORCE_HOSTNAME = 'demagogtv.cz'
+
 const app = Express();
 app.server = http.createServer(app);
 
-// app.use(Express.static(path.join(__dirname, '..', 'build')))
+app.use((req, res, next) => {
+  if (process.env.NODE_ENV === 'production' &&
+    req.headers['x-forwarded-proto'] !== FORCE_PROTOCOL &&
+    req.hostname !== FORCE_HOSTNAME) {
+
+    return res.redirect(`${FORCE_PROTOCOL}://${FORCE_HOSTNAME}${req.url}`)
+  }
+
+  return next();
+})
 
 app.use((req, res, next) => {
   // Don't serve index.html on the path /, it will be handled by react router
