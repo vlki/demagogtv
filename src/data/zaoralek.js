@@ -3,7 +3,7 @@ export default {
   path: '/volby-2017-lidr-cssd-v-cro',
   title: 'Volby 2017: Lídr ČSSD v ČRo',
   subtitle: 'Český rozhlas, 15. září 2017, moderátor: Vladimír Kroc',
-  summary: 'V pořadí čtvrtým volebním lídrem, který v rámci předvolebních debat navštívil studio Českého rozhlasu byl ministr zahraničí Lubomír Zaorálek z ČSSD. Diskuze se točila zejména okolo sociálních a ekonomických témat, došlo však například i na otázku zřízení postu vědeckého diplomata v Izraeli.',
+  summary: 'V pořadí čtvrtým volebním lídrem, který v rámci předvolebních debat navštívil studio Českého rozhlasu, byl ministr zahraničí Lubomír Zaorálek z ČSSD. Diskuze se točila zejména okolo sociálních a ekonomických témat, došlo však například i na otázku zřízení postu vědeckého diplomata v Izraeli.',
   demagogUrl: 'http://demagog.cz/diskusie/453/volby-2017-lidr-cssd-v-cro',
   youtubeUrl: 'https://www.youtube.com/watch?v=ziZ9z1b3DJM',
   guestName: 'Lubomír Zaorálek',

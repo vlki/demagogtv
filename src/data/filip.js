@@ -3,7 +3,7 @@ export default {
   path: '/volby-2017-lidr-kscm-v-cro',
   title: 'Volby 2017: Lídr KSČM v ČRo',
   subtitle: 'Český rozhlas, 8. září 2017, moderátor: Vladimír Kroc',
-  summary: 'V rámci spolupráce s Českám rozhlasem jsme se podívali na rozhovor s Vojtěchem Filipem, lídrem KSČM. Mluvilo se o kondici ekonomiky a českých mzdách, sociálním systému i ruských sankcích. Podívejte si, jak si Vojtěch Filip vedl v pravdivosti svých výroků.',
+  summary: 'V rámci spolupráce s Českým rozhlasem jsme se podívali na rozhovor s Vojtěchem Filipem, lídrem KSČM. Mluvilo se o kondici ekonomiky a českých mzdách, sociálním systému i ruských sankcích. Podívejte se, jak si Vojtěch Filip vedl v pravdivosti svých výroků.',
   demagogUrl: 'http://demagog.cz/diskusie/449/volby-2017-lidr-kscm-v-cro',
   youtubeUrl: 'https://www.youtube.com/watch?v=MUpceuwTOkg',
   guestName: 'Vojtěch Filip',

@@ -16,13 +16,13 @@ class Home extends Component {
               <MainTitle>DemagogTV</MainTitle>
 
               <MainSummary>
-                Sledujete rozhovor a zároveň vidíte, zda je vyslovené pravda či ne.
+                Sledujete rozhovor a zároveň vidíte, zda je vyslovená pravda či ne.
                 Propojili jsme videozáznamy debat s výroky tak, že v čase vyřčení
                 naskočí hodnocení od <a href="http://demagog.cz/">Demagog.cz</a>.
               </MainSummary>
 
               <MainSummary>
-                Přejděte na libovolnou z debat níže a zhlédněte výsledek v praxi!
+                Přejděte na libovolnou debatu z níže uvedených a zhlédněte výsledek v praxi!
               </MainSummary>
             </div>
           </div>
@@ -33,8 +33,8 @@ class Home extends Component {
 
               <SectionSummary>
                 Debaty ze série
-                {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem">Rozhovor s lídrem Českého rozhlasu</a>.
-                Řazené dle volebního potenciálu
+                {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem">Rozhovor s lídrem Českého rozhlasu</a>,
+                řazené dle volebního potenciálu
                 {' '}<a href="http://www.ceskatelevize.cz/ct24/2268226-volebni-potencial-ano-klesl-na-325-procenta-pirati-a-spd-posilili">z&nbsp;průzkumu 9. října 2017</a>
                 {' '}agentur Median a Kantar TNS pro Českou televizi.
               </SectionSummary>

@@ -3,7 +3,7 @@ export default {
   path: '/volby-2017-lidr-spd-v-cro',
   title: 'Volby 2017: Lídr SPD v ČRo',
   subtitle: 'Český rozhlas, 1. října 2017, moderátor: Vladimír Kroc',
-  summary: 'Předseda hnutí SPD Tomio Okamura ve svém předvolebním vystoupení v Českém rozhlase řešil stejně jako další lídři oblasti ekonomiky a zdravotnictví a následně se věnoval prezentaci programu svého hnutí. Hlavním jeho terčem v této debatě byla Evropská unie, kterou by chtěl opustit.',
+  summary: 'Předseda hnutí SPD Tomio Okamura ve svém předvolebním vystoupení v Českém rozhlase řešil stejně jako další lídři oblasti ekonomiky a zdravotnictví a následně se věnoval prezentaci programu svého hnutí. Jeho hlavním terčem v této debatě byla Evropská unie, kterou by chtěl opustit.',
   demagogUrl: 'http://demagog.cz/diskusie/460/volby-2017-lidr-spd-v-cro',
   youtubeUrl: 'https://www.youtube.com/watch?v=bg-hJQxZDNQ',
   guestName: 'Tomio Okamura',

@@ -3,7 +3,7 @@ export default {
   path: '/volby-2017-lidr-piratu-v-cro',
   title: 'Volby 2017: Lídr Pirátů v ČRo',
   subtitle: 'Český rozhlas, 29. září 2017, moderátor: Vladimír Kroc',
-  summary: 'Předseda České pirátské strany byl dalším lídrem, který prezentoval postoje své strany v debatě Českého rozhlasu. Obvyklá ekonomická a zdravotnická témata tentokrát Bartoš prezentací Pirátů a jejich výsledků na obecní úrovni, dále akcentoval téma digitalizace, což je jedna z vlajkových lodí tohoto subjektu.',
+  summary: 'Předseda České pirátské strany byl dalším lídrem, který prezentoval postoje své strany v debatě Českého rozhlasu. Obvyklá ekonomická a zdravotnická témata tentokrát Bartoš prokládal prezentací Pirátů a jejich výsledků na obecní úrovni, dále akcentoval téma digitalizace, což je jedna z vlajkových lodí tohoto subjektu.',
   demagogUrl: 'http://demagog.cz/diskusie/458/volby-2017-lidr-piratu-v-cro',
   youtubeUrl: 'https://www.youtube.com/watch?v=bWBuu23A6LE',
   guestName: 'Ivan Bartoš',
