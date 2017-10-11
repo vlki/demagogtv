@@ -18,7 +18,7 @@ class Home extends Component {
               <MainSummary>
                 Sledujete rozhovor a zároveň vidíte, zda je vyslovené pravda či ne.
                 Propojili jsme videozáznamy debat s výroky tak, že v čase vyřčení
-                naskočí hodnocení od <a href="http://demagog.cz/" target="_blank">Demagog.cz</a>.
+                naskočí hodnocení od <a href="http://demagog.cz/" target="_blank" rel="noopener noreferrer">Demagog.cz</a>.
               </MainSummary>
 
               <MainSummary>
@@ -33,9 +33,9 @@ class Home extends Component {
 
               <SectionSummary>
                 Debaty ze série
-                {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem" target="_blank">Rozhovor s lídrem Českého rozhlasu</a>.
+                {' '}<a href="https://www.irozhlas.cz/zpravy-tag/rozhovor-s-lidrem" target="_blank" rel="noopener noreferrer">Rozhovor s lídrem Českého rozhlasu</a>.
                 Řazené dle volebního potenciálu
-                {' '}<a href="http://www.ceskatelevize.cz/ct24/2268226-volebni-potencial-ano-klesl-na-325-procenta-pirati-a-spd-posilili" target="_blank">z&nbsp;průzkumu 9. října 2017</a>
+                {' '}<a href="http://www.ceskatelevize.cz/ct24/2268226-volebni-potencial-ano-klesl-na-325-procenta-pirati-a-spd-posilili" target="_blank" rel="noopener noreferrer">z&nbsp;průzkumu 9. října 2017</a>
                 {' '}agentur Median a Kantar TNS pro Českou televizi.
               </SectionSummary>
             </div>
@@ -43,7 +43,7 @@ class Home extends Component {
 
           <div className="row">
             {DEBATES_LIST.map(debate =>
-              <div className="col-xs-12 col-sm-6 col-md-4">
+              <div key={debate.path} className="col-xs-12 col-sm-6 col-md-4">
                 <DebateContainer>
                   <Link to={debate.path}>
                     <DebateImgWrapper>
@@ -59,9 +59,9 @@ class Home extends Component {
 
           <FooterText>
             Vytvořeno v říjnu 2017. Společný projekt
-            {' '}<a href="http://demagog.cz" target="_blank">Demagog.cz</a>
+            {' '}<a href="http://demagog.cz" target="_blank" rel="noopener noreferrer">Demagog.cz</a>
             {' '}a
-            {' '}<a href="http://vlki.cz" target="_blank">Jana Vlčka</a>.
+            {' '}<a href="http://vlki.cz" target="_blank" rel="noopener noreferrer">Jana Vlčka</a>.
             {/* Kód je dostupný na GitHubu. */}
           </FooterText>
         </Container>
