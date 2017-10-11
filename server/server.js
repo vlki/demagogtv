@@ -16,9 +16,13 @@ const app = Express();
 app.server = http.createServer(app);
 
 app.use((req, res, next) => {
-  if (process.env.NODE_ENV === 'production' &&
-    req.headers['x-forwarded-proto'] !== FORCE_PROTOCOL &&
-    req.hostname !== FORCE_HOSTNAME) {
+  if (
+    process.env.NODE_ENV === 'production' &&
+    (
+      req.headers['x-forwarded-proto'] !== FORCE_PROTOCOL ||
+      req.hostname !== FORCE_HOSTNAME
+    )
+  ) {
 
     return res.redirect(`${FORCE_PROTOCOL}://${FORCE_HOSTNAME}${req.url}`)
   }
