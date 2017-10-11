@@ -16,7 +16,7 @@ class Home extends Component {
               <MainTitle>DemagogTV</MainTitle>
 
               <MainSummary>
-                Sledujete rozhovor a zároveň vidíte, zda je vyslovená pravda či ne.
+                Sledujte rozhovor a zároveň, zda politik říká pravdu či ne.
                 Propojili jsme videozáznamy debat s výroky tak, že v čase vyřčení
                 naskočí hodnocení od <a href="http://demagog.cz/">Demagog.cz</a>.
               </MainSummary>
