@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { Helmet } from "react-helmet"
+import { Helmet } from 'react-helmet'
 
 import { ResultsRow } from './PersonResultBadge'
 import { DEBATES_LIST } from './data'
