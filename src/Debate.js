@@ -186,7 +186,7 @@ class Debate extends Component {
                     {' '}<a href="http://demagog.cz">Demagog.cz</a>
                     {' '}a
                     {' '}<a href="http://vlki.cz">Jan Vlček</a>.
-                    {/* Kód je dostupný na GitHubu. */}
+                    {' '}Kód je <a href="https://github.com/vlki/demagogtv">na GitHubu</a>.
                   </FooterText>
                 </LabelsContainer>
               </VideoAndLabelsContainer>
