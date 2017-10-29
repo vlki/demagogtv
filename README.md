@@ -39,8 +39,8 @@ yarn run server
 
 ## Licence
 
-* Data o výrocích patří projektu [Demagog.cz](http://demagog.cz)
-* Ostatní je pod licencí [MIT](LICENSE.md)
+* Data o výrocích a obrázky patří projektu [Demagog.cz](http://demagog.cz)
+* Kód je pod licencí [MIT](LICENSE.md)
 
 ---
 
