@@ -1,7 +1,16 @@
 {
-  "name": "demagog-tv",
+  "name": "demagogtv",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vlki/demagogtv.git"
+  },
+  "homepage": "https://demagogtv.cz",
+  "author": {
+    "name": "Jan Vlček",
+    "email": "jan.vlcek@vlki.cz"
+  },
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -30,6 +39,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "server": "node ./server/index.js",
     "heroku-postbuild": "yarn run build"
   }
 }
