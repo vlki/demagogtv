@@ -12,6 +12,8 @@ import robejsek from './robejsek'
 import stropnicky from './stropnicky'
 import zaoralek from './zaoralek'
 
+import duelHynekHannig from './duel-hynek-hannig'
+
 // sorted by survey at
 // http://www.ceskatelevize.cz/ct24/2268226-volebni-potencial-ano-klesl-na-325-procenta-pirati-a-spd-posilili
 export const DEBATES_LIST = [
@@ -29,7 +31,10 @@ export const DEBATES_LIST = [
   // these are not in the survey, so just sorted randomly
   mach,
   robejsek,
-  cech
+  cech,
+
+  // plus experiment
+  duelHynekHannig
 ]
 
 export const DEBATES_BY_PATH = DEBATES_LIST.reduce(

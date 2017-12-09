@@ -21,6 +21,7 @@ const VIDEO_ASPECT_RATIO = 9/16
 class Debate extends Component {
   checkInterval = null
   player = null
+  videoPlayer = null
   statementContainers = {}
   videoContainer = null
   state = {
@@ -77,7 +78,7 @@ class Debate extends Component {
     }
   }
 
-  handlePlayerReady = event => {
+  handleYoutubePlayerReady = event => {
     this.player = event.target
     this.updateVideoSize()
   }
@@ -85,12 +86,17 @@ class Debate extends Component {
   checkPlayerTime = () => {
     if (this.player !== null) {
       this.setState({ time: this.player.getCurrentTime() })
+    } else if (this.videoPlayer !== null) {
+      this.setState({ time: this.videoPlayer.currentTime })
     }
   }
 
   playerGoToCheck = check => {
     if (this.player !== null) {
       this.player.seekTo(parseTime(check.highlightStart), true)
+    } else if (this.videoPlayer !== null) {
+      this.videoPlayer.currentTime = parseTime(check.highlightStart)
+      this.videoPlayer.play()
     }
   }
 
@@ -153,17 +159,29 @@ class Debate extends Component {
           <div className="row">
             <div className="col-xs-6 col-lg-7" ref={container => this.videoContainer = container}>
               <VideoAndLabelsContainer videoWidth={videoWidth} >
-                <YouTube
-                  videoId={debate.videoId}
-                  opts={{
-                    width: videoWidth,
-                    height: videoWidth * VIDEO_ASPECT_RATIO,
-                    playerVars: {
-                      rel: 0
-                    }
-                  }}
-                  onReady={this.handlePlayerReady}
-                />
+                {debate.videoId &&
+                  <YouTube
+                    videoId={debate.videoId}
+                    opts={{
+                      width: videoWidth,
+                      height: videoWidth * VIDEO_ASPECT_RATIO,
+                      playerVars: {
+                        rel: 0
+                      }
+                    }}
+                    onReady={this.handleYoutubePlayerReady}
+                  />
+                }
+                {debate.videoSrc &&
+                  <video
+                    src={debate.videoSrc}
+                    preload="preload"
+                    controls="controls"
+                    width={videoWidth}
+                    height={videoWidth * VIDEO_ASPECT_RATIO}
+                    ref={player => this.videoPlayer = player}
+                  />
+                }
 
                 <LabelsContainer videoHeight={videoWidth * VIDEO_ASPECT_RATIO}>
                   <DebateTitle>{debate.title}</DebateTitle>
