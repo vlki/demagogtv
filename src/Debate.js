@@ -203,6 +203,7 @@ class Debate extends Component {
                     appId="150764505690468"
                     videoId={debate.facebookVideoId}
                     onReady={this.handleFacebookPlayerReady}
+                    width={videoWidth}
                   />
                 }
 
