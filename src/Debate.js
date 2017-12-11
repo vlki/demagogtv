@@ -5,6 +5,7 @@ import ReactTooltip from 'react-tooltip'
 import styled, { css } from 'styled-components'
 import debounce from 'lodash/debounce'
 import { Helmet } from 'react-helmet'
+import FacebookPlayer from 'react-facebook-player'
 
 import { DEBATES_BY_PATH } from './data'
 import {
@@ -21,6 +22,7 @@ const VIDEO_ASPECT_RATIO = 9/16
 class Debate extends Component {
   checkInterval = null
   player = null
+  facebookPlayer = null
   videoPlayer = null
   statementContainers = {}
   videoContainer = null
@@ -83,11 +85,22 @@ class Debate extends Component {
     this.updateVideoSize()
   }
 
+  handleFacebookPlayerReady = (id, player) => {
+    this.facebookPlayer = player
+    this.updateVideoSize()
+
+    if (this.facebookPlayer.isMuted()) {
+      this.facebookPlayer.unmute()
+    }
+  }
+
   checkPlayerTime = () => {
     if (this.player !== null) {
       this.setState({ time: this.player.getCurrentTime() })
     } else if (this.videoPlayer !== null) {
       this.setState({ time: this.videoPlayer.currentTime })
+    } else if (this.facebookPlayer !== null) {
+      this.setState({ time: this.facebookPlayer.getCurrentPosition() })
     }
   }
 
@@ -97,6 +110,9 @@ class Debate extends Component {
     } else if (this.videoPlayer !== null) {
       this.videoPlayer.currentTime = parseTime(check.highlightStart)
       this.videoPlayer.play()
+    } else if (this.facebookPlayer !== null) {
+      this.facebookPlayer.seek(parseTime(check.highlightStart))
+      this.facebookPlayer.play()
     }
   }
 
@@ -182,6 +198,13 @@ class Debate extends Component {
                     ref={player => this.videoPlayer = player}
                   />
                 }
+                {debate.facebookVideoId &&
+                  <FacebookPlayer
+                    appId="150764505690468"
+                    videoId={debate.facebookVideoId}
+                    onReady={this.handleFacebookPlayerReady}
+                  />
+                }
 
                 <LabelsContainer videoHeight={videoWidth * VIDEO_ASPECT_RATIO}>
                   <DebateTitle>{debate.title}</DebateTitle>
@@ -196,7 +219,12 @@ class Debate extends Component {
 
                   <DebateLinks>
                     <DebateLink href={debate.demagogUrl}>Rozbor debaty na Demagog.cz</DebateLink>
-                    <DebateLink href={debate.youtubeUrl}>Videozáznam debaty na YouTube</DebateLink>
+                    {debate.youtubeUrl &&
+                      <DebateLink href={debate.youtubeUrl}>Videozáznam debaty na YouTube</DebateLink>
+                    }
+                    {debate.facebookVideoId &&
+                      <DebateLink href={`https://www.facebook.com/${debate.facebookVideoId}`}>Videozáznam debaty na Facebooku</DebateLink>
+                    }
                   </DebateLinks>
 
                   <FooterText>

@@ -4,10 +4,11 @@ import styled from 'styled-components'
 import { Helmet } from 'react-helmet'
 
 import { ResultsRow } from './PersonResultBadge'
-import { DEBATES_LIST } from './data'
+import { DEBATES_LIST_ROZHLAS, DEBATE_ZEMAN } from './data'
 
 class Home extends Component {
   render() {
+
     return (
       <Container className="container-fluid">
         <Helmet>
@@ -34,6 +35,30 @@ class Home extends Component {
 
         <div className="row">
           <div className="col-xs-12 col-sm-10">
+            <SectionTitle>Prezidentův projev na konferenci hnutí SPD</SectionTitle>
+
+            <SectionSummary>
+              Prezident Miloš Zeman během probíhající předvolební kampaně navštívil celostátní konferenci hnutí SPD Tomia Okamury.
+            </SectionSummary>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-xs-12 col-sm-6 col-md-4">
+            <DebateContainer>
+              <Link to={DEBATE_ZEMAN.path}>
+                <DebateImgWrapper>
+                  <DebateImg src={DEBATE_ZEMAN.debateImageSrc} alt={DEBATE_ZEMAN.title} />
+                </DebateImgWrapper>
+                <DebateTitle>{DEBATE_ZEMAN.guestName}</DebateTitle>
+                <ResultsRow debate={DEBATE_ZEMAN} />
+              </Link>
+            </DebateContainer>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-xs-12 col-sm-10">
             <SectionTitle>Rozhovory s lídry v ČRo</SectionTitle>
 
             <SectionSummary>
@@ -47,7 +72,7 @@ class Home extends Component {
         </div>
 
         <div className="row">
-          {DEBATES_LIST.map(debate =>
+          {DEBATES_LIST_ROZHLAS.map(debate =>
             <div key={debate.path} className="col-xs-12 col-sm-6 col-md-4">
               <DebateContainer>
                 <Link to={debate.path}>
