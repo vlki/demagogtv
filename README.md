@@ -4,9 +4,9 @@ Sledujte rozhovor a zároveň, zda politik říká pravdu či ne. Propojili jsme
 videozáznamy debat s výroky tak, že v čase vyřčení naskočí hodnocení od
 [Demagog.cz](http://demagog.cz). [https://demagogtv.cz](https://demagogtv.cz)
 
-![](./screenshot-demagogtv.png)
+*[Go to description in English](#project-description)*
 
-*[Description in English below](#project-description)*
+![](./screenshot-demagogtv.png)
 
 ## Technologie
 
