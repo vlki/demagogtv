@@ -1,18 +1,37 @@
 export default {
-  videoId: 'RpZWGukrOXA',
   path: '/volby-2017-lidr-zelenych-v-cro',
   title: 'Volby 2017: Lídr Zelených v ČRo',
   subtitle: 'Český rozhlas, 20. září 2017, moderátor: Vladimír Kroc',
   summary: 'Předseda Strany zelených v předvolební debatě v Českém rozhlase mluvil zejména o ekonomických tématech, o výši mezd i penzí. Při představování programu své strany se ovšem dostal také k ochraně životního prostředí, což je oblast, na kterou dlouhodobě klade strana důraz.',
-  demagogUrl: 'http://demagog.cz/diskusie/455/volby-2017-lidr-zelenych-v-cro',
-  youtubeUrl: 'https://www.youtube.com/watch?v=RpZWGukrOXA',
-  guestName: 'Matěj Stropnický',
-  partyName: 'Zelení',
-  guestImageSrc: '/politik/matej-stropnicky.jpg',
-  debateImageSrc: '/cro/matej-stropnicky.jpg',
+  player: {
+    type: 'youtube',
+    videoId: 'RpZWGukrOXA'
+  },
+  links: [
+    {
+      label: 'Rozbor debaty na Demagog.cz',
+      href: 'http://demagog.cz/diskusie/455/volby-2017-lidr-zelenych-v-cro'
+    },
+    {
+      label: 'Videozáznam debaty na YouTube',
+      href: 'https://www.youtube.com/watch?v=RpZWGukrOXA'
+    }
+  ],
+  listing: {
+    title: 'Matěj Stropnický, Zelení',
+    imageSrc: '/video-thumbnails/volby-2017-lidr-zelenych-v-cro.jpg'
+  },
+  speakers: [
+    {
+      name: 'Matěj Stropnický',
+      short: 'Stropnický',
+      imageSrc: '/speakers/matej-stropnicky.jpg'
+    }
+  ],
   checks: [
     {
       statement: 'Zejména jako nastupujícím učitelům, všichni mluví o učitelích, ale je důležité zaměřit se na ty nastupující učitele. Ty mají dneska velmi často okolo 22, 23 tisíc.',
+      speaker: 'Stropnický',
       highlightStart: '0:55',
       highlightEnd: '1:06',
       result: 'pravda',
@@ -20,6 +39,7 @@ export default {
     },
     {
       statement: 'Na prvním místě jsou to montovny, které opět přinášejí pouze velmi levnou namáhavou zdlouhavou práci, ve které celá řada lidí vydrží pouze několik měsíců. Například, například v té firmě Amazon, která sem byla vlastně tahána, řekněme, Czech Investem, což je státní agentura pro zahraniční pobídky, nebo pobídky zahraničním investorům.',
+      speaker: 'Stropnický',
       highlightStart: '1:31',
       highlightEnd: '1:50',
       result: 'pravda',
@@ -27,6 +47,7 @@ export default {
     },
     {
       statement: 'Především je potřeba jako uznat, že české zdravotnictví je jedno z nejdostupnějších v rámci zemí Evropské unie.',
+      speaker: 'Stropnický',
       highlightStart: '2:28',
       highlightEnd: '2:37',
       result: 'pravda',
@@ -34,6 +55,7 @@ export default {
     },
     {
       statement: '… teďko v České republice byl vlastně přijat, byla přijata novela ústavního zákona o držení zbraní.',
+      speaker: 'Stropnický',
       highlightStart: '5:54',
       highlightEnd: '5:59',
       result: 'nepravda',
@@ -41,6 +63,7 @@ export default {
     },
     {
       statement: 'Dneska už velkou většinu jaderné energie například z Temelína vyvážíme, jo.',
+      speaker: 'Stropnický',
       highlightStart: '11:44',
       highlightEnd: '11:48',
       result: 'pravda',
@@ -48,6 +71,7 @@ export default {
     },
     {
       statement: '… už dneska jsme prostě závislí na dovozu plynu i ropy, jo.',
+      speaker: 'Stropnický',
       highlightStart: '12:16',
       highlightEnd: '12:19',
       result: 'pravda',
@@ -55,6 +79,7 @@ export default {
     },
     {
       statement: 'Můžeme si dát takový příklad. V severních Čechách stále probíhá prostě těžba hnědého uhlí. Ta těžba je stále méně rentabilní, stát vlastně vybírá pouze nějaká 2 procenta zhruba z té, z té těžby. Jako nájem. Protože ta surovina patří, nebo ten nerost patří vždycky státu. A za to nejsou vlastně k pořízení ani ty rekultivace, které potom v té, v té krajině musí se odehrát.',
+      speaker: 'Stropnický',
       highlightStart: '13:29',
       highlightEnd: '13:52',
       result: 'pravda',
@@ -62,6 +87,7 @@ export default {
     },
     {
       statement: 'My jako zelení, kteří v letech 2006 až 9, kdy jsme byli součástí vlády, tak jsme vlastně přišli s programem na zateplování, který se jmenoval Zelená úsporám. Šlo do něj tehdy 20 miliard korun. Byly to peníze, na které si dosáhli jako přesně lidi z malejch domečků na, na vesnicích.',
+      speaker: 'Stropnický',
       highlightStart: '15:04',
       highlightEnd: '15:22',
       result: 'pravda',
@@ -69,6 +95,7 @@ export default {
     },
     {
       statement: 'Ale říkáme, ano, obnovitelné zdroje je potřeba podporovat, víme, že tady byl prostě v minulosti ten neblaze proslulý solární tunel, no, my jsme nebyli ti, kdo ho způsobili. To byl prostě pozměňovací návrh sociální demokracie.',
+      speaker: 'Stropnický',
       highlightStart: '16:22',
       highlightEnd: '16:34',
       result: 'zavadejici',
@@ -76,6 +103,7 @@ export default {
     },
     {
       statement: 'Kamiony dneska, ano, sice platí na dálnicích, ale vybereme na mýtném zhruba 10 miliard ročně, jenomže Státní fond dopravní infrastruktury, který je investorem u vlastně výstavby silnic a dálnic. Silnic tedy první třídy a dálnic. Tak ročně investuje přes 60 nebo před, před, v několika předchozích letech i přes 80 miliard. To znamená, my neumíme vybrat vlastně dostatečné množství peněz na to, abychom pokryli náklady, které nám způsobují kamiony, které po těch dálnicích jezdí.',
+      speaker: 'Stropnický',
       highlightStart: '17:22',
       highlightEnd: '17:53',
       result: 'neoveritelne',
@@ -83,6 +111,7 @@ export default {
     },
     {
       statement: 'Dneska je sice průměrný důchod pro ženy i pro muže zhruba stejný, něco okolo 11,5 tisíce korun…',
+      speaker: 'Stropnický',
       highlightStart: '21:52',
       highlightEnd: '21:57',
       result: 'nepravda',
@@ -90,6 +119,7 @@ export default {
     },
     {
       statement: '(pokr.) … ale právě proto, že teprve ten průměrný je v téhle té částce (myšlen důchod ve výši 11 500 Kč, pozn. Demagog.cz), tak to znamená, že velká řada lidí má i důchod 10 tisíc, nebo 9 tisíc, nebo dokonce 8.',
+      speaker: 'Stropnický',
       highlightStart: '21:57',
       highlightEnd: '22:06',
       result: 'pravda',
@@ -97,6 +127,7 @@ export default {
     },
     {
       statement: 'Od 16 let prostě mají částečnou trestní odpovědnost (lidé, pozn. Demagog.cz).',
+      speaker: 'Stropnický',
       highlightStart: '23:10',
       highlightEnd: '23:13',
       result: 'nepravda',
@@ -104,6 +135,7 @@ export default {
     },
     {
       statement: 'Tak, všechny průzkumy, i naše, a teďko vlastně i ten nový průzkum, který se jmenuje, myslím, Behavio, tak nějak to teďko vyšlo úplně aktuálně tenhle týden, ukazuje to, co jsme už věděli i ze zahraničí. Zelené volí především ženy.',
+      speaker: 'Stropnický',
       highlightStart: '23:30',
       highlightEnd: '23:44',
       result: 'pravda',
@@ -111,6 +143,7 @@ export default {
     },
     {
       statement: 'My jsme sice dneska parlamentní stranou ve smyslu tom, že máme asi 7 senátorů, kteří byli zvoleni s podporou Strany zelených, jeden z nich je i členem Zelených, to je Petr Orel z Nového Jičína.',
+      speaker: 'Stropnický',
       highlightStart: '24:42',
       highlightEnd: '24:52',
       result: 'pravda',

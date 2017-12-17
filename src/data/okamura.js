@@ -1,18 +1,37 @@
 export default {
-  videoId: 'bg-hJQxZDNQ',
   path: '/volby-2017-lidr-spd-v-cro',
   title: 'Volby 2017: Lídr SPD v ČRo',
   subtitle: 'Český rozhlas, 1. října 2017, moderátor: Vladimír Kroc',
   summary: 'Předseda hnutí SPD Tomio Okamura ve svém předvolebním vystoupení v Českém rozhlase řešil stejně jako další lídři oblasti ekonomiky a zdravotnictví a následně se věnoval prezentaci programu svého hnutí. Jeho hlavním terčem v této debatě byla Evropská unie, kterou by chtěl opustit.',
-  demagogUrl: 'http://demagog.cz/diskusie/460/volby-2017-lidr-spd-v-cro',
-  youtubeUrl: 'https://www.youtube.com/watch?v=bg-hJQxZDNQ',
-  guestName: 'Tomio Okamura',
-  partyName: 'SPD',
-  guestImageSrc: '/politik/tomio-okamura.jpg',
-  debateImageSrc: '/cro/tomio-okamura.jpg',
+  player: {
+    type: 'youtube',
+    videoId: 'bg-hJQxZDNQ'
+  },
+  links: [
+    {
+      label: 'Rozbor debaty na Demagog.cz',
+      href: 'http://demagog.cz/diskusie/460/volby-2017-lidr-spd-v-cro'
+    },
+    {
+      label: 'Videozáznam debaty na YouTube',
+      href: 'https://www.youtube.com/watch?v=bg-hJQxZDNQ'
+    }
+  ],
+  listing: {
+    title: 'Tomio Okamura, SPD',
+    imageSrc: '/video-thumbnails/volby-2017-lidr-spd-v-cro.jpg'
+  },
+  speakers: [
+    {
+      name: 'Tomio Okamura',
+      short: 'Okamura',
+      imageSrc: '/speakers/tomio-okamura.jpg'
+    }
+  ],
   checks: [
     {
       statement: 'HDP České republiky již překonalo některé západní země. Například Portugalsko, Řecko a další. Nicméně peníze v České republice nezůstávají. Důchody jsou násobně nižší než v těchto zemích. Stejně tak jako průměrný plat.',
+      speaker: 'Okamura',
       highlightStart: '0:24',
       highlightEnd: '0:39',
       result: 'nepravda',
@@ -20,6 +39,7 @@ export default {
     },
     {
       statement: 'Ten problém nadnárodních firem, který vyvádějí asi 600 miliard korun ročně z České republiky.',
+      speaker: 'Okamura',
       highlightStart: '3:14',
       highlightEnd: '3:18',
       result: 'nepravda',
@@ -27,6 +47,7 @@ export default {
     },
     {
       statement: 'Tak, zdravotnictví je placeno prostřednictvím veřejného zdravotního pojištění, a to chceme rozhodně zachovat. My odmítáme privatizaci základní péče pro občany České republiky. Odmítáme, aby nebyla dostupná zdravotní péče pro všechny občany, jako je tomu v dnešní době.',
+      speaker: 'Okamura',
       highlightStart: '3:31',
       highlightEnd: '3:48',
       result: 'nepravda',
@@ -34,6 +55,7 @@ export default {
     },
     {
       statement: 'Je potřeba dostat především plat nastupujícího lékaře nad úroveň průměrné mzdy.',
+      speaker: 'Okamura',
       highlightStart: '4:40',
       highlightEnd: '4:44',
       result: 'pravda',
@@ -41,6 +63,7 @@ export default {
     },
     {
       statement: 'Když se český student hlásí na českou vysokou školu placenou z daní daňových poplatníků České republiky, to znamená například jeho rodičů, tak místo nemá. A místo něj má místo zahraniční státní, cizí státní příslušník, jehož rodiče se vůbec na placení této vysoké školy nepodílejí.',
+      speaker: 'Okamura',
       highlightStart: '6:00',
       highlightEnd: '6:17',
       result: 'nepravda',
@@ -48,6 +71,7 @@ export default {
     },
     {
       statement: 'Školy s cílem dostat co největší příspěvky od státu na studenta vypisují obory, například v cestovním ruchu, které nemají ve skutečnosti vůbec uplatnění, protože není tolik míst v cestovním ruchu.',
+      speaker: 'Okamura',
       highlightStart: '7:06',
       highlightEnd: '7:16',
       result: 'zavadejici',
@@ -55,6 +79,7 @@ export default {
     },
     {
       statement: 'Naopak nám chybí manuelní profese, řemeslníci, instalatéři a podobně. A na tyto profese, protože chybí, se potom zaměstnávají cizí, cizí státní příslušníci. Zatímco ti, kteří vystudovali nepotřebné, například filozofické multikulturní obory, tak jsou na úřadech práce, nebo nedělají v oboru, který vystudovali.',
+      speaker: 'Okamura',
       highlightStart: '7:21',
       highlightEnd: '7:41',
       result: 'neoveritelne',
@@ -62,6 +87,7 @@ export default {
     },
     {
       statement: 'V současné době je to kolem 4,5 procenta HDP České republiky se vynakládá na školství.',
+      speaker: 'Okamura',
       highlightStart: '7:47',
       highlightEnd: '7:51',
       result: 'pravda',
@@ -69,6 +95,7 @@ export default {
     },
     {
       statement: 'Tak, jak víte, tak česká armáda je bohužel absolutně nefunkční. (…) Před dvouma rokama nám v Poslanecké sněmovně kolovala studie (‚jakási studie ministerstva obrany‘ — dodává Okamura, pozn. Demagog.cz), že současná kapacita české armády stačí k ochraně území velikosti Středočeského kraje pouze po dobu 6 týdnů. Takže z toho vycházím.',
+      speaker: 'Okamura',
       highlightStart: '8:51',
       highlightEnd: '9:26',
       result: 'pravda',
@@ -76,6 +103,7 @@ export default {
     },
     {
       statement: 'Takže nám nyní například Evropská komise podsouvá, že musíme pod hrozbou sankcí přijímat nepřizpůsobivé migranty, dokonce navrhují sociální systém 800 euro na nezákonného migranta, aby je rozptýlili po celém území Evropské unie.',
+      speaker: 'Okamura',
       highlightStart: '11:04',
       highlightEnd: '11:18',
       result: 'nepravda',
@@ -83,6 +111,7 @@ export default {
     },
     {
       statement: 'No, tak, promiňte, migrantů je tady asi 300 tisíc. To asi víte, ty čísla. (…) Ano. Legálních migrantů včetně Ukrajinců, Slováků a dalších.',
+      speaker: 'Okamura',
       highlightStart: '11:43',
       highlightEnd: '11:51',
       result: 'nepravda',
@@ -90,6 +119,7 @@ export default {
     },
     {
       statement: 'Tyto azylová zařízení, ty migrační, ty integrační jsou tady čtyři. Jsou v Jaroměři, v Havířově, v Brně a v Předlicích v Ústí nad Labem. Tam to mimo kvóty zcela, zcela mimo kvóty vláda obchází kvóty a přijímá tyto migranty i včetně muslimských. Tam jsou různé národnosti. Je to od Afghánistánu, je to od prostě dalších zemí.',
+      speaker: 'Okamura',
       highlightStart: '13:10',
       highlightEnd: '13:30',
       result: 'zavadejici',
@@ -97,6 +127,7 @@ export default {
     },
     {
       statement: 'Nejenom připravili, já už jsem je dokonce podal. A už se o nich hlasovalo v Poslanecké sněmovně. Hlasovalo se jak o mém zákonu, o návrhu zákona o referendu, tak se hlasovalo o přímé volbě a odvolatelnosti politiků. Tak se hlasovalo o mém návrhu zákona o přímé hmotné odpovědnosti ministrů a hejtmanů. Všechny tyto zákony byly Babišem, Sobotkou, Bělobrádkem, panem Kalouskem, předsedou ODS Fialou a jejich poslanci zamítnuty.',
+      speaker: 'Okamura',
       highlightStart: '15:09',
       highlightEnd: '15:33',
       result: 'nepravda',
@@ -104,6 +135,7 @@ export default {
     },
     {
       statement: 'Například Nejvyšší kontrolní úřad v pos…, myslím, tuším, v předposledním zjištění zjistil, že nejvíce předražené zakázky a největší finanční machinace jsou na ministerstvu obrany u pana Stropnického za hnutí ANO, u paní Marksové Tominové ministryně za ČSSD na práci, sociálních věcí. A u pana Jurečky na KDU-ČSL na ministerstvu zemědělství. Dokonce u paní Marksové Nejvyšší kontrolní úřad zjistil, a je to půl roku staré zjištění cirka, zjistil šestinásobně předražené zakázky na úklid.',
+      speaker: 'Okamura',
       highlightStart: '15:39',
       highlightEnd: '16:06',
       result: 'zavadejici',
@@ -111,6 +143,7 @@ export default {
     },
     {
       statement: 'Proto my chceme, aby prezident byl i odvolatelný. To je teprve přímá demokracie. To v České republice ještě není, aby byl odvolatelný občany na základě referenda.',
+      speaker: 'Okamura',
       highlightStart: '16:33',
       highlightEnd: '16:41',
       result: 'pravda',
@@ -118,6 +151,7 @@ export default {
     },
     {
       statement: 'Vláda se tady, se tady prsila úplně lživě investicí firmy Nexen, korejské pneumatiky, pneumatikárny do České republiky. Já jsem k tomu vystupoval ve sněmovně. Česká republika zaplatila miliony korun na každé to pracovní místo ze svého rozpočtu. Tuším, že to bylo asi 200 tisíc korun na pracovní místo. A já jsem zjistil, že vláda do té podmínky té smlouvy vůbec nedala, že je podmínkou zaměstnat české občany. Ona tam dala zaměstnat, že je podmínkou zaměstnat občany EU.',
+      speaker: 'Okamura',
       highlightStart: '18:09',
       highlightEnd: '18:38',
       result: 'zavadejici',
@@ -125,6 +159,7 @@ export default {
     },
     {
       statement: 'Protože podle mezinárodních žebříčků jenom na splnění daňových, daňových formalit, vlastně všech formulářů, my jsme ze všech vyspělých zemí prakticky na chvostu v počtu hodin, teď jsem je zapomněl, ale tuším, že se, je to asi snad 200 hodin, co účetní každé firmy, nebo 180 hodin musí splnit na to, aby splnila vůbec zákonné povinnosti. Je to jedno z nejvíc vůbec ve vyspělých zemích.',
+      speaker: 'Okamura',
       highlightStart: '19:25',
       highlightEnd: '19:45',
       result: 'pravda',
@@ -132,6 +167,7 @@ export default {
     },
     {
       statement: 'Prosazujeme referendum o vystoupení z Evropské unie, v podstatě jako jediná parlamentní strana.',
+      speaker: 'Okamura',
       highlightStart: '20:18',
       highlightEnd: '20:22',
       result: 'pravda',
@@ -139,6 +175,7 @@ export default {
     },
     {
       statement: 'U mnoha a mnoha dotací vychází, že kdybychom si ty peníze nechali tady a použili je přímo na tu věc, viz například známý projekt počítače do škol, počítačové učebny do škol, kde 60 procent z částky dotace šlo jenom na pořízení dotace a jenom 40 procent na nákup počítačů.',
+      speaker: 'Okamura',
       highlightStart: '20:38',
       highlightEnd: '20:53',
       result: 'neoveritelne',
@@ -146,6 +183,7 @@ export default {
     },
     {
       statement: 'A co se týče Evropské unie, samozřejmě ten diktát je neuvěřitelnej. My musíme přijmout euro na základě Lisabonské smlouvy.',
+      speaker: 'Okamura',
       highlightStart: '21:12',
       highlightEnd: '21:17',
       result: 'nepravda',
@@ -153,6 +191,7 @@ export default {
     },
     {
       statement: 'Musíme brát migranty, ne že ne. Na základě Lisabonské smlouvy.',
+      speaker: 'Okamura',
       highlightStart: '21:18',
       highlightEnd: '21:22',
       result: 'zavadejici',
@@ -160,6 +199,7 @@ export default {
     },
     {
       statement: 'Tak, některé průzkumy nám dávají v posledním týdnu už až 13 procent.',
+      speaker: 'Okamura',
       highlightStart: '23:04',
       highlightEnd: '23:08',
       result: 'pravda',
@@ -167,6 +207,7 @@ export default {
     },
     {
       statement: 'Nás je v SPD k dnešnímu dni 11 126, jsme mezi pěti největšími parlamentními stranami. A vůbec mezi pěti největšími politickými subjekty v České republice.',
+      speaker: 'Okamura',
       highlightStart: '23:14',
       highlightEnd: '23:23',
       result: 'neoveritelne',

@@ -1,297 +1,37 @@
 export default {
-  videoId: '',
-  path: '/volby-2017-lidr-xxx-v-cro',
-  title: 'Volby 2017: Lídr XXX v ČRo',
-  subtitle: 'Český rozhlas, XX. října 2017, moderátor: Vladimír Kroc',
+  path: '/xxx',
+  title: '',
+  subtitle: '',
   summary: '',
-  demagogUrl: 'http://demagog.cz',
-  youtubeUrl: 'https://www.youtube.com/watch?v=',
-  guestName: '',
-  guestImageSrc: 'http://demagog.cz',
-  debateImageSrc: 'http://demagog.cz',
+  player: {
+    type: 'youtube',
+    videoId: ''
+  },
+  links: [
+    {
+      label: 'Rozbor debaty na Demagog.cz',
+      href: 'https://demagog.cz'
+    },
+    {
+      label: 'Původní záznam debaty',
+      href: ''
+    }
+  ],
+  speakers: [
+    {
+      name: '',
+      short: '',
+      imageSrc: '/speakers/'
+    }
+  ],
+  listing: {
+    title: '',
+    imageSrc: '/video-thumbnails/'
+  },
   checks: [
     {
       statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
-      highlightStart: '',
-      highlightEnd: '',
-      result: '',
-      explanation: ''
-    },
-    {
-      statement: '',
+      speaker: '',
       highlightStart: '',
       highlightEnd: '',
       result: '',

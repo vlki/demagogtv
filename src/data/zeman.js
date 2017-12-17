@@ -3,16 +3,35 @@ export default {
   title: 'Prezidentův projev na konferenci SPD',
   subtitle: '9. prosince 2017',
   summary: 'Prezident Miloš Zeman během probíhající předvolební kampaně navštívil celostátní konferenci hnutí SPD Tomia Okamury. Při této příležitosti zde přednesl projev, ve kterém mluvil o bodech, které má podle jeho názoru s tímto hnutím společné. Mluvil zejména o přímé demokracii nebo inkluzi. Ve své řeči se ovšem vůči hostitelskému hnutí vymezil a to v souvislosti s tím, že SPD odmítá podporovat zahraniční mise české armády, které naopak Zeman velmi vítá.',
-  demagogUrl: 'https://demagog.cz/diskuze/prezidentuv-projev-na-konferenci-hnuti-spd',
-  // youtubeUrl: '',
-  // videoSrc: '',
-  facebookVideoId: '1843803928963747',
-  guestName: 'Miloš Zeman',
-  guestImageSrc: '/politik/milos-zeman.jpg',
-  debateImageSrc: '/zeman-spd.jpg',
+  player: {
+    type: 'facebook',
+    videoId: '1843803928963747'
+  },
+  links: [
+    {
+      label: 'Rozbor projevu na Demagog.cz',
+      href: 'https://demagog.cz/diskuze/prezidentuv-projev-na-konferenci-hnuti-spd'
+    },
+    {
+      label: 'Facebook příspěvek, kde byl záznam původně zvěřejněn',
+      href: 'https://www.facebook.com/1843803928963747'
+    }
+  ],
+  speakers: [
+    {
+      name: 'Miloš Zeman',
+      short: 'Zeman',
+      imageSrc: '/speakers/milos-zeman.jpg'
+    }
+  ],
+  listing: {
+    title: 'Miloš Zeman',
+    imageSrc: '/video-thumbnails/prezidentuv-projev-na-konferenci-hnuti-spd.jpg'
+  },
   checks: [
     {
       statement: '...jsem se sešel s vedoucími představiteli všech devíti parlamentních subjektů a snažil jsem se přispět k jejich vzájemné komunikaci',
+      speaker: 'Zeman',
       highlightStart: '3:18',
       highlightEnd: '3:32',
       result: 'neoveritelne',
@@ -20,6 +39,7 @@ export default {
     },
     {
       statement: 'Když jsem já byl předsedou Poslanecké sněmovny, stačili mi tři (místopředsedové) a také jsem to vydržel, teď je jich pět. Tak dobře, minimálně jedno dobře placené teplé místo tam bude tak trochu přebývat, ale hlavně, že se bude mluvit o racionalizačních a úsporných opatřeních.',
+      speaker: 'Zeman',
       highlightStart: '4:10',
       highlightEnd: '4:33',
       result: 'nepravda',
@@ -27,6 +47,7 @@ export default {
     },
     {
       statement: 'Nejmenovaní politici, nebo kandidáti na politiky, oznámili, že naši voliči v minulých parlamentních volbách byli ovlivněni zahraničními rozvědkami. Nuže dobrá, oni neřekli, jestli ruskými nebo americkými, i když asi mysleli spíše ty ruské.',
+      speaker: 'Zeman',
       highlightStart: '6:52',
       highlightEnd: '7:20',
       result: 'pravda',
@@ -34,6 +55,7 @@ export default {
     },
     {
       statement: 'Je tu třeba i panem předsedou zmíněná inkluze, kde jsem kdysi stál sám voják v poli, kdy mi všichni nadávali, jak umístění mentálně postižených dětí do normálních tříd je to správné, to multikulturní, a nakonec se ke mně začali postupně přidávat další.',
+      speaker: 'Zeman',
       highlightStart: '8:30',
       highlightEnd: '8:56',
       result: 'zavadejici',
@@ -41,6 +63,7 @@ export default {
     },
     {
       statement: 'Snažil jsem se vylepšit některé návrhy na přímou volbu starostů, primátorů a hejtmanů. Bohužel prezident nemá zákonodárnou iniciativu, která se sebrala Václavu Havlovi v roce 1993.',
+      speaker: 'Zeman',
       highlightStart: '9:36',
       highlightEnd: '9:59',
       result: 'pravda',
@@ -48,6 +71,7 @@ export default {
     },
     {
       statement: 'Povinná volební účast u nás byla za Masarykovy první republiky, dnes je třeba v Belgii, Lucembursku, v Austrálii, v dalších zemích, když nejdete k volbám, zaplatíte pokutu, ne likvidační, ale řekněme v ceně dobré večeře pro celou rodinu.',
+      speaker: 'Zeman',
       highlightStart: '11:19',
       highlightEnd: '11:41',
       result: 'pravda',
@@ -55,6 +79,7 @@ export default {
     },
     {
       statement: 'Teď ve Sněmovně leží návrh zákona o obecném referendu, a ten předpokládá, až bude přijat, že potřebujete 250 tisíc podpisů na petici pro vystoupení z Evropské unie, nebo na jakékoli jiné téma. Vy jste získali 550 tisíc podpisů, nebo hlasů pro svoji stranu, takže to byste měli zvládnout levou zadní.',
+      speaker: 'Zeman',
       highlightStart: '13:33',
       highlightEnd: '14:06',
       result: 'nepravda',
@@ -62,6 +87,7 @@ export default {
     },
     {
       statement: 'V Afghánistánu bojuje asi 400 našich vojáků proti Tálibánu. Je Tálibán extremistická muslimská organizace? Nesporně ano. Na Sinaji naši vojáci včetně letadla CASA bojují proti Al-Káidě. Je Al-Káida extremistická muslimská organizace? Nepochybně ano. V Iráku asi 50 našich vojáků, většinou leteckých instruktorů, bojuje proti Islámskému státu. Je Islámský stát teroristická islámská organizace? Nepochybně ano. Na Golanech, kde tedy máme zatím bohužel jen tři vojáky, je An-Nusra, což je taky islámská teroristická organizace, a konečně v Mali, kde máme 50 vojáků, tam to vedou hlavně Francouzi, ten boj proti muslimům, je nějaká organizace, kde přiznávám, že ten název si už nepamatuji.',
+      speaker: 'Zeman',
       highlightStart: '17:57',
       highlightEnd: '19:22',
       result: 'pravda',
@@ -69,6 +95,7 @@ export default {
     },
     {
       statement: 'Už před čtyřmi lety při své návštěvě Izraele jsem navrhoval přesun české ambasády.',
+      speaker: 'Zeman',
       highlightStart: '21:36',
       highlightEnd: '21:44',
       result: 'zavadejici',
@@ -76,6 +103,7 @@ export default {
     },
     {
       statement: 'A zbabělá Evropská unie dělá všechno proto, aby propalestinské teroristické hnutí mělo převahu nad hnutím proizraelským (...) Připomínám jako důkaz tohoto svého tvrzení, že nedávno Evropský parlament umožnil vystoupení usvědčené palestinské teroristce, která poučovala o tom, že boj proti palestinské autonomii je totožný s bojem proti Židům v Osvětimi.',
+      speaker: 'Zeman',
       highlightStart: '21:45',
       highlightEnd: '22:17',
       result: 'zavadejici',

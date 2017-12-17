@@ -1,20 +1,39 @@
 export default {
-  videoId: 'bWBuu23A6LE',
   path: '/volby-2017-lidr-piratu-v-cro',
   title: 'Volby 2017: Lídr Pirátů v ČRo',
   subtitle: 'Český rozhlas, 29. září 2017, moderátor: Vladimír Kroc',
   summary: 'Předseda České pirátské strany byl dalším lídrem, který prezentoval postoje své strany v debatě Českého rozhlasu. Obvyklá ekonomická a zdravotnická témata tentokrát Bartoš prokládal prezentací Pirátů a jejich výsledků na obecní úrovni, dále akcentoval téma digitalizace, což je jedna z vlajkových lodí tohoto subjektu.',
-  demagogUrl: 'http://demagog.cz/diskusie/458/volby-2017-lidr-piratu-v-cro',
-  youtubeUrl: 'https://www.youtube.com/watch?v=bWBuu23A6LE',
-  guestName: 'Ivan Bartoš',
-  partyName: 'Piráti',
-  guestImageSrc: '/politik/ivan-bartos.jpg',
-  debateImageSrc: '/cro/ivan-bartos.jpg',
+  player: {
+    type: 'youtube',
+    videoId: 'bWBuu23A6LE'
+  },
+  links: [
+    {
+      label: 'Rozbor debaty na Demagog.cz',
+      href: 'http://demagog.cz/diskusie/458/volby-2017-lidr-piratu-v-cro'
+    },
+    {
+      label: 'Videozáznam debaty na YouTube',
+      href: 'https://www.youtube.com/watch?v=bWBuu23A6LE'
+    }
+  ],
+  listing: {
+    title: 'Ivan Bartoš, Piráti',
+    imageSrc: '/video-thumbnails/volby-2017-lidr-piratu-v-cro.jpg'
+  },
+  speakers: [
+    {
+      name: 'Ivan Bartoš',
+      short: 'Bartoš',
+      imageSrc: '/speakers/ivan-bartos.jpg'
+    }
+  ],
   checks: [
     {
       highlightStart: '1:03',
       highlightEnd: '1:07',
       statement: 'Skoro 800 tisíc lidí má na sobě nějakou exekuci…',
+      speaker: 'Bartoš',
       result: 'pravda',
       explanation: 'Exekutorská komora České republiky vede <a href="http://www.ekcr.cz/1/aktuality-pro-media/2289-tiskova-zprava-ctyri-a-vice-exekuci-ma-jiz-413-tisic-obcanu-ceske-republiky-v-roce-2016-klesl-pocet-nove-narizenych-exekuci-narostl-vsak-celkovy-pocet-bezicich-pripadu?w=" target="_blank">statistiky</a> o počtu vedených exekucí. V roce 2016 probíhalo 4,5 mil. exekucí proti 834 tis. dlužníků – fyzickým osobám. Proti celkem 68 tis. právnických osob bylo vedeno 228 tis. exekucí. Celková vymáhaná částka byla 325 mld. korun.'
     },
@@ -22,6 +41,7 @@ export default {
       highlightStart: '2:05',
       highlightEnd: '2:11',
       statement: '… čeští lidé si domů skutečně nepřinesou čtyři pětiny, ani tolik, kolik je minimální mzda v Německu.',
+      speaker: 'Bartoš',
       result: 'pravda',
       explanation: `Více než polovina obyvatel České republiky opravdu měsíčně nevydělá více, než činí čtyři pětiny minimální mzdy v Německu. Výrok proto hodnotíme jako pravdivý.
 
@@ -35,6 +55,7 @@ Podrobnější informace o rozložení zaměstnanců do mzdových pásem jsou pa
       highlightStart: '2:11.05',
       highlightEnd: '2:21',
       statement: 'Takže posilovat, posilovat vlastně to bohatství těch efektivních lidí v České republice a my máme efektivitu snad 88 procent, o čem se jako v řadě zemí Evropy může zdát.',
+      speaker: 'Bartoš',
       result: 'pravda',
       explanation: `Výrok hodnotíme jako pravdivý, neboť uvedený údaj o efektivitě práce je chybný pouze o několik procent a vedle toho je pravda, že horší produktivita práce než v ČR je v devíti evropských zemích.
 
@@ -46,6 +67,7 @@ Horší produktivita práce než v ČR byla hned v devíti evropských zemích. 
       highlightStart: '3:13',
       highlightEnd: '3:34',
       statement: 'My obecně a jako Pirátská strana toto měla od samého počátku ve svém programu. Hovoříme o transparentních organizacích, o kontrole vlastně nakládání s těmi penězi těch pojištěnců, které, který ty peníze do toho systému vlastně průběžně dávají a následně i jejich efektivní čerpání a tady je velká otázka kontroly a fungování zdravotních pojišťoven.',
+      speaker: 'Bartoš',
       result: 'zavadejici',
       explanation: `Pirátská strana vznikla v roce <a href="https://www.pirati.cz/o-nas/" target="_blank">2009</a>, její první volební program se tak týká parlamentních voleb v roce <a href="https://wiki.pirati.cz/volby2010/komplet" target="_blank">2010</a>, druhý pak voleb v roce <a href="https://wiki.pirati.cz/volby2013/program" target="_blank">2013</a>. Ani v jednom z těchto dvou programů není obsažena kapitola zdravotnictví nebo stanoviska k fungování zdravotních pojišťoven.
 
@@ -59,6 +81,7 @@ Výrok tedy hodnotíme jako zavádějící, neboť Piráti sice ve svém dlouhod
       highlightStart: '4:45',
       highlightEnd: '4:54',
       statement: 'V minulých letech vláda schválila několik zásadních zdravotních registrů a my se teď připojujeme k evropské iniciativě vlastně sdílení těch informací o těch pacientech.',
+      speaker: 'Bartoš',
       result: 'pravda',
       explanation: `V současnosti je <a href="http://www.uzis.cz/registry/narodni-zdravotni-registry" target="_blank">vedeno</a> dvanáct Národních zdravotních registrů, naposledy k jejich rozšíření došlo v roce 2016 po přijetí vládou navržené novely zákona o zdravotních službách. Rozšířeny byly o diabetologický registr a registr intenzivní péče.
 
@@ -82,6 +105,7 @@ Spolupráce s Eurostatem při sběru dat je upravena nařízením (EU) 1338/2008
       highlightStart: '11:21.3',
       highlightEnd: '11:27.3',
       statement: '… aby jsme se pak nedočetli v novinách, že ministrovi zahraničí někdo pronikl do soukromého mailu a podobně.',
+      speaker: 'Bartoš',
       result: 'pravda',
       explanation: `V lednu tohoto roku se hackeři nabourali do <a href="http://www.ceskenoviny.cz/zpravy/e-maily-ministerstva-zahranici-napadli-hackeri-mozna-z-jine-zeme/1444439" target="_blank">e-mailových schránek</a> pracovníků ministerstva zahraničních věcí i ministra samotného.
 
@@ -91,6 +115,7 @@ Hackeři z e-mailových schránek podle ministra Zaorálka <a href="https://www.
       highlightStart: '13:38.8',
       highlightEnd: '13:44.3',
       statement: 'Když se podíváte na příjmovou strukturu České republiky, tak nikdo nemá žádné úspory.',
+      speaker: 'Bartoš',
       result: 'nepravda',
       explanation: `Výrok Ivana Bartoše o úsporách obyvatel České republiky je nepravdivý, i přes porovnání s okolními bohatšími zeměmi neobstojí tvrzení, že nikdo nemá žádné úspory.
 
@@ -112,6 +137,7 @@ Pro převod USD na CZK byl použit kurz <a href="http://www.cnb.cz/cs/index.html
       highlightStart: '15:01.5',
       highlightEnd: '15:24',
       statement: 'My jsme třeba v rámci naší kampaně spojili, spustili stránku úřad.piráti.cz, kde jsme ukázali živě, jak funguje založit s.r.o. během jednoho dne, kde si to člověk za 10 minut nakliká. (…) My jsme deseti firmám, deseti lidem, kteří použili tu aplikaci jako demo verzi funkční založili tu firmu tímto způsobem.',
+      speaker: 'Bartoš',
       result: 'pravda',
       explanation: `Server <a href="https://urad.pirati.cz/" target="_blank">urad.pirati.cz</a> skutečně představuje veřejnosti řešení, které významně zlevňuje a zjednodušuje založení společnosti s ručením omezeným.
 
@@ -123,6 +149,7 @@ Aplikaci jsme vyzkoušeli a s její pomocí bychom skutečně mohli založit fir
       highlightStart: '16:21.5',
       highlightEnd: '16:26.9',
       statement: 'Tam se dokonce, a to je pro Čechy úplně vzdálená budoucnost, jako dá volit přes internet (v Estonsku, pozn. Demagog.cz).',
+      speaker: 'Bartoš',
       result: 'pravda',
       explanation: `Elektronické volby v Estonsku fungují od roku <a href="http://202020.cz/jak-probihaji-volby-na-internetu-v-estonsku/" target="_blank">2005</a> a v posledních volbách tento způsob hlasování využila téměř třetina voličů. Využít mohou buď svůj čipový občanský průkaz, nebo speciální volební aplikaci. Estonsko zároveň i nadále umožňuje účastnit se voleb klasickým „papírovým“ způsobem.
 
@@ -132,6 +159,7 @@ Některé evropské země, včetně Německa, Norska nebo Itálie, v minulosti s
       highlightStart: '17:24',
       highlightEnd: '17:36',
       statement: '… po osmi letech aktivní politiky, kde jsme každé volby povyrostli až tak, že máme třeba starostu v Mariánských Lázních. Máme pět krajských zastupitelů z naší pomoci byli zvolení čtyři senátoři.',
+      speaker: 'Bartoš',
       result: 'pravda',
       explanation: `Předseda Pirátů Ivan Bartoš má pravdu, že straně roste počet zastupitelů. Momentálně opravdu mají pět krajských zastupitelů a starostu v Mariánských lázních.
 
@@ -167,6 +195,7 @@ V roce 2016 byli v rámci koaliční podpory kandidáta zvoleni dva senátoři s
       highlightStart: '17:36.1',
       highlightEnd: '17:55',
       statement: 'Já věřím v úspěch v těhle parlamentních volbách už jen z toho důvodu, že průzkumy, které vydávala Česká televize po krajských volbách, hovořily o tom, že Piráti mají potenciál 10 procent mezi nevoliči. O tom, že zvažují Piráti, volit Piráty má v současné chvíli 15 procent lidí.',
+      speaker: 'Bartoš',
       result: 'pravda',
       explanation: `Po posledních krajských volbách, které se konaly ve dnech 7. a 8. října 2016, zpracovala agentura <a href="http://www.ceskatelevize.cz/ct24/sites/default/files/1827238-median_krajske_volby2016_motivace_a_struktura_volicu.pdf" target="_blank">Median</a> pro Českou televizi výzkum zveřejněný 12. října 2016. Sběr dat probíhal v předvolebním období, a to od 3. do 7. října 2016. Výzkum se v jedné své části zaměřoval na pravděpodobnou volbu těch, kteří ve výzkumu avizovali neúčast.
 
@@ -182,6 +211,7 @@ Ještě doplňme, že <a href="http://www.kpes.upol.cz/besmart/modules/courses/f
       highlightStart: '19:01',
       highlightEnd: '19:18',
       statement: 'V tom, co vy jste citoval, jmenuje se to Demokratické minimum, což například znamená, že ten náš poslanec nebo i člen v rámci stranického hlasování nehlasuje o ničem, o čem neměl dost informací, nebyl informován s předstihem. U čeho nemůže udělat tu kvalifikovanou, kvalifikované rozhodnutí.',
+      speaker: 'Bartoš',
       result: 'pravda',
       explanation: `V programu Pirátů se skutečně vyskytuje pojem <a href="https://www.pirati.cz/program/dlouhodoby/minimum/" target="_blank">Demokratické minimum</a>. Demokratické minimum je prohlášení, které je kandidát Pirátské strany povinen podepsat před každými volbami. V prohlášení stojí, že kandidát podpoří jen ten návrh, se kterým byl dopředu seznámen.
 
@@ -191,6 +221,7 @@ Podobné formulace, které používá předseda Bartoš, jsou obsaženy i v <a h
       highlightStart: '19:43',
       highlightEnd: '20:16',
       statement: 'Tak já jako příklad uvedu hlavní město Prahu, kde máme vlastně první volební období 4 pirátské zastupitele v opozici. (…) My jsme rozkryli kauzu, připravili jsme jí kompletně pro Radu města Prahy. Ve věci Opencard upozornili jsme na, na multiplikaci funkcí paní Kleslové, která záhy některé ze svých dozorčích rad a aktivit minimálně utlumila.',
+      speaker: 'Bartoš',
       result: 'pravda',
       explanation: `Pražští piráti mají skutečně velkou zásluhu na odkrytí několika korupčních kauz.
 
@@ -208,6 +239,7 @@ Jejich aktivitu v minulém roce dokládá také 81 <a href="https://praha.idnes.
       highlightStart: '22:59',
       highlightEnd: '23:10',
       statement: 'Když si vezmete historicky třeba jenom sčítání, sčítání obyvatelstva a data, která jste vy o sobě musel vydat a neodevzdání toho bylo pod pohrůžkou pokuty 20 tisíc korun.',
+      speaker: 'Bartoš',
       result: 'nepravda',
       explanation: `<i>Doplňujeme, že předseda Bartoš v této části hovoří o mnohdy likvidační šikaně lidí, jakožto fyzických osob. (Ty nároky na člověka jsou enormní, když si vezmete třeba sčítání obyvatelstva. Neodevzdání dat o své osobě bylo pod pohrůžkou pokuty 20 tisíc korun. To je likvidační pro běžného člověka s platem třeba 14 tisíc.)</i>
 

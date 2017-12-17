@@ -31,8 +31,10 @@ export const DEBATES_LIST = [
   robejsek,
   cech,
 
-  // plus experiments
+  // duels
   duelHynekHannig,
+
+  // other
   zeman
 ]
 
@@ -57,6 +59,10 @@ export const DEBATES_LIST_ROZHLAS = [
 ]
 
 export const DEBATE_ZEMAN = zeman
+
+export const DEBATES_LIST_SEZNAM_DUELS = [
+  duelHynekHannig
+]
 
 export const DEBATES_BY_PATH = DEBATES_LIST.reduce(
   (carry, debate) => Object.assign(carry, {

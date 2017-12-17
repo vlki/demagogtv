@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import YouTube from 'react-youtube'
 import ReactTooltip from 'react-tooltip'
 import styled, { css } from 'styled-components'
 import debounce from 'lodash/debounce'
 import { Helmet } from 'react-helmet'
-import FacebookPlayer from 'react-facebook-player'
 
 import { DEBATES_BY_PATH } from './data'
 import {
@@ -15,6 +13,9 @@ import {
 } from './metadata'
 import { formatTime, parseTime, convertNewlinesToBr } from './utils'
 import PersonResultBadge from './PersonResultBadge'
+import FacebookPlayer from './players/FacebookPlayer'
+import Html5Player from './players/Html5Player'
+import YoutubePlayer from './players/YoutubePlayer'
 
 const CHECK_PLAYER_TIME_INTERVAL_MS = 100
 const VIDEO_ASPECT_RATIO = 9/16
@@ -22,8 +23,6 @@ const VIDEO_ASPECT_RATIO = 9/16
 class Debate extends Component {
   checkInterval = null
   player = null
-  facebookPlayer = null
-  videoPlayer = null
   statementContainers = {}
   videoContainer = null
   state = {
@@ -80,39 +79,19 @@ class Debate extends Component {
     }
   }
 
-  handleYoutubePlayerReady = event => {
-    this.player = event.target
-    this.updateVideoSize()
-  }
-
-  handleFacebookPlayerReady = (id, player) => {
-    this.facebookPlayer = player
-    this.updateVideoSize()
-
-    if (this.facebookPlayer.isMuted()) {
-      this.facebookPlayer.unmute()
-    }
+  handlePlayerReady = player => {
+    this.player = player
   }
 
   checkPlayerTime = () => {
     if (this.player !== null) {
-      this.setState({ time: this.player.getCurrentTime() })
-    } else if (this.videoPlayer !== null) {
-      this.setState({ time: this.videoPlayer.currentTime })
-    } else if (this.facebookPlayer !== null) {
-      this.setState({ time: this.facebookPlayer.getCurrentPosition() })
+      this.setState({ time: this.player.getTime() })
     }
   }
 
   playerGoToCheck = check => {
     if (this.player !== null) {
-      this.player.seekTo(parseTime(check.highlightStart), true)
-    } else if (this.videoPlayer !== null) {
-      this.videoPlayer.currentTime = parseTime(check.highlightStart)
-      this.videoPlayer.play()
-    } else if (this.facebookPlayer !== null) {
-      this.facebookPlayer.seek(parseTime(check.highlightStart))
-      this.facebookPlayer.play()
+      this.player.goToTime(parseTime(check.highlightStart))
     }
   }
 
@@ -148,6 +127,21 @@ class Debate extends Component {
 
     const debate = DEBATES_BY_PATH[match.path]
 
+    let Player = null
+    switch (debate.player.type) {
+      case 'html5':
+        Player = Html5Player
+        break
+
+      case 'facebook':
+        Player = FacebookPlayer
+        break
+
+      case 'youtube':
+        Player = YoutubePlayer
+        break
+    }
+
     return (
       <div>
         <Helmet>
@@ -175,34 +169,11 @@ class Debate extends Component {
           <div className="row">
             <div className="col-xs-6 col-lg-7" ref={container => this.videoContainer = container}>
               <VideoAndLabelsContainer videoWidth={videoWidth} >
-                {debate.videoId &&
-                  <YouTube
-                    videoId={debate.videoId}
-                    opts={{
-                      width: videoWidth,
-                      height: videoWidth * VIDEO_ASPECT_RATIO,
-                      playerVars: {
-                        rel: 0
-                      }
-                    }}
-                    onReady={this.handleYoutubePlayerReady}
-                  />
-                }
-                {debate.videoSrc &&
-                  <video
-                    src={debate.videoSrc}
-                    preload="preload"
-                    controls="controls"
-                    width={videoWidth}
+                {Player !== null &&
+                  <Player
+                    debate={debate}
                     height={videoWidth * VIDEO_ASPECT_RATIO}
-                    ref={player => this.videoPlayer = player}
-                  />
-                }
-                {debate.facebookVideoId &&
-                  <FacebookPlayer
-                    appId="150764505690468"
-                    videoId={debate.facebookVideoId}
-                    onReady={this.handleFacebookPlayerReady}
+                    onReady={this.handlePlayerReady}
                     width={videoWidth}
                   />
                 }
@@ -213,19 +184,19 @@ class Debate extends Component {
                   <DebateSubtitle>{debate.subtitle}</DebateSubtitle>
 
                   <DebatePersonResultBadge>
-                    <PersonResultBadge debate={debate} />
+                    <div className="clearfix">
+                      {debate.speakers.map((speaker, index) =>
+                        <PersonResultBadge key={index} debate={debate} speaker={speaker} />
+                      )}
+                    </div>
                   </DebatePersonResultBadge>
 
                   <DebateSummary>{debate.summary}</DebateSummary>
 
                   <DebateLinks>
-                    <DebateLink href={debate.demagogUrl}>Rozbor debaty na Demagog.cz</DebateLink>
-                    {debate.youtubeUrl &&
-                      <DebateLink href={debate.youtubeUrl}>Videozáznam debaty na YouTube</DebateLink>
-                    }
-                    {debate.facebookVideoId &&
-                      <DebateLink href={`https://www.facebook.com/${debate.facebookVideoId}`}>Videozáznam debaty na Facebooku</DebateLink>
-                    }
+                    {debate.links.map((link, index) =>
+                      <DebateLink key={index} href={link.href}>{link.label}</DebateLink>
+                    )}
                   </DebateLinks>
 
                   <FooterText>
@@ -261,7 +232,10 @@ class Debate extends Component {
                       {index < (debate.checks.length - 1) && <StatementTimeline />}
                     </StatementTime>
                     <StatementContent>
-                      <p><em>„{check.statement}“</em></p>
+                      <p>
+                        {debate.speakers.length > 1 && <span>{check.speaker}: </span>}
+                        <em>„{check.statement}“</em>
+                      </p>
                       <StatementResultExpanderWrapper>
                         <StatementResultBadge result={check.result} />
                         {shownExplanations.indexOf(index) === -1
@@ -509,7 +483,7 @@ const DebateSubtitle = styled.p`
 `
 
 const DebatePersonResultBadge = styled.div`
-  margin-top: 20px;
+  margin-top: 10px;
 `
 
 const DebateSummary = styled.p`

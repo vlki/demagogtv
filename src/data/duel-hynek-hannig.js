@@ -2,16 +2,41 @@ export default {
   path: '/duel-hynek-versus-hannig',
   title: 'Duel: Hynek versus Hannig',
   subtitle: 'Seznam Zprávy, 27. listopadu 2017, moderátorka: Martina Spěváčková',
-  summary: 'Jiří Hynek versus Petr Hannig. O Hrad se utká devět prezidentských kandidátů, dva z nich se střetli v pořadu Duel na Seznamu. Do Duelu jsme pozvali prezidenta Asociace obranného a bezpečnostního průmyslu Jiřího Hynka za Realisty a hudebníka a předsedu strany Rozumní Petra Hanniga. „Moje první cesta povede do Bruselu. Chci, abychom si o svých věcech rozhodovali sami, to řeknu panu Junckerovi, že není vládcem, ale správcem Evropské unie,“ uvedl v Duelu Jiří Hynek. „Mám na kampaň tři tisíce korun, nepodporují mne miliardáři, protože vědí, že ani já bych je poté nepodporoval,“ řekl Petr Hannig. Hannig nechce přijímat euro místo koruny. „Euro je dobré jen pro velké podnikatele, jinak to nemá žádný smysl, myslím, že v tom jsem mezi kandidáty jediný,“ prohlásil Hannig. Nejdůležitějším tématem pro Jiřího Hynka je, aby si Češi o svých záležitostech rozhodovali doma. „Také naprosto odmítám euro, je to přežitý projekt, visí na laně, spadneme z něj, pokud na něj nastoupíme,“ uvedl Hynek. „Nejsem proti EU, ale musí se vrátit ke kořenům, vzpomenout si, proč vznikla,“ doplnil Hynek. „Zavírání očí před tím, co se děje, je v Bruselu trestuhodné.“',
-  demagogUrl: 'https://demagog.cz/diskuze/prezidentsky-duel-seznamu',
-  // youtubeUrl: 'https://www.youtube.com/watch?v=',
-  videoSrc: 'https://vlki.cz/duel-hynek-hannig.mp4',
-  guestName: '',
-  guestImageSrc: '',
-  debateImageSrc: '',
+  summary: 'Seznam zprávy po velké prezidentské debatě pořádá rovněž i další diskuze, které podrobujeme našemu ověřování. V prvním duelu se zde potkali pánové Hannig a Hynek. Bavili se především o vedení svých kampaní a o nejdůležitějších tématech voleb dle jejich mínění.',
+  player: {
+    type: 'html5',
+    src: 'https://vlki.cz/duel-hynek-hannig.mp4'
+  },
+  links: [
+    {
+      label: 'Rozbor debaty na Demagog.cz',
+      href: 'https://demagog.cz/diskuze/prezidentsky-duel-seznamu'
+    },
+    {
+      label: 'Původní záznam debaty na Seznam Zprávy',
+      href: 'https://www.seznamzpravy.cz/clanek/vyzyvatele-milose-zemana-duel-dvou-prezidentskych-kandidatu-na-seznamu-40196?seq-no=1&dop-ab-variant&source=clanky-home'
+    }
+  ],
+  speakers: [
+    {
+      name: 'Jiří Hynek',
+      short: 'Hynek',
+      imageSrc: '/speakers/jiri-hynek.jpg'
+    },
+    {
+      name: 'Petr Hannig',
+      short: 'Hannig',
+      imageSrc: '/speakers/petr-hannig.jpg'
+    }
+  ],
+  listing: {
+    title: 'Duel: Hynek versus Hannig',
+    imageSrc: '/video-thumbnails/duel-hynek-versus-hannig.jpg'
+  },
   checks: [
     {
       statement: 'Na kampaň nemám žádné peníze, na účtu mám 3 200 korun.',
+      speaker: 'Hannig',
       highlightStart: '1:05',
       highlightEnd: '1:12',
       result: 'pravda',
@@ -19,6 +44,7 @@ export default {
     },
     {
       statement: 'Já nevím, jak pan doktor Hynek, ale já jsem si myslím jediný, který nechce zásadně přijímat euro.',
+      speaker: 'Hannig',
       highlightStart: '4:50',
       highlightEnd: '4:59',
       result: 'nepravda',

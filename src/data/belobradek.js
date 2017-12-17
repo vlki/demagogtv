@@ -1,18 +1,37 @@
 export default {
-  videoId: 'bWVhWpBT16Y',
   path: '/volby-2017-lidr-kdu-csl-v-cro',
   title: 'Volby 2017: Lídr KDU-ČSL v ČRo',
   subtitle: 'Český rozhlas, 24. září 2017, moderátor: Vladimír Kroc',
   summary: 'Předseda KDU-ČSL Bělobrádek si ve svém rozhovoru připsal doposud nejvíce faktických výroků ze všech námi sledovaných lídrů, kteří vystoupili v rozhovoru Českého rozhlasu. Vicepremiér mluvil kromě obvyklých ekonomických a zdravotnických otázek také o dalších oblastech, např. o podpoře rodin s dětmi.',
-  demagogUrl: 'http://demagog.cz/diskusie/454/volby-2017-lidr-kdu-csl-v-cro',
-  youtubeUrl: 'https://www.youtube.com/watch?v=bWVhWpBT16Y',
-  guestName: 'Pavel Bělobrádek',
-  partyName: 'KDU-ČSL',
-  guestImageSrc: '/politik/pavel-belobradek.jpg',
-  debateImageSrc: '/cro/pavel-belobradek.jpg',
+  player: {
+    type: 'youtube',
+    videoId: 'bWVhWpBT16Y'
+  },
+  links: [
+    {
+      label: 'Rozbor debaty na Demagog.cz',
+      href: 'http://demagog.cz/diskusie/454/volby-2017-lidr-kdu-csl-v-cro'
+    },
+    {
+      label: 'Videozáznam debaty na YouTube',
+      href: 'https://www.youtube.com/watch?v=bWVhWpBT16Y'
+    }
+  ],
+  listing: {
+    title: 'Pavel Bělobrádek, KDU-ČSL',
+    imageSrc: '/video-thumbnails/volby-2017-lidr-kdu-csl-v-cro.jpg'
+  },
+  speakers: [
+    {
+      name: 'Pavel Bělobrádek',
+      short: 'Bělobrádek',
+      imageSrc: '/speakers/pavel-belobradek.jpg'
+    }
+  ],
   checks: [
     {
       statement: 'Česká republika je nejprůmyslovější zemí Evropské unie, my máme přes 36 % HDP v průmyslu, Německo má, myslím, 23, takže z toho je vidět, jak je to robustní základna.',
+      speaker: 'Bělobrádek',
       highlightStart: '0:49',
       highlightEnd: '0:59',
       result: 'pravda',
@@ -20,6 +39,7 @@ export default {
     },
     {
       statement: 'My jsme ve vládě vlastně odsouhlasili to, že to bude pravidelné, ale i to procento HDP, které dáváme do zdravotnictví, je zatím poměrně nízké.',
+      speaker: 'Bělobrádek',
       highlightStart: '1:56',
       highlightEnd: '2:05',
       result: 'zavadejici',
@@ -27,6 +47,7 @@ export default {
     },
     {
       statement: 'My jsme po Rumunsku druzí nejhorší v eGovernmentu.',
+      speaker: 'Bělobrádek',
       highlightStart: '3:46',
       highlightEnd: '3:48',
       result: 'nepravda',
@@ -34,6 +55,7 @@ export default {
     },
     {
       statement: 'Nicméně učni chybějí kvůli tomu, že se za posledních 20 let prostě narodilo o milion dětí méně a z toho prostě Gaussovou křivkou vám chybí potom samozřejmě děti v těch oborech, které nejsou tak preferované.',
+      speaker: 'Bělobrádek',
       highlightStart: '4:46',
       highlightEnd: '4:58',
       result: 'pravda',
@@ -41,6 +63,7 @@ export default {
     },
     {
       statement: 'Co třeba v Německu zase funguje a CDU, když jsem četl teď jejich program, tak opět to poměrně zdůrazňují, je duální vzdělávání.',
+      speaker: 'Bělobrádek',
       highlightStart: '5:09',
       highlightEnd: '5:16',
       result: 'pravda',
@@ -48,6 +71,7 @@ export default {
     },
     {
       statement: 'Česká republika patří k několika nejbezpečnějším zemím na světě. Kriminalita za naší vlády poklesla.',
+      speaker: 'Bělobrádek',
       highlightStart: '6:20',
       highlightEnd: '6:27',
       result: 'pravda',
@@ -55,6 +79,7 @@ export default {
     },
     {
       statement: 'My jsme teď poměrně velkým cílem všelijakých hoaxů a kyberválky, to znamená všelijaké podvrhy, falešné zprávy, různé propagandy. Je tady spousta dezinformačních webů. A Česká republika je poměrně hustě zásobována pozorností těchto konspiračních a podvržených zpráv.',
+      speaker: 'Bělobrádek',
       highlightStart: '6:41',
       highlightEnd: '7:04',
       result: 'pravda',
@@ -62,6 +87,7 @@ export default {
     },
     {
       statement: 'My jsme jako vláda odsouhlasili vznik nového úřadu, který bude mít kybernetickou bezpečnost na starosti. Budou ji tvořit odborníci, kteří už nyní v Brně působí a působili pod Národním bezpečnostním úřadem. Jsou tu špičkoví odborníci, kteří dokázali porazit v celosvětových simulacích všechny ostatní, dokonce i Estonce.',
+      speaker: 'Bělobrádek',
       highlightStart: '7:11',
       highlightEnd: '7:32',
       result: 'pravda',
@@ -69,6 +95,7 @@ export default {
     },
     {
       statement: 'Spolupracujeme i se špičkami, jako je Izrael, Spojené státy.',
+      speaker: 'Bělobrádek',
       highlightStart: '7:49',
       highlightEnd: '7:52',
       result: 'pravda',
@@ -76,6 +103,7 @@ export default {
     },
     {
       statement: 'A po dobu mnoha let se vlastně vyplácelo vytvářet ghetta. Bylo to finančně zajímavé pro obchodníky s chudobou. Naše vláda změnila to, že vlastně nedostávají peníze na hlavu ale na prostor, což je určitě pokrok.',
+      speaker: 'Bělobrádek',
       highlightStart: '8:18',
       highlightEnd: '8:34',
       result: 'pravda',
@@ -83,6 +111,7 @@ export default {
     },
     {
       statement: 'Ono za posledních mnoho let se posouvají na sever a přibývá jich.',
+      speaker: 'Bělobrádek',
       highlightStart: '8:48',
       highlightEnd: '8:53',
       result: 'pravda',
@@ -90,6 +119,7 @@ export default {
     },
     {
       statement: 'KDU-ČSL představila svoji důchodovou reformu už v roce 2011.',
+      speaker: 'Bělobrádek',
       highlightStart: '9:40',
       highlightEnd: '9:44',
       result: 'pravda',
@@ -97,6 +127,7 @@ export default {
     },
     {
       statement: 'Za ty čtyři roky rodinám s dětmi zůstalo 5,5 miliardy korun v kapsách, které mohly použít právě ve prospěch dětí.',
+      speaker: 'Bělobrádek',
       highlightStart: '12:28',
       highlightEnd: '12:35',
       result: 'pravda',
@@ -104,6 +135,7 @@ export default {
     },
     {
       statement: 'A také nám začíná trochu růst i porodnost v posledních třech letech.',
+      speaker: 'Bělobrádek',
       highlightStart: '12:37',
       highlightEnd: '12:40',
       result: 'pravda',
@@ -111,6 +143,7 @@ export default {
     },
     {
       statement: 'My jsme od začátku, a dali jsme to i do programového prohlášení vlády a do koaliční smlouvy, prosazovali, aby EET bylo pouze na vybrané skupiny, protože se domníváme, že u těch nejmenších, u těch, kteří nejsou plátci DPH nebo když má někdo stánek a prodává tam jednou za 14 dní pivo a párek, tak to prostě nedává smysl, stejně jako u řemeslníků, které potom stejně nezkontrolujete (...) My jsme sváděli poměrně urputné boje s ČSSD a s hnutím ANO s tím, že jsme nechtěli vůbec, aby tyto fáze nastaly, ale nakonec jsme udělali ten kompromis, ať rozhodne volič, zda třetí a čtvrtou fázi EET chce.',
+      speaker: 'Bělobrádek',
       highlightStart: '14:57',
       highlightEnd: '15:56',
       result: 'zavadejici',
@@ -118,6 +151,7 @@ export default {
     },
     {
       statement: 'Takže my jsme vytvořili Radu vlády pro konkurenceschopnost a hospodářský růst, které předsedám, a je tam zároveň ministr průmyslu, ministr školství, to znamená propojení tak, abychom dokázali vytěžit co nejvíce pro společný zájem. Prvním projektem už je takto orientovaný projekt na Technologické agentuře, která podporuje aplikovaný výzkum v oblasti energetiky a takto sektorově chceme postupovat dál.',
+      speaker: 'Bělobrádek',
       highlightStart: '17:30',
       highlightEnd: '17:55',
       result: 'neoveritelne',
@@ -125,6 +159,7 @@ export default {
     },
     {
       statement: 'Na vládách často jsme svědky kompetenčních sporů mezi ministerstvem pro místní rozvoj a dalších ministerstev.',
+      speaker: 'Bělobrádek',
       highlightStart: '20:16',
       highlightEnd: '20:22',
       result: 'neoveritelne',
@@ -132,6 +167,7 @@ export default {
     },
     {
       statement: 'Bohužel máme už situaci, kdy třeba druhá třetí generace není zvyklá chodit do zaměstnání.',
+      speaker: 'Bělobrádek',
       highlightStart: '22:46',
       highlightEnd: '22:52',
       result: 'neoveritelne',
@@ -139,6 +175,7 @@ export default {
     },
     {
       statement: 'A já jsem přesvědčen, že i to, jak i díky KDU-ČSL jsme se postavili třeba k ukrajinské krizi, teď tady minulý týden byl ministr Ukrajiny pro energetiku a děkoval za celou vládu za náš postoj.',
+      speaker: 'Bělobrádek',
       highlightStart: '23:40',
       highlightEnd: '23:52',
       result: 'neoveritelne',
@@ -146,6 +183,7 @@ export default {
     },
     {
       statement: 'Jsou tady stovky milionů lidí pronásledovaných kvůli své víře, kvůli svému přesvědčení politickému.',
+      speaker: 'Bělobrádek',
       highlightStart: '24:11',
       highlightEnd: '24:19',
       result: 'pravda',
@@ -153,6 +191,7 @@ export default {
     },
     {
       statement: 'Za těch sedm let, co jsem předsedou strany, tak jsme vždycky v každý volbách byli o něco lepší než v těch předcházejících.',
+      speaker: 'Bělobrádek',
       highlightStart: '24:29',
       highlightEnd: '24:35',
       result: 'pravda',

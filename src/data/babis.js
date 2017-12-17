@@ -1,25 +1,45 @@
 export default {
-  videoId: 'GnjRm3luhSg',
   path: '/volby-2017-lidr-ano-v-cro',
   title: 'Volby 2017: Lídr ANO v ČRo',
   subtitle: 'Český rozhlas, 10. září 2017, moderátor: Vladimír Kroc',
   summary: 'Andrej Babiš z hnutí ANO probral v rozhovoru velké množství témat, od kondice české ekonomiky a daní až k světové bezpečnosti a unijním záležitostem. A došlo i na Čapí hnízdo.',
-  demagogUrl: 'http://demagog.cz/diskusie/451/volby-2017-lidr-ano-v-cro',
-  youtubeUrl: 'https://www.youtube.com/watch?v=GnjRm3luhSg',
-  guestName: 'Andrej Babiš',
-  partyName: 'ANO',
-  guestImageSrc: '/politik/andrej-babis.jpg',
-  debateImageSrc: '/cro/andrej-babis.jpg',
+  player: {
+    type: 'youtube',
+    videoId: 'GnjRm3luhSg'
+  },
+  links: [
+    {
+      label: 'Rozbor debaty na Demagog.cz',
+      href: 'http://demagog.cz/diskusie/451/volby-2017-lidr-ano-v-cro'
+    },
+    {
+      label: 'Videozáznam debaty na YouTube',
+      href: 'https://www.youtube.com/watch?v=GnjRm3luhSg'
+    }
+  ],
+  listing: {
+    title: 'Andrej Babiš, ANO',
+    imageSrc: '/video-thumbnails/volby-2017-lidr-ano-v-cro.jpg'
+  },
+  speakers: [
+    {
+      name: 'Andrej Babiš',
+      short: 'Babiš',
+      imageSrc: '/speakers/andrej-babis.jpg'
+    }
+  ],
   checks: [
     {
       highlightStart: '0:31',
       highlightEnd: '0:37',
       statement: 'Dneska ten růst je tažen hlavně spotřebou obyvatelstva, lidi už nemají strach utrácet.',
+      speaker: 'Babiš',
       result: 'pravda',
       explanation: 'Česká ekonomika v současné době <a href="https://www.cnb.cz/cs/menova_politika/prognoza/">roste</a> v odhadovaném tempu + 3,6 % HDP. Podle odhadu <a href="https://www.czso.cz/csu/czso/cri/tvorba-a-uziti-hdp-2-ctvrtleti-2017">ČSÚ</a>&nbsp;byl hrubý domácí produkt ve druhém čtvrtletí o 2,5 % vyšší než v předchozím čtvrtletí a meziročně se zvýšil o 4,7 %. K příznivému vývoji české ekonomiky přispěla jak domácí, tak zahraniční poptávka.&nbsp;<br>Export zboží vykázal dokonce v první polovině roku 2017 historicky nejvyšší&nbsp;<a href="http://www.businessinfo.cz/cs/clanky/export-zbozi-za-prvni-pololeti-2017-je-nejvyssi-v-historii-93367.html" >hodnotu</a>.<br><br>Na zlepšující se bilanci ekonomiky se krom exportu také výrazně podílela domácí <a href="https://www.czso.cz/csu/czso/cri/tvorba-a-uziti-hdp-2-ctvrtleti-2017">spotřeba</a>, ta&nbsp;byla vyšší mezičtvrtletně o 1,8 % a meziročně o 4,4 %.<br><br>S růstem ekonomiky ve druhém čtvrtletí souvisel také další úbytek volných pracovních míst.&nbsp;Celková zaměstnanost byla oproti předchozímu čtvrtletí o 0,4 % vyšší, meziročně vzrostla o 1,3 %.<br><br>V grafu je patrný postupný stabilní růst hodnoty spotřeby domácností, který započal na konci roku 2015. Dle některých <a href="https://www.irozhlas.cz/zpravy-domov/po-hubenych-letech-zacali-cesi-opet-utracet-druhe-nejvyssi-vydaje-padly-za_1707141830_pla">ekonomů</a> jsou hodnoty za rok 2016 rekordní. <br><br><img src="http://www.statistikaamy.cz/wp-content/uploads/2017/01/S%C3%BAkupov%C3%A1_graf1.png" alt="http://www.statistikaamy.cz/wp-content/uploads/2017/01/S%C3%BAkupov%C3%A1_graf1.png"><br><br>Zdroj: <a href="http://www.statistikaamy.cz/2017/01/spotreba-domacnosti-tahla-rust-hdp/">Statistika a my</a><br><br>Otázka strachu domácností utrácet je podle nás neověřitelná a subjektivní. Přesto ale rostoucí příjmy jednotlivců a domácností vycházející z ekonomického růstu hospodářství vedly ke&nbsp;<a href="https://www.irozhlas.cz/zpravy-domov/po-hubenych-letech-zacali-cesi-opet-utracet-druhe-nejvyssi-vydaje-padly-za_1707141830_pla">zlepšení</a> stavu financí v domácnostech a vyšší spotřebě. Výrok tedy hodnotíme jako pravdivý.'
     },
     {
       statement: 'My jsme skutečně za období tý naší vlády napumpovali navíc do důchodů asi 56 miliard a taky neustále se navyšují platy.',
+      speaker: 'Babiš',
       highlightStart: '0:37',
       highlightEnd: '0:46',
       result: 'pravda',
@@ -27,6 +47,7 @@ export default {
     },
     {
       statement: 'Skutečně se nedaří investovat, taky se nedaří čerpat evropské peníze.',
+      speaker: 'Babiš',
       highlightStart: '0:53',
       highlightEnd: '0:58',
       result: 'pravda',
@@ -34,6 +55,7 @@ export default {
     },
     {
       statement: 'Dneska máme 200 tisíc volných pracovních míst, ale bohužel polovina je požadavek základní vzdělání do těch montoven.',
+      speaker: 'Babiš',
       highlightStart: '1:17',
       highlightEnd: '1:24',
       result: 'pravda',
@@ -41,6 +63,7 @@ export default {
     },
     {
       statement: 'Já jsem snížil dluh o 70 miliard, my jsme skončili v Evropě druzí za Lucemburskem.',
+      speaker: 'Babiš',
       highlightStart: '2:33',
       highlightEnd: '2:36',
       result: 'zavadejici',
@@ -48,6 +71,7 @@ export default {
     },
     {
       statement: 'A skutečně jsme vybrali obrovské množství daní a odvodů, 604 miliard za období tý naší vlády, ještě do konce července.',
+      speaker: 'Babiš',
       highlightStart: '2:40',
       highlightEnd: '2:48',
       result: 'zavadejici',
@@ -55,6 +79,7 @@ export default {
     },
     {
       statement: 'Problém u navyšování platů je to, že nikdy ministři nechtěli uposlechnout moje doporučení, abysme navyšovali platy hlavně u těch, kteří mají nejmíň, učitelé, sociální služby, kultura, ano i policisti.',
+      speaker: 'Babiš',
       highlightStart: '2:59',
       highlightEnd: '3:13',
       result: 'nepravda',
@@ -62,6 +87,7 @@ export default {
     },
     {
       statement: 'Já jsem taky plánoval, plánoval mínus, ano, ale potom jsem udělal maximum, abysem měl plus a taky jsem ho měl.',
+      speaker: 'Babiš',
       highlightStart: '3:50',
       highlightEnd: '3:57',
       result: 'zavadejici',
@@ -69,6 +95,7 @@ export default {
     },
     {
       statement: 'Není možné, když GIBS má průměrný plat 60 tisíc a mě na vládě přehlasují a ještě jim navýší o 21 % platy a nedaj tím učitelům, tak to není jako možné.',
+      speaker: 'Babiš',
       highlightStart: '4:45',
       highlightEnd: '4:56',
       result: 'zavadejici',
@@ -76,6 +103,7 @@ export default {
     },
     {
       statement: 'Já jsem jenom dával příklad. Starostu v New Yorku volí přímo obyvatelé. Byl tam Michael Bloomberg, nejúspěšnější. A víte, kolik tam má zastupitelů? 51. A New York je tak velký, jak Česká republika, 9 milionů obyvatel, dokonce má větší rozpočet, 2 tisíce miliard, my máme 1 300. A v Praze víte, kolik máme zastupitelů? 1 171',
+      speaker: 'Babiš',
       highlightStart: '10:11',
       highlightEnd: '10:32',
       result: 'pravda',
@@ -83,6 +111,7 @@ export default {
     },
     {
       statement: 'A když mě pan Sobotka vykopl z vlády, tak dokonce ČEZ přikázal české vládě, jak má ministr financí hlasovat na valné hromadě.',
+      speaker: 'Babiš',
       highlightStart: '11:09',
       highlightEnd: '11:17',
       result: 'neoveritelne',
@@ -90,6 +119,7 @@ export default {
     },
     {
       statement: 'Ta sprosťárna s tím trestním stíháním kvůli Čapímu hnízdu, vždyť to je, to je, ty lidi přece tomu musí rozumět, že 10 let stará kauze.',
+      speaker: 'Babiš',
       highlightStart: '13:04',
       highlightEnd: '13:12',
       result: 'zavadejici',
@@ -97,6 +127,7 @@ export default {
     },
     {
       statement: 'Tak se podívejte, jak hlasovaly tradiční strany ohledně navýšení hazardu? Přišli jsme o 400 milionů, byli proti mně, ano.',
+      speaker: 'Babiš',
       highlightStart: '14:29',
       highlightEnd: '14:35',
       result: 'neoveritelne',
@@ -104,6 +135,7 @@ export default {
     },
     {
       statement: 'My jsme šestá nejbezpečnější země na světě.',
+      speaker: 'Babiš',
       highlightStart: '15:19',
       highlightEnd: '15:21',
       result: 'neoveritelne',
@@ -111,6 +143,7 @@ export default {
     },
     {
       statement: 'A co se týká samozřejmě boje proti terorismu, že ty rozvědky vlastně někdy mají takové zákony, že když ten terorista v Berlíně zabije lidi, tak oni věděli, že vypálil školu v Itálii, ale oni museli čekat, až zase něco se stane.',
+      speaker: 'Babiš',
       highlightStart: '15:31',
       highlightEnd: '15:44',
       result: 'pravda',
@@ -118,6 +151,7 @@ export default {
     },
     {
       statement: 'Musíme vyřešit režim v Sýrii a v Libyi a v těch krajinách, odkaď vlastně přicházejí ti migranti. Dneska už chodí jenom migranti z Afriky.',
+      speaker: 'Babiš',
       highlightStart: '16:57',
       highlightEnd: '17:06',
       result: 'zavadejici',
@@ -125,6 +159,7 @@ export default {
     },
     {
       statement: 'Pane redaktore, já jsem jediný český ministr, který od vstupu do Evropské unie prosadil jediný český legislativní návrh, a to je boj proti DPH reverse charge.',
+      speaker: 'Babiš',
       highlightStart: '17:09',
       highlightEnd: '17:18',
       result: 'zavadejici',
@@ -132,6 +167,7 @@ export default {
     },
     {
       statement: '… byl jsem ve Financial Times, napsali, že jsem vydíral Evropu. Ano, vydíral jsem, protože jsem říkal, to je náš český národní zájem a Francouz byl proti mně.',
+      speaker: 'Babiš',
       highlightStart: '17:22',
       highlightEnd: '17:30',
       result: 'pravda',
@@ -139,6 +175,7 @@ export default {
     },
     {
       statement: 'A 11, 11 vlád trvalo 2 roky.',
+      speaker: 'Babiš',
       highlightStart: '21:19',
       highlightEnd: '21:21',
       result: 'pravda',

@@ -10,16 +10,22 @@ import {
   RESULT_ICON
 } from './metadata'
 
-const PersonResultBadge = ({ debate }) =>
-  <div className="clearfix">
+const PersonResultBadge = ({ debate, speaker }) =>
+  <PersonResultBadgeContainer>
     <PictureWrapper>
-      <img src={debate.guestImageSrc} alt={debate.guestName} />
+      <img src={speaker.imageSrc} alt={speaker.name} />
     </PictureWrapper>
     <DetailWrapper>
-      <GuestName>{debate.guestName}</GuestName>
-      <ResultsRow debate={debate} />
+      <GuestName>{speaker.name}</GuestName>
+      <ResultsRow debate={debate} speaker={speaker} />
     </DetailWrapper>
-  </div>
+  </PersonResultBadgeContainer>
+
+const PersonResultBadgeContainer = styled.div`
+  float: left;
+  margin-top: 10px;
+  padding-right: 20px;
+`
 
 const PictureWrapper = styled.div`
   float: left;
@@ -78,8 +84,8 @@ const ResultLabel = styled.span`
   margin-right: 10px;
 `
 
-export const ResultsRow = ({ debate }) => {
-  const checks = debate.checks
+export const ResultsRow = ({ showImage, debate, speaker }) => {
+  const checks = debate.checks.filter(check => check.speaker === speaker.short)
 
   const truths = checks.filter(({ result }) => result === RESULT_TRUTH)
   const untruths = checks.filter(({ result }) => result === RESULT_UNTRUTH)
@@ -88,6 +94,11 @@ export const ResultsRow = ({ debate }) => {
 
   return (
     <ResultsWrapper>
+      {showImage &&
+        <ResultImgWrapper>
+          <img src={speaker.imageSrc} alt={speaker.name} />
+        </ResultImgWrapper>
+      }
       <Result result="pravda" count={truths.length} />
       <Result result="nepravda" count={untruths.length} />
       <Result result="zavadejici" count={misleadings.length} />
@@ -95,5 +106,18 @@ export const ResultsRow = ({ debate }) => {
     </ResultsWrapper>
   )
 }
+
+const ResultImgWrapper = styled.div`
+  float: left;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+
+  > img {
+    width: 100%;
+  }
+`
 
 export default PersonResultBadge

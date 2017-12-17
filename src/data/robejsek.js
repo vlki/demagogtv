@@ -1,18 +1,37 @@
 export default {
-  videoId: 'U2CcUXpac10',
   path: '/volby-2017-lidr-realistu-v-cro',
   title: 'Volby 2017: Lídr Realistů v ČRo',
   subtitle: 'Český rozhlas, 1. října 2017, moderátor: Vladimír Kroc',
   summary: 'Petr Robejšek zastupoval v předvolebním rozhovoru v Českém rozhlase stranu Realisté. Mentor tohoto hnutí často popisoval nástroje, kterými se strana a také on sám v politických aktivitách řídí. Obecně v rámci diskuze nepadlo příliš faktických trvzení.',
-  demagogUrl: 'http://demagog.cz/diskusie/459/volby-2017-lidr-realistu-v-cro',
-  youtubeUrl: 'https://www.youtube.com/watch?v=U2CcUXpac10',
-  guestName: 'Petr Robejšek',
-  partyName: 'Realisté',
-  guestImageSrc: '/politik/petr-robejsek.jpg',
-  debateImageSrc: '/cro/petr-robejsek.jpg',
+  player: {
+    type: 'youtube',
+    videoId: 'U2CcUXpac10'
+  },
+  links: [
+    {
+      label: 'Rozbor debaty na Demagog.cz',
+      href: 'http://demagog.cz/diskusie/459/volby-2017-lidr-realistu-v-cro'
+    },
+    {
+      label: 'Videozáznam debaty na YouTube',
+      href: 'https://www.youtube.com/watch?v=U2CcUXpac10'
+    }
+  ],
+  listing: {
+    title: 'Petr Robejšek, Realisté',
+    imageSrc: '/video-thumbnails/volby-2017-lidr-realistu-v-cro.jpg'
+  },
+  speakers: [
+    {
+      name: 'Petr Robejšek',
+      short: 'Robejšek',
+      imageSrc: '/speakers/petr-robejsek.jpg'
+    }
+  ],
   checks: [
     {
       statement: 'Někteří naši konkurenti něco takového plánovali již v minulosti (15% rovnou daň — pozn. Demagog.cz). Byli pak u vlády, neuskutečnili.',
+      speaker: 'Robejšek',
       highlightStart: '1:19',
       highlightEnd: '1:26',
       result: 'pravda',
@@ -20,6 +39,7 @@ export default {
     },
     {
       statement: 'Důchodci, kteří chtějí pracovat, přestože už dosáhli důchodový věk, tak si musí platit na důchod. To jsou absurdity, které bychom chtěli zrušit. A to by se dalo velice rychle zrušit. A jistě by to pomohlo právě těm, kterých se to týká. Těch, kteří si přivydělávají k důchodu.',
+      speaker: 'Robejšek',
       highlightStart: '10:29',
       highlightEnd: '10:44',
       result: 'pravda',

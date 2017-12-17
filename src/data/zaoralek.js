@@ -4,15 +4,35 @@ export default {
   title: 'Volby 2017: Lídr ČSSD v ČRo',
   subtitle: 'Český rozhlas, 15. září 2017, moderátor: Vladimír Kroc',
   summary: 'V pořadí čtvrtým volebním lídrem, který v rámci předvolebních debat navštívil studio Českého rozhlasu, byl ministr zahraničí Lubomír Zaorálek z ČSSD. Diskuze se točila zejména okolo sociálních a ekonomických témat, došlo však například i na otázku zřízení postu vědeckého diplomata v Izraeli.',
-  demagogUrl: 'http://demagog.cz/diskusie/453/volby-2017-lidr-cssd-v-cro',
-  youtubeUrl: 'https://www.youtube.com/watch?v=ziZ9z1b3DJM',
-  guestName: 'Lubomír Zaorálek',
-  partyName: 'ČSSD',
-  guestImageSrc: '/politik/lubomir-zaoralek.jpg',
-  debateImageSrc: '/cro/lubomir-zaoralek.jpg',
+  player: {
+    type: 'youtube',
+    videoId: 'ziZ9z1b3DJM'
+  },
+  links: [
+    {
+      label: 'Rozbor debaty na Demagog.cz',
+      href: 'http://demagog.cz/diskusie/453/volby-2017-lidr-cssd-v-cro'
+    },
+    {
+      label: 'Videozáznam debaty na YouTube',
+      href: 'https://www.youtube.com/watch?v=ziZ9z1b3DJM'
+    }
+  ],
+  listing: {
+    title: 'Lubomír Zaorálek, ČSSD',
+    imageSrc: '/video-thumbnails/volby-2017-lidr-cssd-v-cro.jpg'
+  },
+  speakers: [
+    {
+      name: 'Lubomír Zaorálek',
+      short: 'Zaorálek',
+      imageSrc: '/speakers/lubomir-zaoralek.jpg'
+    }
+  ],
   checks: [
     {
       statement: 'A samozřejmě že jsem rád, že za čtyři roky se zvýšila průměrná mzda o tři tisíce a že nám se zvýšila minimální mzda už skoro na těch 40 % průměrné mzdy.',
+      speaker: 'Zaorálek',
       highlightStart: '1:02',
       highlightEnd: '1:10',
       result: 'pravda',
@@ -20,6 +40,7 @@ export default {
     },
     {
       statement: 'Vláda zvýšila mzdy také zdravotníků od 1. ledna.',
+      speaker: 'Zaorálek',
       highlightStart: '2:56',
       highlightEnd: '2:59',
       result: 'pravda',
@@ -27,6 +48,7 @@ export default {
     },
     {
       statement: 'Ve zdravotnictví, tam je důležité se ubránit tomu, co znovu čtu v těch programech politických stran, kde se znova mluví o poplatcích.',
+      speaker: 'Zaorálek',
       highlightStart: '3:05',
       highlightEnd: '3:11',
       result: 'pravda',
@@ -34,6 +56,7 @@ export default {
     },
     {
       statement: 'A tak funguje ten systém tak, že vlastně 10 % lidí čerpá 60 % těch peněz, na které se skládáme.',
+      speaker: 'Zaorálek',
       highlightStart: '4:24',
       highlightEnd: '4:29',
       result: 'neoveritelne',
@@ -41,6 +64,7 @@ export default {
     },
     {
       statement: 'My sami dokonce jsme vytvořili knihu oborových příležitostí, kde jsme zmapovali, mapujeme vlastně ty šance v jednotlivých zemích světa podle oboru, a každý, kdo má zájem, na internetu nebo ty knihy můžou od nás dostat, vlastně se od nás doví takovou orientaci toho, kde mohou ty svoje výrobky upotřebit, takže my nečekáme, kdo přijde, ale snažíme se sami v tom světě to mapovat ty příležitosti a dávat dohromady naše podnikatele s těmi příležitostmi.',
+      speaker: 'Zaorálek',
       highlightStart: '22:16',
       highlightEnd: '22:40',
       result: 'pravda',
@@ -48,6 +72,7 @@ export default {
     },
     {
       statement: 'My jsme zřídili post vědeckého diplomata v Izraeli, protože Izrael je nabitý vědou, výzkumem a inovacemi',
+      speaker: 'Zaorálek',
       highlightStart: '22:45',
       highlightEnd: '22:52',
       result: 'pravda',
@@ -55,6 +80,7 @@ export default {
     },
     {
       statement: 'Nám stoupá ekonomika, stoupá ekonomická výměna právě s takovými zeměmi, jako je Holandsko, Německo, Švýcarsko, Spojené státy, Izrael a podobně.',
+      speaker: 'Zaorálek',
       highlightStart: '23:21',
       highlightEnd: '23:32',
       result: 'pravda',

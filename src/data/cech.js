@@ -1,18 +1,37 @@
 export default {
-  videoId: 'FbRHlr5Fuzc',
   path: '/volby-2017-lidr-spo-v-cro',
   title: 'Volby 2017: Lídr SPO v ČRo',
   subtitle: 'Český rozhlas, 6. října 2017, moderátor: Vladimír Kroc',
   summary: 'Strana práv občanů vybrala jako svého superlídra do voleb Františka Ringo Čecha. Ten tak Zemanovce zastupoval i v rozhovoru pro Český rozhlas, kde mluvil o svých postojích k různým otázkám. Rozhovor jako takový nebyl příliš obsáhlý, co se počtu faktických výroku týče. V nich pak Čech mluvil zejména o Evropské unii.',
-  demagogUrl: 'http://demagog.cz/diskusie/463/volby-2017-lidr-spo-v-cro',
-  youtubeUrl: 'https://www.youtube.com/watch?v=FbRHlr5Fuzc',
-  guestName: 'František Čech',
-  partyName: 'SPO',
-  guestImageSrc: '/politik/frantisek-cech.jpg',
-  debateImageSrc: '/cro/frantisek-cech.jpg',
+  player: {
+    type: 'youtube',
+    videoId: 'FbRHlr5Fuzc'
+  },
+  links: [
+    {
+      label: 'Rozbor debaty na Demagog.cz',
+      href: 'http://demagog.cz/diskusie/463/volby-2017-lidr-spo-v-cro'
+    },
+    {
+      label: 'Videozáznam debaty na YouTube',
+      href: 'https://www.youtube.com/watch?v=FbRHlr5Fuzc'
+    }
+  ],
+  listing: {
+    title: 'František Čech, SPO',
+    imageSrc: '/video-thumbnails/volby-2017-lidr-spo-v-cro.jpg'
+  },
+  speakers: [
+    {
+      name: 'František Čech',
+      short: 'Čech',
+      imageSrc: '/speakers/frantisek-cech.jpg'
+    }
+  ],
   checks: [
     {
       statement: 'Já nejsem proti Evropský unii, nakonec jsem pro ni hlasoval jako poslanec.',
+      speaker: 'Čech',
       highlightStart: '11:34',
       highlightEnd: '11:39',
       result: 'nepravda',
@@ -20,6 +39,7 @@ export default {
     },
     {
       statement: 'Já jsem neměl představu, že budeme zcela v moci nevolenejch úředníků, kteří prostě si dělají, co chtějí. Vždyť my jsme, nám někdo říká furt, jak máme žít, co máme pěstovat.',
+      speaker: 'Čech',
       highlightStart: '11:50',
       highlightEnd: '12:02',
       result: 'zavadejici',
@@ -27,6 +47,7 @@ export default {
     },
     {
       statement: 'Můžu uvést příklad, který se týká migrantů, takže mi to trochu nahrává. Jak byl francouzskej prezident překvapenej, když hrála Francie s Marokem a celej stadion fandil Maroku, protože tam byli… Jak byl z toho zoufalej, dokonce odjel z toho zápasu.',
+      speaker: 'Čech',
       highlightStart: '22:03',
       highlightEnd: '22:20',
       result: 'zavadejici',

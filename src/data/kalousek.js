@@ -1,18 +1,37 @@
 export default {
-  videoId: 'oiajSLdXpfY',
   path: '/volby-2017-lidr-top-09-v-cro',
   title: 'Volby 2017: Lídr TOP 09 v ČRo',
   subtitle: 'Český rozhlas, 28. září 2017, moderátor: Vladimír Kroc',
   summary: 'Předseda TOP 09 se ve svém vystoupení v Českém rozhlase držel primárně ekonomických výroků, když popisoval jednak stav tuzemského hospodářství a také některé aspekty současné vlády v dané oblasti. Vyjma obligátních zdravotnických otázek se dále věnoval i výdajům na obranu nebo zapojením České republiky v Evropské unii.',
-  demagogUrl: 'http://demagog.cz/diskusie/457/volby-2017-lidr-top-09-v-cro',
-  youtubeUrl: 'https://www.youtube.com/watch?v=oiajSLdXpfY',
-  guestName: 'Miroslav Kalousek',
-  partyName: 'TOP 09',
-  guestImageSrc: '/politik/miroslav-kalousek.jpg',
-  debateImageSrc: '/cro/miroslav-kalousek.jpg',
+  player: {
+    type: 'youtube',
+    videoId: 'oiajSLdXpfY'
+  },
+  links: [
+    {
+      label: 'Rozbor debaty na Demagog.cz',
+      href: 'http://demagog.cz/diskusie/457/volby-2017-lidr-top-09-v-cro'
+    },
+    {
+      label: 'Videozáznam debaty na YouTube',
+      href: 'https://www.youtube.com/watch?v=oiajSLdXpfY'
+    }
+  ],
+  listing: {
+    title: 'Miroslav Kalousek, TOP 09',
+    imageSrc: '/video-thumbnails/volby-2017-lidr-top-09-v-cro.jpg'
+  },
+  speakers: [
+    {
+      name: 'Miroslav Kalousek',
+      short: 'Kalousek',
+      imageSrc: '/speakers/miroslav-kalousek.jpg'
+    }
+  ],
   checks: [
     {
       statement: 'My jsme už kdysi prosadili nadstandardy. Možnost připlatit si nadstandard přináší do zdravotnictví více peněz. Současné vládní strany to zrušily.',
+      speaker: 'Kalousek',
       highlightStart: '3:35',
       highlightEnd: '3:47',
       result: 'nepravda',
@@ -20,6 +39,7 @@ export default {
     },
     {
       statement: 'Proč odchází tolik lékařů do Německa, do Rakouska? Protože tam se prostě nebáli těch věcí, které se u nás politici bojí, tedy té více odpovědnosti, více spoluúčasti, nadstandardy, a proto je tam také možné lékaře lépe platit.',
+      speaker: 'Kalousek',
       highlightStart: '5:12',
       highlightEnd: '5:31',
       result: 'zavadejici',
@@ -27,6 +47,7 @@ export default {
     },
     {
       statement: 'Jsme šestá, šestá nejbezpečnější země na světě.',
+      speaker: 'Kalousek',
       highlightStart: '5:57',
       highlightEnd: '6:03',
       result: 'neoveritelne',
@@ -34,6 +55,7 @@ export default {
     },
     {
       statement: 'My jsme udělali první krok (myšleno v rámci důchodové reformy, pozn. Demagog.cz), vláda ho zrušila, což bych jí odpustil, kdyby ho nahradila něčím lepším. Ona slíbila, že předloží svoji vlastní penzijní reformu, nepředložila vůbec nic.',
+      speaker: 'Kalousek',
       highlightStart: '8:24',
       highlightEnd: '8:38',
       result: 'pravda',
@@ -41,6 +63,7 @@ export default {
     },
     {
       statement: 'Za poslední, za poslední 4 roky vláda dokázala nabrat o 30 tisíc státních zaměstnanců víc (…) to je 20 miliard ročně.',
+      speaker: 'Kalousek',
       highlightStart: '14:40',
       highlightEnd: '14:54',
       result: 'pravda',
@@ -48,6 +71,7 @@ export default {
     },
     {
       statement: 'My jsme dominantně exportní ekonomika a většina našeho vývozu směřuje do zemí Evropské unie a do eurozóny.',
+      speaker: 'Kalousek',
       highlightStart: '16:24',
       highlightEnd: '16:34',
       result: 'pravda',
@@ -55,6 +79,7 @@ export default {
     },
     {
       statement: 'Samozřejmě ten proces trvá, nejdřív musíte vstoupit do jakéhosi systému ERM2, tam jste 2 roky. To znamená, od okamžiku toho rozhodnutí trvá 3 roky, než tam (do společné evropské měny — pozn. Demagog.cz) vstoupíte.',
+      speaker: 'Kalousek',
       highlightStart: '17:44',
       highlightEnd: '17:58',
       result: 'pravda',
@@ -62,6 +87,7 @@ export default {
     },
     {
       statement: 'Kdyby vláda dodržela svůj závazek, že na konci letošního roku bude na 1,4 procentech (výdajů na obranu v % k HDP, pozn. Demagog.cz)…',
+      speaker: 'Kalousek',
       highlightStart: '20:01',
       highlightEnd: '20:09',
       result: 'nepravda',

@@ -1,18 +1,37 @@
 export default {
-  videoId: 'MUpceuwTOkg',
   path: '/volby-2017-lidr-kscm-v-cro',
   title: 'Volby 2017: Lídr KSČM v ČRo',
   subtitle: 'Český rozhlas, 8. září 2017, moderátor: Vladimír Kroc',
   summary: 'V rámci spolupráce s Českým rozhlasem jsme se podívali na rozhovor s Vojtěchem Filipem, lídrem KSČM. Mluvilo se o kondici ekonomiky a českých mzdách, sociálním systému i ruských sankcích. Podívejte se, jak si Vojtěch Filip vedl v pravdivosti svých výroků.',
-  demagogUrl: 'http://demagog.cz/diskusie/449/volby-2017-lidr-kscm-v-cro',
-  youtubeUrl: 'https://www.youtube.com/watch?v=MUpceuwTOkg',
-  guestName: 'Vojtěch Filip',
-  partyName: 'KSČM',
-  guestImageSrc: '/politik/vojtech-filip.jpg',
-  debateImageSrc: '/cro/vojtech-filip.jpg',
+  player: {
+    type: 'youtube',
+    videoId: 'MUpceuwTOkg'
+  },
+  links: [
+    {
+      label: 'Rozbor debaty na Demagog.cz',
+      href: 'http://demagog.cz/diskusie/449/volby-2017-lidr-kscm-v-cro'
+    },
+    {
+      label: 'Videozáznam debaty na YouTube',
+      href: 'https://www.youtube.com/watch?v=MUpceuwTOkg'
+    }
+  ],
+  listing: {
+    title: 'Vojtěch Filip, KSČM',
+    imageSrc: '/video-thumbnails/volby-2017-lidr-kscm-v-cro.jpg'
+  },
+  speakers: [
+    {
+      name: 'Vojtěch Filip',
+      short: 'Filip',
+      imageSrc: '/speakers/vojtech-filip.jpg'
+    }
+  ],
   checks: [
     {
       statement: 'Ale pokud jde o současnou situaci, je evidentní, že pro českou ekonomiku jsou rozhodující exporty a potom vnitřní poptávka.',
+      speaker: 'Filip',
       highlightStart: '0:51',
       highlightEnd: '1:02',
       result: 'pravda',
@@ -20,6 +39,7 @@ export default {
     },
     {
       statement: 'V České republice máme evropské ceny, ale žel české mzdy, které dosahují tak cirka 40 procent toho evropského, počítám ty staré evropské země, průměru.',
+      speaker: 'Filip',
       highlightStart: '1:05',
       highlightEnd: '1:17',
       result: 'nepravda',
@@ -27,6 +47,7 @@ export default {
     },
     {
       statement: 'Minimální mzda, která, pravda, vyrostla, tak jak si přála sociální demokracie…',
+      speaker: 'Filip',
       highlightStart: '1:39',
       highlightEnd: '1:48',
       result: 'pravda',
@@ -34,6 +55,7 @@ export default {
     },
     {
       statement: 'Protože ty daně pochází kromě dvou výjimek drobných, které schválila tato koaliční vláda ČSSD, ANO a KDU-ČSL, vlastně daňový systém Miroslava Kalouska.',
+      speaker: 'Filip',
       highlightStart: '2:30',
       highlightEnd: '2:44',
       result: 'pravda',
@@ -41,6 +63,7 @@ export default {
     },
     {
       statement: 'Podívejte se, jeden z nejvyšších ekonomických výkonů dosahuje například Japonsko, která má mnohem vyšší diferenciaci daní, než mají ostatní státy, které jsou v ekonomickém progresu. Trochu se jim blíží ty severské státy jako je Švédsko, Finsko, kde je taky daňová progrese.',
+      speaker: 'Filip',
       highlightStart: '2:47',
       highlightEnd: '3:07',
       result: 'zavadejici',
@@ -48,6 +71,7 @@ export default {
     },
     {
       statement: 'A my si přeci nemůžeme nechat diktovat od byrokratů, jak se máme chovat. Jestli máme mít takovéhle jaksi zákony, jak máme chránit velryby, teď to možná malinko přeháním, anebo jestli máme mít takovou subsidiaritu, tedy jaksi návaznost těch našich právních norem na evropské normy…',
+      speaker: 'Filip',
       highlightStart: '11:28',
       highlightEnd: '11:47',
       result: 'zavadejici',
@@ -55,6 +79,7 @@ export default {
     },
     {
       statement: 'Víte, když jsme se podívali na výsledek těch sankcí, tak už rok po zahájení těchto sankcí evropské země, osmadvacítka, tedy včetně Británie, ztratila na tom ruském trhu 8 procent svých výkonů. A Spojené státy americké na tomtéž trhu při sankcích, které oni nařídili, pravda, trochu jiné než, než Evropská komise, vydělaly 10 procent.',
+      speaker: 'Filip',
       highlightStart: '12:34',
       highlightEnd: '12:58',
       result: 'nepravda',
@@ -62,6 +87,7 @@ export default {
     },
     {
       statement: 'A znovu podotýkám, že ta valorizace (penzí, pozn. Demagog.cz), jak se zastavila po roce 2006 nástupem Topolánkovy vlády, a to samé platí o té minimální mzdě…',
+      speaker: 'Filip',
       highlightStart: '18:48',
       highlightEnd: '19:01',
       result: 'nepravda',
@@ -69,6 +95,7 @@ export default {
     },
     {
       statement: '(pokračování předchozího výroku) … tak ve skutečnosti my jsme shodili ty příjmy cirka o 20 procentních bodů pro ty, pro ty sociálně slabé.',
+      speaker: 'Filip',
       highlightStart: '19:02',
       highlightEnd: '19:10',
       result: 'neoveritelne',
@@ -76,6 +103,7 @@ export default {
     },
     {
       statement: 'To není o nějakém molochu, podívejte se, Česká správa sociálního zabezpečení je taky jediná a spravuje ty, ten důchodový systém cirka za 1,8 těch, procenta těch prostředků, které, které vybereme na ty, na ty důchody. Kdežto ty fon…, ty jednotlivé fondy, které jsou v tom třetím pilíři, to spravují za 5 až 7 procent, to znamená, že ubírají z toho, co lidé platí na ten třetí pilíř o 2 proce…, o 3 až 5 procent více.',
+      speaker: 'Filip',
       highlightStart: '19:59',
       highlightEnd: '20:29',
       result: 'zavadejici',

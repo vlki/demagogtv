@@ -1,18 +1,37 @@
 export default {
-  videoId: 'G9HXKJZNnWs',
   path: '/volby-2017-lidr-stan-v-cro',
   title: 'Volby 2017: Lídr STAN v ČRo',
   subtitle: 'Český rozhlas, 5. října 2017, moderátor: Vladimír Kroc',
   summary: 'Posledním lídrem, kterého jsme ověřili ve spolupráci s Českým rozhlasem, je Jan Farský ze strany Starostové a nezávislí. Mluvilo se o evropských penězích, ekonomické situaci i některých zákonech, které Farský pomáhal prosadit. Jak je naším dobrým zvykem, i nyní vám přinášíme analýzu jeho faktických vyjádření.',
-  demagogUrl: 'http://demagog.cz/diskusie/462/volby-2017-lidr-stan-v-cro',
-  youtubeUrl: 'https://www.youtube.com/watch?v=G9HXKJZNnWs',
-  guestName: 'Jan Farský',
-  partyName: 'STAN',
-  guestImageSrc: '/politik/jan-farsky.jpg',
-  debateImageSrc: '/cro/jan-farsky.jpg',
+  player: {
+    type: 'youtube',
+    videoId: 'G9HXKJZNnWs'
+  },
+  links: [
+    {
+      label: 'Rozbor debaty na Demagog.cz',
+      href: 'http://demagog.cz/diskusie/462/volby-2017-lidr-stan-v-cro'
+    },
+    {
+      label: 'Videozáznam debaty na YouTube',
+      href: 'https://www.youtube.com/watch?v=G9HXKJZNnWs'
+    }
+  ],
+  listing: {
+    title: 'Jan Farský, STAN',
+    imageSrc: '/video-thumbnails/volby-2017-lidr-stan-v-cro.jpg'
+  },
+  speakers: [
+    {
+      name: 'Jan Farský',
+      short: 'Farský',
+      imageSrc: '/speakers/jan-farsky.jpg'
+    }
+  ],
   checks: [
     {
       statement: '…je rozmístěno (zdravotnický materiál, pozn. Demagog.cz) hrozně neefektivně. Jsou oblasti, který díky síle politiků je několik rezonancí a gama nožů, a jsou oblasti, kde se na ně čeká hrozně dlouho.',
+      speaker: 'Farský',
       highlightStart: '1:45',
       highlightEnd: '1:55',
       result: 'neoveritelne',
@@ -20,6 +39,7 @@ export default {
     },
     {
       statement: 'Já jsem už prosadil zákon o registru smluv, který donutil ke zveřejňování i zdravotnický zařízení a už dneska šetří desítky milionů právě na tom, že je vidět, jak ty peníze tečou nehospodárně.',
+      speaker: 'Farský',
       highlightStart: '2:20',
       highlightEnd: '2:32',
       result: 'neoveritelne',
@@ -27,6 +47,7 @@ export default {
     },
     {
       statement: 'Rusko v tom, že je to země, která v poslední době porušuje mezinárodní dohody, porušuje mezinárodní smlouvy, mezinárodní právo a tak jako si utrhlo kus Moldavska, jako si utrhlo kus Gruzie, kus Ukrajiny, tak podobným způsobem útočí na Českou republiku. Ono to neútočí jako zbraněmi, které si můžou lidé představovat z 20. století, ale Rusko přezbrojilo na 21. století a je to otázka boje v kyberprostoru, fake news, dezinformací…',
+      speaker: 'Farský',
       highlightStart: '5:52',
       highlightEnd: '6:26',
       result: 'pravda',
@@ -34,6 +55,7 @@ export default {
     },
     {
       statement: 'A když jsem starostoval, tak, tak měli jsme v obci v podstatě ghetto, kam se sestěhovávali dlouhodobě sociálně nepřizpůsobiví a ti, kteří měli nějaký komplikovaný život, a tam jsme zavedli pravidlo, že, že pravidla musí platit pro všechny stejně a ti, kteří to pochopili a my jsme s nimi pracovali samozřejmě, bavili jsme se s nimi, ti, kteří platili nájem, tak tam jsou a ti, kteří neplatili nájem, tak se museli odstěhovat a tím jsme to ghetto v podstatě dokázali během několika let vyřešit.',
+      speaker: 'Farský',
       highlightStart: '9:15',
       highlightEnd: '9:49',
       result: 'pravda',
@@ -41,6 +63,7 @@ export default {
     },
     {
       statement: 'Zároveň je ale nutné říct, že i v této chvíli, kdy máme minimální nezaměstnanost, obrovský růst, tak i tak není důchodový účet sanován příjmy, takže se musí dotovat z ostatních oblastí rozpočtu.',
+      speaker: 'Farský',
       highlightStart: '10:02',
       highlightEnd: '10:14',
       result: 'pravda',
@@ -48,6 +71,7 @@ export default {
     },
     {
       statement: '…a dokonce jsou projekty, kde, kde nám Evropská unie, a týká se to i vzdělávání, digitalizace, kde nám chtěla pomoct čtrnácti miliardami k tomu, aby byl v České republice internet dostupnější a levnější a tady se tak dlouho dohadoval pan ministr Mládek s panem ministrem Chovancem, ministerstvo vnitra s ministerstvem průmyslu a obchodu, že ty peníze nakonec budeme Evropské unii vracet.',
+      speaker: 'Farský',
       highlightStart: '12:59',
       highlightEnd: '13:21',
       result: 'pravda',
@@ -55,6 +79,7 @@ export default {
     },
     {
       statement: 'Problém taky je, že jsme často papežštější než papež a že v České republice si předpisy, ať už to jsou ve stravování, nebo i v maloobchodě, přepisujeme daleko přísnější, než od nás Evropská unie požaduje a místo abysme pak jako přiznali naši chybu, tak ještě zaútočíme zpátky na Evropskou unii.',
+      speaker: 'Farský',
       highlightStart: '13:21',
       highlightEnd: '13:40',
       result: 'pravda',
@@ -62,6 +87,7 @@ export default {
     },
     {
       statement: 'Od poloviny příštího roku díky aktivitě Věry Kovářové a i mojí se podaří to, že už nebudete si muset pro řidičák jít s fotkou z fotolabu, ale stát použije fotku, kterou má, kterou vás fotil na občanku.',
+      speaker: 'Farský',
       highlightStart: '15:31',
       highlightEnd: '15:47',
       result: 'pravda',
@@ -69,6 +95,7 @@ export default {
     },
     {
       statement: '…trvalo tři roky, kdy jsem psal ministerstvu dopravy, aby to udělali a oni tři roky psali, že to fakt nejde a až ve chvíli, kdy už jsem se opravdu rozčílil a řekl jsem, že do konce volebního období to jinak nepůjde a ten zákon jsme podali, tak začali říkat, že by to teda snad šlo, ale tak v roce 2021, 2022.',
+      speaker: 'Farský',
       highlightStart: '15:49',
       highlightEnd: '16:04',
       result: 'pravda',
@@ -76,6 +103,7 @@ export default {
     },
     {
       statement: 'Takže, takže nakonec jsme zatlačili víc a bude to od poloviny příštího roku, což jenom v příštím roce ušetří cestu 400 tisícům lidí, protože za ten rok si má vyměnit necelých 800 tisíc lidí řidičák, tak nějakých 400 tisíc lidí nebude utrácet 120 korun za fotku ve fotolabu a nebude toho úředníka nutit skenovat jejich fotku, když už ji v tom systému stát má.',
+      speaker: 'Farský',
       highlightStart: '16:06',
       highlightEnd: '16:26',
       result: 'pravda',
@@ -83,6 +111,7 @@ export default {
     },
     {
       statement: 'Nebo se podařilo prodloužit potvrzení na, na účast na zotavovacích akcích (…) děcka musely každý rok si dojít, a to je 200 tisíc dětí ročně, k praktickému lékaři pro potvrzení, že jsou schopni účastnit se tábora, zaplatili průměrně 200 korun, musel je doprovodit jejich zákonný zástupce, který si na to musel vzít dovolenou, a přesto to byl jenom v podstatě papír, který fungoval v tu chvíli pro vodácký tábor, pro vysokohorskou turistiku i pro rekreační týden na Mácháči, takže lejstro. A teď se podařilo, že to bude stačit jednou za dva roky a že to bude součást preventivní prohlídky, což šetří 200 tisíc návštěv lékaře ročně a 40 milionů jenom, jenom v hotovosti těm lidem.',
+      speaker: 'Farský',
       highlightStart: '16:29',
       highlightEnd: '17:17',
       result: 'pravda',
@@ -90,6 +119,7 @@ export default {
     },
     {
       statement: 'A já si myslím, že v téhle oblasti je potřeba zmínit i to, že my jsme při vstupu do NATO se zavázali, že dvě procenta budeme dávat na obranu, ale obrana nejde chápat úzce jenom v tom, že, že je to na nákup tanků a střeliva, ale to je i otázka vzdělání, výzkumu i vývoje a jedna z oblastí, která by v tomhle mohla posílit, je právě ten výzkum, který by byl otázkou bezpečnostní, protože, protože to je to, o čem jako budeme se rozhodovat v budoucnosti a kde je obrovský prostor pro investice.',
+      speaker: 'Farský',
       highlightStart: '20:42',
       highlightEnd: '21:15',
       result: 'pravda',
@@ -97,6 +127,7 @@ export default {
     },
     {
       statement: 'A ten armádní rozpočet dvě procenta HDP jsou nějakých přes 90 miliard. Aktuálně utrácíme něco kolem 50 miliard.',
+      speaker: 'Farský',
       highlightStart: '21:15',
       highlightEnd: '21:23',
       result: 'pravda',

@@ -1,18 +1,37 @@
 export default {
-  videoId: 'E_rzZhbc-6k',
   path: '/volby-2017-lidr-ods-v-cro',
   title: 'Volby 2017: Lídr ODS v ČRo',
   subtitle: 'Český rozhlas, 12. září 2017, moderátor: Vladimír Kroc',
   summary: 'Dalším lídrem politické strany, který přišel do Českého rozhlasu, a ocitl se tak v centru našeho ověřování, je předseda ODS Petr Fiala. Mluvilo se samozřejmě o školství, ale také o EET, byrokracii a Evropské unii. Jak jeho vystoupení dopadlo po faktické stránce, to si můžete přečíst v naší analýze. ',
-  demagogUrl: 'http://demagog.cz/diskusie/452/volby-2017-lidr-ods-v-cro',
-  youtubeUrl: 'https://www.youtube.com/watch?v=E_rzZhbc-6k',
-  guestName: 'Petr Fiala',
-  partyName: 'ODS',
-  guestImageSrc: '/politik/petr-fiala.jpg',
-  debateImageSrc: '/cro/petr-fiala.jpg',
+  player: {
+    type: 'youtube',
+    videoId: 'E_rzZhbc-6k'
+  },
+  links: [
+    {
+      label: 'Rozbor debaty na Demagog.cz',
+      href: 'http://demagog.cz/diskusie/452/volby-2017-lidr-ods-v-cro'
+    },
+    {
+      label: 'Videozáznam debaty na YouTube',
+      href: 'https://www.youtube.com/watch?v=E_rzZhbc-6k'
+    }
+  ],
+  listing: {
+    title: 'Petr Fiala, ODS',
+    imageSrc: '/video-thumbnails/volby-2017-lidr-ods-v-cro.jpg'
+  },
+  speakers: [
+    {
+      name: 'Petr Fiala',
+      short: 'Fiala',
+      imageSrc: '/speakers/petr-fiala.jpg'
+    }
+  ],
   checks: [
     {
       statement: 'Podívejme se, jakou tady máme dneska situaci. Vysoké školy doteď nevědí, kolik dostanou. Jak máme po nich chtít špičkovou kvalitu a excelentní výzkum, když nemají ani takové peníze, jaké měly před několika lety v době ekonomické krize.',
+      speaker: 'Fiala',
       highlightStart: '1:50',
       highlightEnd: '2:02',
       result: 'pravda',
@@ -20,6 +39,7 @@ export default {
     },
     {
       statement: 'Máme tady o 30 tisíc státních zaměstnanců víc, z toho je tu spousta nových úředníků.',
+      speaker: 'Fiala',
       highlightStart: '2:38',
       highlightEnd: '2:44',
       result: 'pravda',
@@ -27,6 +47,7 @@ export default {
     },
     {
       statement: 'No, například naše děti mají špatné znalosti, nebo zhoršující se znalosti v matematice, přírodních vědách, dokonce i ve čtenářské gramotnosti. ',
+      speaker: 'Fiala',
       highlightStart: '6:46',
       highlightEnd: '6:53',
       result: 'pravda',
@@ -34,6 +55,7 @@ export default {
     },
     {
       statement: 'Lidé nechtějí dělat řemesla, máme problémy se získáváním dětí, aby studovaly technické a přírodovědné obory.',
+      speaker: 'Fiala',
       highlightStart: '6:53',
       highlightEnd: '7:00',
       result: 'pravda',
@@ -41,6 +63,7 @@ export default {
     },
     {
       statement: 'A mě hrozně mrzí a musím to říct, že jsme tady v době, kdy jsem byl ve vládě, připravili projekt toho duálního systému, zkoušelo se to. A sociálně demokratická vláda nebo sociálně demokratičtí ministři školství v tom nepokračovali.',
+      speaker: 'Fiala',
       highlightStart: '8:12',
       highlightEnd: '8:25',
       result: 'pravda',
@@ -48,6 +71,7 @@ export default {
     },
     {
       statement: 'Hlavně já jsem hrdý na to, že jsme byli první parlamentní strana, která předložila volební program ve 190 konkrétních krocích.',
+      speaker: 'Fiala',
       highlightStart: '12:54',
       highlightEnd: '13:00',
       result: 'pravda',
@@ -55,6 +79,7 @@ export default {
     },
     {
       statement: 'My od počátku kritizujeme tento nástroj (EET a kontrolní hlášení, pozn. Demagog.cz).',
+      speaker: 'Fiala',
       highlightStart: '13:34',
       highlightEnd: '13:36',
       result: 'pravda',
@@ -62,6 +87,7 @@ export default {
     },
     {
       statement: 'Připomeňme si, co nám tady říkal bývalý ministr financí Andrej Babiš o tom, když se zavede do pohostinství a restaurací EET. Říkal, tržby se zvednou o 100 procent. Ať se každý podívá, o kolik se zvedly tržby.',
+      speaker: 'Fiala',
       highlightStart: '13:58',
       highlightEnd: '14:13',
       result: 'pravda',
@@ -69,6 +95,7 @@ export default {
     },
     {
       statement: 'Děje se totéž, co v Chorvatsku (po zavedení EET, pozn. Demagog.cz). Nezvyšuje se příjem, příjem daní do státního rozpočtu. A jenom se likvidují některé živnosti.',
+      speaker: 'Fiala',
       highlightStart: '14:13',
       highlightEnd: '14:21',
       result: 'nepravda',
@@ -76,6 +103,7 @@ export default {
     },
     {
       statement: 'Jestliže jsme na 122. místě na světě v komplikovanosti daňového systému, to si naši lidi nezaslouží. A jestli jsme na 130. místě na světě, pokud jde o vyřízení stavebního povolení, u nás to trvá neskutečně dlouho.',
+      speaker: 'Fiala',
       highlightStart: '16:05',
       highlightEnd: '16:20',
       result: 'nepravda',
@@ -83,6 +111,7 @@ export default {
     },
     {
       statement: 'U nás žije a pracuje půl milionu cizinců.',
+      speaker: 'Fiala',
       highlightStart: '17:39',
       highlightEnd: '17:42',
       result: 'pravda',
@@ -90,6 +119,7 @@ export default {
     },
     {
       statement: 'My jsme se při vstupu do Evropské unie zavázali, že až splníme určitá kritéria, tak euro automa…, de facto automaticky přijmeme.',
+      speaker: 'Fiala',
       highlightStart: '18:31',
       highlightEnd: '18:39',
       result: 'pravda',
