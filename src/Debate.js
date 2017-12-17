@@ -81,7 +81,7 @@ class Debate extends Component {
 
   handlePlayerReady = player => {
     this.player = player
-    this.updateVideoSize()
+    this.updateVideoSizeDebounced()
   }
 
   checkPlayerTime = () => {
