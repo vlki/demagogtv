@@ -1,14 +1,12 @@
 # DemagogTV
 
-*[Description in English below](#project-description)*
-
-Projekt jede na [https://demagogtv.cz](https://demagogtv.cz)
-
-> Sledujte rozhovor a zároveň, zda politik říká pravdu či ne. Propojili jsme
-> videozáznamy debat s výroky tak, že v čase vyřčení naskočí hodnocení od
-> [Demagog.cz](http://demagog.cz).
+Sledujte rozhovor a zároveň, zda politik říká pravdu či ne. Propojili jsme
+videozáznamy debat s výroky tak, že v čase vyřčení naskočí hodnocení od
+[Demagog.cz](http://demagog.cz). [https://demagogtv.cz](https://demagogtv.cz)
 
 ![](./screenshot-demagogtv.png)
+
+*[Description in English below](#project-description)*
 
 ## Technologie
 
