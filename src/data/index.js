@@ -12,6 +12,7 @@ import robejsek from './robejsek'
 import stropnicky from './stropnicky'
 import zaoralek from './zaoralek'
 import zeman from './zeman'
+import zemanVanoce from './zeman-vanoce'
 
 import duelHynekHannig from './duel-hynek-hannig'
 
@@ -35,7 +36,8 @@ export const DEBATES_LIST = [
   duelHynekHannig,
 
   // other
-  zeman
+  zeman,
+  zemanVanoce
 ]
 
 // sorted by survey at
@@ -59,6 +61,8 @@ export const DEBATES_LIST_ROZHLAS = [
 ]
 
 export const DEBATE_ZEMAN = zeman
+
+export const DEBATE_ZEMAN_VANOCE = zemanVanoce
 
 export const DEBATES_LIST_SEZNAM_DUELS = [
   duelHynekHannig

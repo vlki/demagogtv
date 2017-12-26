@@ -7,6 +7,7 @@ import { ResultsRow } from './PersonResultBadge'
 import {
   DEBATES_LIST_ROZHLAS,
   DEBATE_ZEMAN,
+  DEBATE_ZEMAN_VANOCE,
   DEBATES_LIST_SEZNAM_DUELS
 } from './data'
 
@@ -67,6 +68,34 @@ class Home extends Component {
             </div>
           )}
         </div> */}
+
+        <div className="row">
+          <div className="col-xs-12 col-sm-10">
+            <SectionTitle>Vánoční poselství prezidenta republiky</SectionTitle>
+
+            <SectionDate>
+              Prosinec 2017
+            </SectionDate>
+
+            <SectionSummary>
+            Stejně jako v dalších letech přednesl prezident Miloš Zeman své vánoční poselství. Letos bilancoval, jak si z jeho pohledu vedla Česká republika. Vyzvidhl např. bezpečnost a ekonomický stav země, popsal ovšem i ze svého pohledu některé neduhy, které nás trápí.
+            </SectionSummary>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-xs-12 col-sm-6 col-md-4">
+            <DebateContainer>
+              <Link to={DEBATE_ZEMAN_VANOCE.path}>
+                <DebateImgWrapper>
+                  <DebateImg src={DEBATE_ZEMAN_VANOCE.listing.imageSrc} alt={DEBATE_ZEMAN_VANOCE.listing.title} />
+                </DebateImgWrapper>
+                <DebateTitle>{DEBATE_ZEMAN_VANOCE.listing.title}</DebateTitle>
+                <ResultsRow debate={DEBATE_ZEMAN_VANOCE} speaker={DEBATE_ZEMAN_VANOCE.speakers[0]} />
+              </Link>
+            </DebateContainer>
+          </div>
+        </div>
 
         <div className="row">
           <div className="col-xs-12 col-sm-10">
