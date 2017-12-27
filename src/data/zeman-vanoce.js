@@ -2,7 +2,7 @@ export default {
   path: '/vanocni-poselstvi-prezidenta-republiky',
   title: 'Vánoční poselství prezidenta republiky',
   subtitle: '26. prosince 2017',
-  summary: 'Stejně jako v dalších letech přednesl prezident Miloš Zeman své vánoční poselství. Letos bilancoval, jak si z jeho pohledu vedla Česká republika. Vyzvidhl např. bezpečnost a ekonomický stav země, popsal ovšem i ze svého pohledu některé neduhy, které nás trápí.',
+  summary: 'Stejně jako v dalších letech přednesl prezident Miloš Zeman své vánoční poselství. Letos bilancoval, jak si z jeho pohledu vedla Česká republika. Vyzdvihl např. bezpečnost a ekonomický stav země, popsal ovšem i ze svého pohledu některé neduhy, které nás trápí.',
   player: {
     type: 'facebook',
     videoId: '1602630269819392'
