@@ -13,7 +13,7 @@ export default {
       href: 'https://demagog.cz/diskuze/debata-v-ceskem-rozhlase-michal-horacek'
     },
     {
-      label: 'Facebook příspěvek, kde byl záznam původně zvěřejněn',
+      label: 'Zdroj videa: FB Český rozhlas-Radiožurnál',
       href: 'https://www.facebook.com/radiozurnal/videos/10155084432961752/'
     }
   ],
