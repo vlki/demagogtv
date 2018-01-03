@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet'
 import { ResultsRow } from './PersonResultBadge'
 import {
   DEBATES_LIST_ROZHLAS,
+  DEBATES_LIST_ROZHLAS_PREZ,
   DEBATE_ZEMAN,
   DEBATE_ZEMAN_VANOCE,
   DEBATES_LIST_SEZNAM_DUELS
@@ -36,6 +37,36 @@ class Home extends Component {
               Přejděte na libovolnou debatu z&nbsp;níže uvedených a&nbsp;zhlédněte výsledek v&nbsp;praxi!
             </MainSummary>
           </div>
+        </div>
+
+        <div className="row">
+          <div className="col-xs-12 col-sm-10">
+            <SectionTitle>Debaty s prezidentskými kandidáty v ČRo</SectionTitle>
+
+            <SectionDate>
+              Leden 2018
+            </SectionDate>
+
+            <SectionSummary>
+              Těsně před volbami přichází Český rozhlas se seriálem rozhovorů s jednotlivými prezidentskými kandidáty. Celkem naplánoval 8 debat (prezident Zeman odmítl pozvání do diskuze s moderátorem veřejnoprávního rozhlasu).
+            </SectionSummary>
+          </div>
+        </div>
+
+        <div className="row">
+          {DEBATES_LIST_ROZHLAS_PREZ.map(debate =>
+            <div key={debate.path} className="col-xs-12 col-sm-6 col-md-4">
+              <DebateContainer>
+                <Link to={debate.path}>
+                  <DebateImgWrapper>
+                    <DebateImg src={debate.listing.imageSrc} alt={debate.listing.title} />
+                  </DebateImgWrapper>
+                  <DebateTitle>{debate.listing.title}</DebateTitle>
+                  <ResultsRow debate={debate} speaker={debate.speakers[0]} />
+                </Link>
+              </DebateContainer>
+            </div>
+          )}
         </div>
 
         {/* <div className="row">
