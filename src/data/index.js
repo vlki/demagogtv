@@ -9,6 +9,7 @@ import kalousek from './kalousek'
 import mach from './mach'
 import okamura from './okamura'
 import robejsek from './robejsek'
+import rozhlasDrahos from './rozhlas-drahos'
 import rozhlasHoracek from './rozhlas-horacek'
 import rozhlasTopolanek from './rozhlas-topolanek'
 import stropnicky from './stropnicky'
@@ -35,6 +36,7 @@ export const DEBATES_LIST = [
   cech,
 
   // rozhlas prez
+  rozhlasDrahos,
   rozhlasHoracek,
   rozhlasTopolanek,
 
@@ -67,6 +69,7 @@ export const DEBATES_LIST_ROZHLAS = [
 ]
 
 export const DEBATES_LIST_ROZHLAS_PREZ = [
+  rozhlasDrahos,
   rozhlasTopolanek,
   rozhlasHoracek
 ]
