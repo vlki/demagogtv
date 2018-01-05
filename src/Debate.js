@@ -147,7 +147,7 @@ class Debate extends Component {
       <div>
         <Helmet>
           <title>{debate.title} – DemagogTV</title>
-          <meta property="og:image" content={`https://demagogtv.cz${debate.debateImageSrc}`} />
+          <meta property="og:image" content={`https://demagogtv.cz${debate.listing.imageSrc}`} />
           <meta property="og:image:alt" content={debate.title} />
         </Helmet>
 
