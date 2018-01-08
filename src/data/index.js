@@ -11,6 +11,7 @@ import okamura from './okamura'
 import robejsek from './robejsek'
 import rozhlasDrahos from './rozhlas-drahos'
 import rozhlasHoracek from './rozhlas-horacek'
+import rozhlasKulhanek from './rozhlas-kulhanek'
 import rozhlasTopolanek from './rozhlas-topolanek'
 import stropnicky from './stropnicky'
 import zaoralek from './zaoralek'
@@ -38,6 +39,7 @@ export const DEBATES_LIST = [
   // rozhlas prez
   rozhlasDrahos,
   rozhlasHoracek,
+  rozhlasKulhanek,
   rozhlasTopolanek,
 
   // duels
@@ -69,6 +71,7 @@ export const DEBATES_LIST_ROZHLAS = [
 ]
 
 export const DEBATES_LIST_ROZHLAS_PREZ = [
+  rozhlasKulhanek,
   rozhlasDrahos,
   rozhlasTopolanek,
   rozhlasHoracek
