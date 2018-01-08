@@ -143,11 +143,16 @@ class Debate extends Component {
         break
     }
 
+    let ogImage = debate.listing.imageSrc
+    if (!ogImage.startsWith('http')) {
+      ogImage = `https://demagogtv.cz${ogImage}`
+    }
+
     return (
       <div>
         <Helmet>
           <title>{debate.title} – DemagogTV</title>
-          <meta property="og:image" content={`https://demagogtv.cz${debate.listing.imageSrc}`} />
+          <meta property="og:image" content={ogImage} />
           <meta property="og:image:alt" content={debate.title} />
         </Helmet>
 
