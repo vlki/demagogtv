@@ -12,6 +12,7 @@ import robejsek from './robejsek'
 import rozhlasDrahos from './rozhlas-drahos'
 import rozhlasHilser from './rozhlas-hilser'
 import rozhlasHoracek from './rozhlas-horacek'
+import rozhlasHynek from './rozhlas-hynek'
 import rozhlasKulhanek from './rozhlas-kulhanek'
 import rozhlasTopolanek from './rozhlas-topolanek'
 import stropnicky from './stropnicky'
@@ -41,6 +42,7 @@ export const DEBATES_LIST = [
   rozhlasDrahos,
   rozhlasHilser,
   rozhlasHoracek,
+  rozhlasHynek,
   rozhlasKulhanek,
   rozhlasTopolanek,
 
@@ -73,6 +75,7 @@ export const DEBATES_LIST_ROZHLAS = [
 ]
 
 export const DEBATES_LIST_ROZHLAS_PREZ = [
+  rozhlasHynek,
   rozhlasHilser,
   rozhlasKulhanek,
   rozhlasDrahos,
