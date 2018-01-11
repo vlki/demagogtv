@@ -10,6 +10,7 @@ import mach from './mach'
 import okamura from './okamura'
 import robejsek from './robejsek'
 import rozhlasDrahos from './rozhlas-drahos'
+import rozhlasFischer from './rozhlas-fischer'
 import rozhlasHilser from './rozhlas-hilser'
 import rozhlasHoracek from './rozhlas-horacek'
 import rozhlasHynek from './rozhlas-hynek'
@@ -40,6 +41,7 @@ export const DEBATES_LIST = [
 
   // rozhlas prez
   rozhlasDrahos,
+  rozhlasFischer,
   rozhlasHilser,
   rozhlasHoracek,
   rozhlasHynek,
@@ -75,6 +77,7 @@ export const DEBATES_LIST_ROZHLAS = [
 ]
 
 export const DEBATES_LIST_ROZHLAS_PREZ = [
+  rozhlasFischer,
   rozhlasHynek,
   rozhlasHilser,
   rozhlasKulhanek,
