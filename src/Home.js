@@ -8,6 +8,7 @@ import {
   DEBATES_LIST_ROZHLAS,
   DEBATES_LIST_ROZHLAS_PREZ,
   DEBATE_ZEMAN,
+  DEBATE_ZEMAN_SOUKUP,
   DEBATE_ZEMAN_VANOCE,
   DEBATES_LIST_SEZNAM_DUELS
 } from './data'
@@ -36,6 +37,30 @@ class Home extends Component {
             <MainSummary>
               Přejděte na libovolnou debatu z&nbsp;níže uvedených a&nbsp;zhlédněte výsledek v&nbsp;praxi!
             </MainSummary>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-xs-12 col-sm-10">
+            <SectionTitle>Rozhovory před druhým kolem prezidentských voleb</SectionTitle>
+
+            <SectionDate>
+              Leden 2018
+            </SectionDate>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-xs-12 col-sm-6 col-md-4">
+            <DebateContainer>
+              <Link to={DEBATE_ZEMAN_SOUKUP.path}>
+                <DebateImgWrapper>
+                  <DebateImg src={DEBATE_ZEMAN_SOUKUP.listing.imageSrc} alt={DEBATE_ZEMAN_SOUKUP.listing.title} />
+                </DebateImgWrapper>
+                <DebateTitle>{DEBATE_ZEMAN_SOUKUP.listing.title}</DebateTitle>
+                <ResultsRow debate={DEBATE_ZEMAN_SOUKUP} speaker={DEBATE_ZEMAN_SOUKUP.speakers[0]} />
+              </Link>
+            </DebateContainer>
           </div>
         </div>
 

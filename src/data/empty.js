@@ -30,10 +30,10 @@ export default {
   },
   checks: [
     {
-      statement: '',
       speaker: '',
       highlightStart: '',
       highlightEnd: '',
+      statement: '',
       result: '',
       explanation: ''
     }

@@ -20,6 +20,7 @@ import rozhlasTopolanek from './rozhlas-topolanek'
 import stropnicky from './stropnicky'
 import zaoralek from './zaoralek'
 import zeman from './zeman'
+import zemanSoukup from './rozhovor-milose-zemana-v-tv-barrandov'
 import zemanVanoce from './zeman-vanoce'
 
 import duelHynekHannig from './duel-hynek-hannig'
@@ -55,6 +56,7 @@ export const DEBATES_LIST = [
 
   // other
   zeman,
+  zemanSoukup,
   zemanVanoce
 ]
 
@@ -92,6 +94,8 @@ export const DEBATES_LIST_ROZHLAS_PREZ = [
 export const DEBATE_ZEMAN = zeman
 
 export const DEBATE_ZEMAN_VANOCE = zemanVanoce
+
+export const DEBATE_ZEMAN_SOUKUP = zemanSoukup
 
 export const DEBATES_LIST_SEZNAM_DUELS = [
   duelHynekHannig
