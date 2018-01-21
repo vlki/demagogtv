@@ -18,7 +18,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Ivan Bartoš, Piráti',
+    title: 'Volby 2017: Lídr Pirátů v ČRo',
+    summary: '29. září 2017 — Předseda České pirátské strany byl dalším lídrem, který prezentoval postoje své strany v debatě Českého rozhlasu. Obvyklá ekonomická…',
     imageSrc: '/video-thumbnails/volby-2017-lidr-piratu-v-cro.jpg'
   },
   speakers: [

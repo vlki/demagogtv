@@ -25,7 +25,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Michal Horáček',
+    title: 'Debata v Českém rozhlase: Michal Horáček',
+    summary: '2. ledna 2018 — Těsně před volbami přichází Český rozhlas se seriálem rozhovorů s jednotlivými prezidentskými kandidáty. Celkem naplánoval 8 debat…',
     imageSrc: '/video-thumbnails/debata-v-ceskem-rozhlase-michal-horacek.jpg'
   },
   checks: [

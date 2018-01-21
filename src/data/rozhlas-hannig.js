@@ -25,7 +25,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Petr Hannig',
+    title: 'Debata v Českém rozhlase: Petr Hannig',
+    summary: '11. ledna 2018 — Petr Hannig byl posledním z prezidentských kandidátů, který se zúčastnil debaty v Českém rozhlase. Hannig v rozhovoru mluvil o své kampani…',
     imageSrc: 'https://demagog.cz/data/diskusia/s/1515701299,4371.jpg'
   },
   checks: [

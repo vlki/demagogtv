@@ -19,7 +19,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Lubomír Zaorálek, ČSSD',
+    title: 'Volby 2017: Lídr ČSSD v ČRo',
+    summary: '15. září 2017 — V pořadí čtvrtým volebním lídrem, který v rámci předvolebních debat navštívil studio Českého rozhlasu, byl ministr zahraničí Lubomír Zaorálek…',
     imageSrc: '/video-thumbnails/volby-2017-lidr-cssd-v-cro.jpg'
   },
   speakers: [

@@ -25,7 +25,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Miloš Zeman v TV Barrandov',
+    title: 'Rozhovor Miloše Zemana v TV Barrandov',
+    summary: '19. ledna 2018 — Prezident Zeman poskytl první rozhovor od volebního víkendu pro televizi Barrandov. V jeho již tradičním pořadu s Jaromírem Soukupem se hlava státu věnovala výsledkům prvního kola prezidentských voleb, svému oponentovi, kampani i aktuálním politickým otázkám.',
     imageSrc: 'https://demagog.cz/data/diskusia/s/1516368969,863.jpg'
   },
   checks: [

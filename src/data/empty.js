@@ -26,6 +26,7 @@ export default {
   ],
   listing: {
     title: '',
+    summary: '1. ledna 2018 — Xxx…',
     imageSrc: '/video-thumbnails/'
   },
   checks: [

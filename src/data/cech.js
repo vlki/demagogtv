@@ -18,7 +18,8 @@ export default {
     }
   ],
   listing: {
-    title: 'František Čech, SPO',
+    title: 'Volby 2017: Lídr SPO v ČRo',
+    summary: '6. října 2017 — Strana práv občanů vybrala jako svého superlídra do voleb Františka Ringo Čecha. Ten tak Zemanovce zastupoval i v rozhovoru pro Český rozhlas…',
     imageSrc: '/video-thumbnails/volby-2017-lidr-spo-v-cro.jpg'
   },
   speakers: [

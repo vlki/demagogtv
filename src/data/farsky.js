@@ -18,7 +18,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Jan Farský, STAN',
+    title: 'Volby 2017: Lídr STAN v ČRo',
+    summary: '5. října 2017 — Posledním lídrem, kterého jsme ověřili ve spolupráci s Českým rozhlasem, je Jan Farský ze strany Starostové a nezávislí. Mluvilo se o evropských…',
     imageSrc: '/video-thumbnails/volby-2017-lidr-stan-v-cro.jpg'
   },
   speakers: [

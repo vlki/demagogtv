@@ -12,7 +12,7 @@ import {
   RESULT_LABEL
 } from './metadata'
 import { formatTime, parseTime, convertNewlinesToBr } from './utils'
-import PersonResultBadge from './PersonResultBadge'
+import PersonResultBadge, { ResultIcon } from './PersonResultBadge'
 import FacebookPlayer from './players/FacebookPlayer'
 import Html5Player from './players/Html5Player'
 import YoutubePlayer from './players/YoutubePlayer'
@@ -159,7 +159,9 @@ class Debate extends Component {
         <TopBar>
           <TopBarContainer className="container-fluid">
             <Link to="/">
-              <TopBarTitle>DemagogTV</TopBarTitle>
+              <TopBarTitle>
+                <TopBarLogoImg src="/logo.svg" alt="Logo Demagog.cz" /> DemagogTV
+              </TopBarTitle>
             </Link>
             <TopBarLink to="/">Přehled všech debat</TopBarLink>
             <TopBarOuterLink href="http://demagog.cz/jak-hodnotime-metodika">Jak hodnotíme?</TopBarOuterLink>
@@ -206,11 +208,7 @@ class Debate extends Component {
                   </DebateLinks>
 
                   <FooterText>
-                    Projekt DemagogTV vytvořili v říjnu 2017
-                    {' '}<a href="http://demagog.cz">Demagog.cz</a>
-                    {' '}a
-                    {' '}<a href="http://vlki.cz">Jan Vlček</a>.
-                    {' '}Kód je <a href="https://github.com/vlki/demagogtv">opensource</a>.
+                    © 2017—2018 Demagog.cz, z.s. & Jan Vlček. Kód je <a href="https://github.com/vlki/demagogtv">opensource</a>.
                   </FooterText>
                 </LabelsContainer>
               </VideoAndLabelsContainer>
@@ -238,10 +236,10 @@ class Debate extends Component {
                       {index < (debate.checks.length - 1) && <StatementTimeline />}
                     </StatementTime>
                     <StatementContent>
-                      <p>
+                      <StatementText>
                         {debate.speakers.length > 1 && <span>{check.speaker}: </span>}
-                        <em>„{check.statement}“</em>
-                      </p>
+                        „{check.statement}“
+                      </StatementText>
                       <StatementResultExpanderWrapper>
                         <StatementResultBadge result={check.result} />
                         {shownExplanations.indexOf(index) === -1
@@ -280,8 +278,8 @@ const TopBar = styled.div`
   left: 0;
   right: 0;
   height: 52px;
-  border-bottom: 1px solid #D8D8D8;
-  background-color: #ffffff;
+  border-bottom: 2px solid #D8E1E8;
+  background-color: #F4F9FD;
 `
 
 const TopBarContainer = styled.div`
@@ -291,55 +289,42 @@ const TopBarContainer = styled.div`
 
 const TopBarTitle = styled.h1`
   float: left;
-  font-family: 'Oswald', sans-serif;
-  font-weight: bold;
+  font-family: LatoLatinWebHeavy, sans-serif;
   font-size: 24px;
-  color: #222222;
+  color: #3C325C;
   margin: 11px 15px 0 0;
+`
+
+const TopBarLogoImg = styled.img`
+  height: 32px;
+  top: -3px;
+  position: relative;
+  padding-right: 2px;
 `
 
 const TopBarLink = styled(Link)`
   float: left;
   font-size: 16px !important;
   line-height: 22px !important;
-  color: #585859 !important;
-  padding: 14px 15px 15px;
-
-  &:hover {
-    background-color: #F4F4F4;
-  }
+  padding: 13px 15px 15px;
 `
 
 const TopBarOuterLink = styled.a`
   float: left;
   font-size: 16px !important;
   line-height: 22px !important;
-  color: #585859 !important;
-  padding: 14px 15px 15px;
-
-  &:hover {
-    background-color: #F4F4F4;
-  }
+  padding: 13px 15px 15px;
 `
 
 const SupportLinkWrapper = styled.span`
   float: right;
   font-size: 16px !important;
-  color: #888;
 `
 
 const SupportLink = styled.a`
   display: inline-block;
-  background-color: #EC4F2F;
-  color: #fff !important;
   font-weight: bold;
-  padding: 9px 18px 10px 18px;
-  margin: 5px 0 0 15px;
-  border-radius: 3px;
-
-  &:hover, &:focus, &:active {
-    background-color: #227594;
-  }
+  padding: 13px 10px 15px;
 `
 
 const Container = styled.div`
@@ -374,11 +359,11 @@ const StatementContainer = styled.div`
   margin-bottom: 15px;
 
   ${props => props.showingExplanation && css`
-    background-color: #F5F5F5;
+    background-color: #E1EBF3;
   `}
 
   ${props => props.higlighted && css`
-    background-color: #FDEAE6;
+    background-color: #FAE4DD;
   `}
 `
 
@@ -392,11 +377,19 @@ const StatementTimeButton = styled.button`
   width: 100%;
   padding: 0;
   font-size: 16px;
-  color: #EC4F2F;
+  color: #F26538;
   text-decoration: none;
 
   &:hover, &:focus, &:active {
     text-decoration: none;
+  }
+
+  &:focus {
+    color: #0078a0;
+  }
+
+  &:hover {
+    color: #0060ff;
   }
 `
 
@@ -406,56 +399,58 @@ const StatementTimeline = styled.div`
   bottom: -40px;
   left: 50%;
   margin-left: -1px;
-  border-left: 2px solid #E6E6E6;
+  border-left: 2px solid #D8E1E8;
 `
 
 const StatementContent = styled.div`
   flex: 1;
 `
 
+const StatementText = styled.p`
+  margin: 0;
+`
+
 const StatementResultBadge = ({ result }) =>
-  <StatementResultBadgeWrapper color={RESULT_COLOR[result]}>
-    <StatementResultBadgeIcon className={`glyphicon glyphicon-${RESULT_ICON[result]}`} />
-    {' '}
-    {RESULT_LABEL[result]}
+  <StatementResultBadgeWrapper>
+    <ResultIcon result={result} color={RESULT_COLOR[result]} />
+    <StatementResultBadgeLabel color={RESULT_COLOR[result]}>
+      {RESULT_LABEL[result]}
+    </StatementResultBadgeLabel>
   </StatementResultBadgeWrapper>
 
 const StatementResultBadgeWrapper = styled.span`
   display: inline-block;
-  background-color: ${props => props.color};
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 5px 10px 7px 10px;
+  padding-top: 7px;
 `
 
-const StatementResultBadgeIcon = styled.span`
-  font-size: 20px;
-  line-height: 17px;
-  top: 4px;
+const StatementResultBadgeLabel = styled.span`
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  color: ${props => props.color};
+  margin-left: 8px;
 `
 
 const StatementResultExpanderWrapper = styled.div`
-  margin-top: 15px;
+  margin-top: 7px;
 `
 
 const StatementExpanderButton = styled.button`
   padding: 5px;
   vertical-align: top;
   font-size: 16px;
-  color: #EC4F2F;
+  color: #F26538;
   text-decoration: none;
-  margin-left: 10px;
+  margin-left: 15px;
 
   &:focus {
     text-decoration: none;
-    outline: 0;
-    color: #EC4F2F;
+    color: #0078a0;
   }
 
   &:hover, &:active {
     text-decoration: none;
-    outline: 0;
+    color: #0060ff;
   }
 `
 
@@ -478,9 +473,9 @@ const StatementExplanation = styled.p`
 `
 
 const DebateTitle = styled.h2`
-  font-family: 'Oswald', sans-serif;
+  font-family: LatoLatinWeb, sans-serif;
   font-weight: bold;
-  font-size: 37px;
+  font-size: 32px;
   margin: 20px 0 0 0;
 `
 
@@ -507,19 +502,8 @@ const DebateLink = styled.a`
 `
 
 const FooterText = styled.p`
-  color: #888 !important;
-  font-size: 16px !important;
   margin-top: 40px;
   margin-bottom: 50px;
-
-  a {
-    color: #888 !important;
-    text-decoration: underline !important;
-
-    &:hover {
-      color: #EC4F2F !important;
-    }
-  }
 `
 
 export default Debate

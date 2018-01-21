@@ -18,7 +18,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Vojtěch Filip, KSČM',
+    title: 'Volby 2017: Lídr KSČM v ČRo',
+    summary: '8. září 2017 — V rámci spolupráce s Českým rozhlasem jsme se podívali na rozhovor s Vojtěchem Filipem, lídrem KSČM. Mluvilo se o kondici ekonomiky a českých mzdách…',
     imageSrc: '/video-thumbnails/volby-2017-lidr-kscm-v-cro.jpg'
   },
   speakers: [

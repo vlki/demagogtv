@@ -2,7 +2,7 @@ export default {
   path: '/volby-2017-lidr-ods-v-cro',
   title: 'Volby 2017: Lídr ODS v ČRo',
   subtitle: 'Český rozhlas, 12. září 2017, moderátor: Vladimír Kroc',
-  summary: 'Dalším lídrem politické strany, který přišel do Českého rozhlasu, a ocitl se tak v centru našeho ověřování, je předseda ODS Petr Fiala. Mluvilo se samozřejmě o školství, ale také o EET, byrokracii a Evropské unii. Jak jeho vystoupení dopadlo po faktické stránce, to si můžete přečíst v naší analýze. ',
+  summary: 'Dalším lídrem politické strany, který přišel do Českého rozhlasu, a ocitl se tak v centru našeho ověřování, je předseda ODS Petr Fiala. Mluvilo se samozřejmě o školství, ale také o EET, byrokracii a Evropské unii. Jak jeho vystoupení dopadlo po faktické stránce, to si můžete přečíst v naší analýze.',
   player: {
     type: 'youtube',
     videoId: 'E_rzZhbc-6k'
@@ -18,7 +18,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Petr Fiala, ODS',
+    title: 'Volby 2017: Lídr ODS v ČRo',
+    summary: '12. září 2017 — Dalším lídrem politické strany, který přišel do Českého rozhlasu, a ocitl se tak v centru našeho ověřování, je předseda ODS Petr Fiala…',
     imageSrc: '/video-thumbnails/volby-2017-lidr-ods-v-cro.jpg'
   },
   speakers: [

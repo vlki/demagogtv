@@ -26,79 +26,30 @@ import zemanVanoce from './zeman-vanoce'
 import duelHynekHannig from './duel-hynek-hannig'
 
 export const DEBATES_LIST = [
-  // rozhlas
-  babis,
-  zaoralek,
-  fiala,
-  okamura,
-  bartos,
-  filip,
-  kalousek,
-  farsky,
-  belobradek,
-  stropnicky,
-  mach,
-  robejsek,
-  cech,
-
-  // rozhlas prez
-  rozhlasDrahos,
-  rozhlasFischer,
-  rozhlasHannig,
-  rozhlasHilser,
-  rozhlasHoracek,
-  rozhlasHynek,
-  rozhlasKulhanek,
-  rozhlasTopolanek,
-
-  // duels
-  duelHynekHannig,
-
-  // other
+  filip, // 8.9.
+  babis, // 10.9.
+  fiala, // 12.9.
+  zaoralek, // 15.9.
+  stropnicky, // 20.9.
+  belobradek, // 24.9.
+  mach, // 27.9.
+  kalousek, // 28.9.
+  bartos, // 29.9.
+  okamura, // 1.10.
+  robejsek, // 1.10.
+  farsky, // 5.10.
+  cech, // 6.10.
   zeman,
-  zemanSoukup,
-  zemanVanoce
-]
-
-// sorted by survey at
-// http://www.ceskatelevize.cz/ct24/2268226-volebni-potencial-ano-klesl-na-325-procenta-pirati-a-spd-posilili
-export const DEBATES_LIST_ROZHLAS = [
-  babis,
-  zaoralek,
-  fiala,
-  okamura,
-  bartos,
-  filip,
-  kalousek,
-  farsky,
-  belobradek,
-  stropnicky,
-
-  // these are not in the survey, so just sorted randomly
-  mach,
-  robejsek,
-  cech
-]
-
-export const DEBATES_LIST_ROZHLAS_PREZ = [
-  rozhlasHannig,
-  rozhlasFischer,
-  rozhlasHynek,
-  rozhlasHilser,
-  rozhlasKulhanek,
-  rozhlasDrahos,
+  zemanVanoce,
+  rozhlasHoracek,
   rozhlasTopolanek,
-  rozhlasHoracek
-]
-
-export const DEBATE_ZEMAN = zeman
-
-export const DEBATE_ZEMAN_VANOCE = zemanVanoce
-
-export const DEBATE_ZEMAN_SOUKUP = zemanSoukup
-
-export const DEBATES_LIST_SEZNAM_DUELS = [
-  duelHynekHannig
+  rozhlasDrahos,
+  rozhlasKulhanek,
+  rozhlasHilser,
+  rozhlasHynek,
+  rozhlasFischer,
+  rozhlasHannig,
+  zemanSoukup
 ]
 
 export const DEBATES_BY_PATH = DEBATES_LIST.reduce(

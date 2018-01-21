@@ -25,7 +25,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Mirek Topolánek',
+    title: 'Debata v Českém rozhlase: Mirek Topolánek',
+    summary: '3. ledna 2018 — Dalším hostem Českého rozhlasu v rámci diskuzí s prezidentskými kandidáty byl Mirek Topolánek. Ten popisoval v rozhovoru řadu věcí domácí…',
     imageSrc: '/video-thumbnails/debata-v-ceskem-rozhlase-mirek-topolanek.jpg'
   },
   checks: [

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import styled from 'styled-components'
+import styled, { injectGlobal } from 'styled-components'
 
 import Home from './Home'
 import Debate from './Debate'
@@ -23,24 +23,34 @@ class App extends Component {
   }
 }
 
+injectGlobal`
+  body {
+    background-color: #F4F9FD;
+    font-family: LatoLatinWeb, sans-serif;
+    color: #3C325C;
+  }
+`
+
 const AppContainer = styled.div`
   p {
+    font-family: LatoLatinWeb, sans-serif;
     font-size: 16px;
+    letter-spacing: 0.025em;
     line-height: 1.5;
-    color: #222222;
+    color: #3C325C;
   }
 
   a {
-    color: #EC4F2F;
+    color: #F26538;
     text-decoration: none;
 
     &:focus {
-      color: #2795b6;
+      color: #0078a0;
       text-decoration: none;
     }
 
     &:hover {
-      color: #227594;
+      color: #0060ff;
       text-decoration: none;
     }
   }

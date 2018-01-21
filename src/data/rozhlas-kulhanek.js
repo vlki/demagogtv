@@ -25,7 +25,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Vratislav Kulhánek',
+    title: 'Debata v Českém rozhlase: Vratislav Kulhánek',
+    summary: '5. ledna 2018 — Prezidentský kandidát Vratislav Kulhánek (ODA) byl hostem Jana Pokorného ve 20 minutách Radiožurnálu. V rozhovoru se mluvilo o zahraniční…',
     imageSrc: 'https://demagog.cz/data/diskusia/s/1515248543,9181.jpg'
   },
   checks: [

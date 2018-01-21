@@ -18,7 +18,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Andrej Babiš, ANO',
+    title: 'Volby 2017: Lídr ANO v ČRo',
+    summary: '10. září 2017 — Andrej Babiš z hnutí ANO probral v rozhovoru velké množství témat, od kondice české ekonomiky a daní až k světové bezpečnosti a unijním…',
     imageSrc: '/video-thumbnails/volby-2017-lidr-ano-v-cro.jpg'
   },
   speakers: [

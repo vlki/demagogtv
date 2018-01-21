@@ -18,7 +18,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Matěj Stropnický, Zelení',
+    title: 'Volby 2017: Lídr Zelených v ČRo',
+    summary: '20. září 2017 — Předseda Strany zelených v předvolební debatě v Českém rozhlase mluvil zejména o ekonomických tématech, o výši mezd i penzí. Při představování…',
     imageSrc: '/video-thumbnails/volby-2017-lidr-zelenych-v-cro.jpg'
   },
   speakers: [

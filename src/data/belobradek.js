@@ -18,7 +18,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Pavel Bělobrádek, KDU-ČSL',
+    title: 'Volby 2017: Lídr KDU-ČSL v ČRo',
+    summary: '24. září 2017 — Předseda KDU-ČSL Bělobrádek si ve svém rozhovoru připsal doposud nejvíce faktických výroků ze všech námi sledovaných lídrů, kteří vystoupili…',
     imageSrc: '/video-thumbnails/volby-2017-lidr-kdu-csl-v-cro.jpg'
   },
   speakers: [

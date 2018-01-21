@@ -25,7 +25,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Miloš Zeman',
+    title: 'Prezidentův projev na konferenci SPD',
+    summary: '9. prosince 2017 — Prezident Miloš Zeman během probíhající předvolební kampaně navštívil celostátní konferenci hnutí SPD Tomia Okamury. Při této příležitosti…',
     imageSrc: '/video-thumbnails/prezidentuv-projev-na-konferenci-hnuti-spd.jpg'
   },
   checks: [

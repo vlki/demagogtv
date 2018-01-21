@@ -18,7 +18,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Petr Mach, Svobodní',
+    title: 'Volby 2017: Lídr Svobodných v ČRo',
+    summary: '27. září 2017 — Předseda Strany svobodných občanů byl stejně jako další čelné osobnosti jednotlivých stran hostem předvolebního vysílání Českého rozhlasu…',
     imageSrc: '/video-thumbnails/volby-2017-lidr-svobodnych-v-cro.jpg'
   },
   speakers: [

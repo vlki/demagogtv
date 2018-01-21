@@ -25,7 +25,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Jiří Hynek',
+    title: 'Debata v Českém rozhlase: Jiří Hynek',
+    summary: '9. ledna 2018 — Prezidentský kandidát Jiří Hynek (ze strany Realisté) byl dalším hostem Jana Pokorného ve 20 minutách Radiožurnálu. Hlavním tématem byla…',
     imageSrc: 'https://demagog.cz/data/diskusia/s/1515569970,6269.jpg'
   },
   checks: [

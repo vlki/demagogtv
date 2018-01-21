@@ -18,7 +18,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Miroslav Kalousek, TOP 09',
+    title: 'Volby 2017: Lídr TOP 09 v ČRo',
+    summary: '28. září 2017 — Předseda TOP 09 se ve svém vystoupení v Českém rozhlase držel primárně ekonomických výroků, když popisoval jednak stav tuzemského…',
     imageSrc: '/video-thumbnails/volby-2017-lidr-top-09-v-cro.jpg'
   },
   speakers: [

@@ -25,7 +25,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Miloš Zeman',
+    title: 'Vánoční poselství prezidenta republiky',
+    summary: '26. prosince 2017 — Stejně jako v dalších letech přednesl prezident Miloš Zeman své vánoční poselství. Letos bilancoval, jak si z jeho pohledu vedla…',
     imageSrc: '/video-thumbnails/vanocni-poselstvi-prezidenta-republiky.jpg'
   },
   checks: [

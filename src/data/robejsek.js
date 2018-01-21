@@ -18,7 +18,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Petr Robejšek, Realisté',
+    title: 'Volby 2017: Lídr Realistů v ČRo',
+    summary: '1. října 2017 — Petr Robejšek zastupoval v předvolebním rozhovoru v Českém rozhlase stranu Realisté. Mentor tohoto hnutí často popisoval nástroje, kterými…',
     imageSrc: '/video-thumbnails/volby-2017-lidr-realistu-v-cro.jpg'
   },
   speakers: [

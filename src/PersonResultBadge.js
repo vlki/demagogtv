@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import {
   RESULT_TRUTH,
@@ -29,10 +29,11 @@ const PersonResultBadgeContainer = styled.div`
 
 const PictureWrapper = styled.div`
   float: left;
-  width: 70px;
-  height: 70px;
+  width: 66px;
+  height: 66px;
   border-radius: 50%;
   overflow: hidden;
+  border: 2px solid #DDDDDD;
 
   > img {
     width: 100%;
@@ -41,19 +42,19 @@ const PictureWrapper = styled.div`
 
 const DetailWrapper = styled.div`
   float: left;
-  margin-left: 15px;
+  margin-left: 10px;
 `
 
 const GuestName = styled.h3`
-  font-family: 'Oswald', sans-serif;
+  font-family: LatoLatinWeb, sans-serif;
   font-weight: bold;
-  color: #585859;
-  font-size: 23px;
+  color: #3C325C;
+  font-size: 21px;
   margin: 4px 0 0 0;
 `
 
 const ResultsWrapper = styled.div`
-  margin: 4px 0 0 0;
+  margin: 9px 0 0 0;
 `
 
 const Result = ({ result, count }) => {
@@ -61,24 +62,52 @@ const Result = ({ result, count }) => {
 
   return (
     <span>
-      <ResultIcon
-        color={color}
-        className={`glyphicon glyphicon-${RESULT_ICON[result]}`}
-      />
+      <ResultIcon result={result} color={color} />
       <ResultLabel color={color}>{count}</ResultLabel>
     </span>
   )
 }
 
-const ResultIcon = styled.span`
-  font-size: 22px;
-  color: ${props => props.color};
+export const ResultIcon = styled.span`
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 1.3em;
+  background-repeat: no-repeat;
+  background-color: ${props => props.color};
+
+  ${props => props.result === RESULT_TRUTH && css`
+    background-image: url(/true-symbol.svg);
+    background-position: 48% 55%;
+    background-size: 12px 12px;
+  `}
+
+  ${props => props.result === RESULT_UNTRUTH && css`
+    background-image: url(/untrue-symbol.svg);
+    background-position: 50% 53%;
+    background-size: 10px 10px;
+  `}
+
+  ${props => props.result === RESULT_MISLEADING && css`
+    background-image: url(/misleading-symbol.svg);
+    background-position: 50% 50%;
+    background-size: 12px 12px;
+  `}
+
+  ${props => props.result === RESULT_UNVERIFIABLE && css`
+    background-image: url(/unverifiable-symbol.svg);
+    background-position: 50% 50%;
+    background-size: 12px 12px;
+  `}
 `
 
 const ResultLabel = styled.span`
-  font-family: 'Oswald', sans-serif;
-  font-weight: normal;
-  font-size: 24px;
+  font-family: LatoLatinWeb, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
   color: ${props => props.color};
   margin-left: 5px;
   margin-right: 10px;

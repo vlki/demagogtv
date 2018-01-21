@@ -18,7 +18,8 @@ export default {
     }
   ],
   listing: {
-    title: 'Tomio Okamura, SPD',
+    title: 'Volby 2017: Lídr SPD v ČRo',
+    summary: '1. října 2017 — Předseda hnutí SPD Tomio Okamura ve svém předvolebním vystoupení v Českém rozhlase řešil stejně jako další lídři oblasti ekonomiky…',
     imageSrc: '/video-thumbnails/volby-2017-lidr-spd-v-cro.jpg'
   },
   speakers: [

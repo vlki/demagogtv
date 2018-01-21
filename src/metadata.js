@@ -4,17 +4,18 @@ export const RESULT_MISLEADING = 'zavadejici'
 export const RESULT_UNVERIFIABLE = 'neoveritelne'
 
 export const RESULT_COLOR = {
-  [RESULT_TRUTH]: '#22ab55',
-  [RESULT_UNTRUTH]: '#ec4f2f',
-  [RESULT_MISLEADING]: '#ec912f',
-  [RESULT_UNVERIFIABLE]: '#227594'
+  [RESULT_TRUTH]: '#0060ff',
+  [RESULT_UNTRUTH]: '#eb1d2b',
+  [RESULT_MISLEADING]: '#ffba00',
+  [RESULT_UNVERIFIABLE]: '#9dbaeb'
 }
 
+// TODO: remove
 export const RESULT_ICON = {
-  [RESULT_TRUTH]: 'ok-sign',
-  [RESULT_UNTRUTH]: 'remove-sign',
-  [RESULT_MISLEADING]: 'exclamation-sign',
-  [RESULT_UNVERIFIABLE]: 'question-sign'
+  [RESULT_TRUTH]: '/true-symbol.svg',
+  [RESULT_UNTRUTH]: '/untrue-symbol.svg',
+  [RESULT_MISLEADING]: '/misleading-symbol.svg',
+  [RESULT_UNVERIFIABLE]: '/unverifiable-symbol.svg'
 }
 
 export const RESULT_LABEL = {
