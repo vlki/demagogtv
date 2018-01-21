@@ -6,11 +6,7 @@ import debounce from 'lodash/debounce'
 import { Helmet } from 'react-helmet'
 
 import { DEBATES_BY_PATH } from './data'
-import {
-  RESULT_COLOR,
-  RESULT_ICON,
-  RESULT_LABEL
-} from './metadata'
+import { RESULT_COLOR, RESULT_LABEL } from './metadata'
 import { formatTime, parseTime, convertNewlinesToBr } from './utils'
 import PersonResultBadge, { ResultIcon } from './PersonResultBadge'
 import FacebookPlayer from './players/FacebookPlayer'

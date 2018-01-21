@@ -6,8 +6,7 @@ import {
   RESULT_UNTRUTH,
   RESULT_MISLEADING,
   RESULT_UNVERIFIABLE,
-  RESULT_COLOR,
-  RESULT_ICON
+  RESULT_COLOR
 } from './metadata'
 
 const PersonResultBadge = ({ debate, speaker }) =>

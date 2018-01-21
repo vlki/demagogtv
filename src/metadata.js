@@ -10,14 +10,6 @@ export const RESULT_COLOR = {
   [RESULT_UNVERIFIABLE]: '#9dbaeb'
 }
 
-// TODO: remove
-export const RESULT_ICON = {
-  [RESULT_TRUTH]: '/true-symbol.svg',
-  [RESULT_UNTRUTH]: '/untrue-symbol.svg',
-  [RESULT_MISLEADING]: '/misleading-symbol.svg',
-  [RESULT_UNVERIFIABLE]: '/unverifiable-symbol.svg'
-}
-
 export const RESULT_LABEL = {
   [RESULT_TRUTH]: 'Pravda',
   [RESULT_UNTRUTH]: 'Nepravda',
