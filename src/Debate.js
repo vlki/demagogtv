@@ -472,6 +472,7 @@ const DebateTitle = styled.h2`
   font-family: LatoLatinWeb, sans-serif;
   font-weight: bold;
   font-size: 32px;
+  line-height: 1.25;
   margin: 20px 0 0 0;
 `
 
@@ -480,7 +481,7 @@ const DebateSubtitle = styled.p`
 `
 
 const DebatePersonResultBadge = styled.div`
-  margin-top: 10px;
+  margin-top: 17px;
 `
 
 const DebateSummary = styled.p`

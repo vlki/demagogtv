@@ -10,7 +10,7 @@ import {
 } from './metadata'
 
 const PersonResultBadge = ({ debate, speaker }) =>
-  <PersonResultBadgeContainer>
+  <div>
     <PictureWrapper>
       <img src={speaker.imageSrc} alt={speaker.name} />
     </PictureWrapper>
@@ -18,13 +18,7 @@ const PersonResultBadge = ({ debate, speaker }) =>
       <GuestName>{speaker.name}</GuestName>
       <ResultsRow debate={debate} speaker={speaker} />
     </DetailWrapper>
-  </PersonResultBadgeContainer>
-
-const PersonResultBadgeContainer = styled.div`
-  float: left;
-  margin-top: 10px;
-  padding-right: 20px;
-`
+  </div>
 
 const PictureWrapper = styled.div`
   float: left;

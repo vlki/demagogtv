@@ -32,6 +32,7 @@ class Html5Player extends Component {
         src={debate.player.src}
         preload="preload"
         controls="controls"
+        playsinline
         width={width}
         height={height}
         ref={player => this.player = player}

@@ -134,6 +134,7 @@ const FeaturedTitle = styled.h2`
   font-family: LatoLatinWeb, sans-serif;
   font-weight: bold;
   font-size: 24px;
+  line-height: 1.25;
 
   @media(max-width:767px) {
     margin-top: 18px;
@@ -152,7 +153,7 @@ const DebateImgWrapper = styled.div`
 `
 
 const FeaturedPersonResultBadgeWrapper = styled.div`
-  margin-top: 7px;
+  margin-top: 15px;
 `
 
 const OtherDebatesSeparator = styled.hr`
@@ -167,6 +168,7 @@ const DebateTitle = styled.h2`
   font-family: LatoLatinWeb, sans-serif;
   font-weight: bold;
   font-size: 24px;
+  line-height: 1.25;
 
   @media(max-width:767px) {
     margin-top: 15px;

@@ -41,6 +41,7 @@ class YoutubePlayer extends Component {
           width,
           height,
           playerVars: {
+            playsinline: 1,
             rel: 0
           }
         }}
