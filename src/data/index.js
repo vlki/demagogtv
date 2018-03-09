@@ -21,6 +21,7 @@ import rozhlasTopolanek from './rozhlas-topolanek'
 import stropnicky from './stropnicky'
 import zaoralek from './zaoralek'
 import zeman from './zeman'
+import zeman20180308 from './zeman20180308'
 import zemanSoukup from './rozhovor-milose-zemana-v-tv-barrandov'
 import zemanVanoce from './zeman-vanoce'
 
@@ -51,7 +52,8 @@ export const DEBATES_LIST = [
   rozhlasFischer,
   rozhlasHannig,
   zemanSoukup,
-  bartos20180307
+  bartos20180307,
+  zeman20180308
 ]
 
 export const DEBATES_BY_PATH = DEBATES_LIST.reduce(
