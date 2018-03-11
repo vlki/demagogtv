@@ -12,6 +12,7 @@ import PersonResultBadge, { ResultIcon } from './PersonResultBadge'
 import FacebookPlayer from './players/FacebookPlayer'
 import Html5Player from './players/Html5Player'
 import YoutubePlayer from './players/YoutubePlayer'
+import SeznamPlayer from './players/SeznamPlayer';
 
 const CHECK_PLAYER_TIME_INTERVAL_MS = 100
 const VIDEO_ASPECT_RATIO = 9/16
@@ -137,9 +138,13 @@ class Debate extends Component {
       case 'youtube':
         Player = YoutubePlayer
         break
+
+      case 'seznam':
+        Player = SeznamPlayer
+        break
     }
 
-    let ogImage = debate.listing.imageSrc
+    let ogImage = debate.listing ? debate.listing.imageSrc : ''
     if (!ogImage.startsWith('http')) {
       ogImage = `https://demagogtv.cz${ogImage}`
     }

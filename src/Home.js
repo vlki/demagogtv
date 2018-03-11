@@ -8,8 +8,9 @@ import { DEBATES_LIST } from './data'
 
 class Home extends Component {
   render() {
-    const featuredDebate = DEBATES_LIST[DEBATES_LIST.length - 1]
-    const otherDebates = DEBATES_LIST.slice(0, -1).reverse()
+    const debatesList = DEBATES_LIST.filter(debate => debate.listing)
+    const featuredDebate = debatesList[debatesList.length - 1]
+    const otherDebates = debatesList.slice(0, -1).reverse()
 
     return (
       <Container className="container-fluid">
