@@ -13,8 +13,8 @@ export default {
       href: 'https://demagog.cz/diskuze/odpovedi-andreje-babise'
     },
     {
-      label: 'Záznam debaty na webu České televize',
-      href: 'http://www.ceskatelevize.cz/porady/1126672097-otazky-vaclava-moravce/218411030500311/'
+      label: 'Facebook příspěvek, kde byl záznam původně zvěřejněn',
+      href: 'https://www.facebook.com/CT24.cz/videos/10156391856984009/'
     }
   ],
   speakers: [
