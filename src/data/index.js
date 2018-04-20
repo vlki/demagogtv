@@ -3,6 +3,7 @@ import babis20180311 from './babis20180311'
 import bartos from './bartos'
 import bartos20180307 from './bartos20180307'
 import bartos20180307seznamexperiment from './bartos20180307-seznamexperiment'
+import bartosBabis20180419 from './bartos-babis-20180419'
 import belobradek from './belobradek'
 import cech from './cech'
 import farsky from './farsky'
@@ -57,7 +58,8 @@ export const DEBATES_LIST = [
   bartos20180307,
   zeman20180308,
   bartos20180307seznamexperiment,
-  babis20180311
+  babis20180311,
+  bartosBabis20180419
 ]
 
 export const DEBATES_BY_PATH = DEBATES_LIST.reduce(
