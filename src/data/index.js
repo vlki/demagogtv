@@ -10,6 +10,7 @@ import farsky from './farsky'
 import fiala from './fiala'
 import filip from './filip'
 import kalousek from './kalousek'
+import kalousekBabis20180419 from './kalousek-babis-20180419'
 import mach from './mach'
 import okamura from './okamura'
 import robejsek from './robejsek'
@@ -59,7 +60,8 @@ export const DEBATES_LIST = [
   zeman20180308,
   bartos20180307seznamexperiment,
   babis20180311,
-  bartosBabis20180419
+  bartosBabis20180419,
+  kalousekBabis20180419
 ]
 
 export const DEBATES_BY_PATH = DEBATES_LIST.reduce(

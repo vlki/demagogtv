@@ -19,14 +19,14 @@ export default {
   ],
   speakers: [
     {
-      name: 'Andrej Babiš',
-      short: 'Babiš',
-      imageSrc: 'https://demagog.cz/data/politik/t/1512846453,983.jpg'
-    },
-    {
       name: 'Ivan Bartoš',
       short: 'Bartoš',
       imageSrc: 'https://demagog.cz/data/politik/t/1512846053,2605.jpg'
+    },
+    {
+      name: 'Andrej Babiš',
+      short: 'Babiš',
+      imageSrc: 'https://demagog.cz/data/politik/t/1512846453,983.jpg'
     }
   ],
   listing: {
