@@ -52,11 +52,13 @@ class Home extends Component {
                 <FeaturedTitle>{featuredDebate.listing.title}</FeaturedTitle>
               </Link>
               <FeaturedSummary>{featuredDebate.listing.summary}</FeaturedSummary>
-              {featuredDebate.speakers.map((speaker, index) =>
-                <FeaturedPersonResultBadgeWrapper key={index}>
-                  <PersonResultBadge debate={featuredDebate} speaker={speaker} />
-                </FeaturedPersonResultBadgeWrapper>
-              )}
+              <FeaturedPersonResultBadges>
+                {featuredDebate.speakers.map((speaker, index) =>
+                  <FeaturedPersonResultBadgeWrapper key={index}>
+                    <PersonResultBadge debate={featuredDebate} speaker={speaker} />
+                  </FeaturedPersonResultBadgeWrapper>
+                )}
+              </FeaturedPersonResultBadges>
             </div>
           </div>
         </FeaturedBlock>
@@ -153,8 +155,14 @@ const DebateImgWrapper = styled.div`
   }
 `
 
+const FeaturedPersonResultBadges = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
 const FeaturedPersonResultBadgeWrapper = styled.div`
   margin-top: 15px;
+  flex: 0 0 300px;
 `
 
 const OtherDebatesSeparator = styled.hr`

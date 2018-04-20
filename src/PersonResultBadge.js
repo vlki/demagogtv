@@ -10,7 +10,7 @@ import {
 } from './metadata'
 
 const PersonResultBadge = ({ debate, speaker }) =>
-  <div>
+  <PersonResultBadgeContainer>
     <PictureWrapper>
       <img src={speaker.imageSrc} alt={speaker.name} />
     </PictureWrapper>
@@ -18,11 +18,14 @@ const PersonResultBadge = ({ debate, speaker }) =>
       <GuestName>{speaker.name}</GuestName>
       <ResultsRow debate={debate} speaker={speaker} />
     </DetailWrapper>
-  </div>
+  </PersonResultBadgeContainer>
+
+const PersonResultBadgeContainer = styled.div`
+  display: flex;
+`
 
 const PictureWrapper = styled.div`
-  float: left;
-  width: 66px;
+  flex: 0 0 66px;
   height: 66px;
   border-radius: 50%;
   overflow: hidden;
@@ -34,7 +37,6 @@ const PictureWrapper = styled.div`
 `
 
 const DetailWrapper = styled.div`
-  float: left;
   margin-left: 10px;
 `
 

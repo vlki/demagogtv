@@ -192,13 +192,13 @@ class Debate extends Component {
 
                   <DebateSubtitle>{debate.subtitle}</DebateSubtitle>
 
-                  <DebatePersonResultBadge>
-                    <div className="clearfix">
-                      {debate.speakers.map((speaker, index) =>
-                        <PersonResultBadge key={index} debate={debate} speaker={speaker} />
-                      )}
-                    </div>
-                  </DebatePersonResultBadge>
+                  <DebatePersonResultBadges>
+                    {debate.speakers.map((speaker, index) =>
+                      <DebatePersonResultBadgeWrapper key={index}>
+                        <PersonResultBadge debate={debate} speaker={speaker} />
+                      </DebatePersonResultBadgeWrapper>
+                    )}
+                  </DebatePersonResultBadges>
 
                   <DebateSummary>{debate.summary}</DebateSummary>
 
@@ -485,8 +485,14 @@ const DebateSubtitle = styled.p`
   margin: 10px 0 0 0;
 `
 
-const DebatePersonResultBadge = styled.div`
+const DebatePersonResultBadges = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
+const DebatePersonResultBadgeWrapper = styled.div`
   margin-top: 17px;
+  flex: 0 0 300px;
 `
 
 const DebateSummary = styled.p`
