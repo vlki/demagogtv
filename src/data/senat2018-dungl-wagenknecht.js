@@ -24,7 +24,7 @@ export default {
       name: "Pavel Dungl",
       short: "Dungl",
       imageSrc:
-        "https://demagog.cz/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaGdJIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--337275ba0fb99270559c44b4c81ffe89cb9004e0/20180618124319.jpg"
+        "https://demagog.cz/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaHNJIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b13d61b62b7f2f97f59ed0091a79447e65698a/dungl.jpg"
     },
     {
       name: "Lukáš Wagenknecht",
