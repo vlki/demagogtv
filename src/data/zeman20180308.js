@@ -30,7 +30,7 @@ export default {
     title: "Projev prezidenta při příležitosti inaugurace",
     summary:
       "8. března 2018 — Při příležitosti inaugurace Miloše Zemana a jeho vstupu do 2. prezidentského období přednesla hlava státu velmi sledovaný projev. V něm se pokusil bilancovat své dosavadní působení v prezidentské roli, identifikovat některé negativní prvky v české společnosti a také letmo nastínil své představy do budoucna. Projev Miloše Zemana jsme prošli a ověřili jeho faktická prohlášení.",
-    imageSrc: "https://demagog.cz/data/diskusia/s/1520609325,8414.jpg",
+    imageSrc: "/video-thumbnails/zeman-inaugurace.jpg",
   },
   checks: [
     {

@@ -35,8 +35,7 @@ export default {
     title: "Kandidáti na senátory Pavel Dungl a Lukáš Wagenknecht",
     summary:
       "8. října 2018 — První senátní duel jsme sledovali v Českém rozhlase. Setkali se kandidáti za volební obvod Praha 8 - Pavel Dungl a Lukáš Wagenknecht. Debata se točila kolem kompetencí a odpovědností role senátora, zdravotnictví nebo transparentnosti ve veřejné správě.",
-    imageSrc:
-      "https://demagog.cz/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaG9JIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--145e71eb7049e419ea61cfd7e8ea7ced0957a040/N%C3%A1hled%20na%20web.png",
+    imageSrc: "/video-thumbnails/senat-dungl-wagenknecht.png",
   },
   checks: [
     {

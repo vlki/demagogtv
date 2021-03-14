@@ -30,7 +30,7 @@ export default {
     title: "Debata v Českém rozhlase: Pavel Fischer",
     summary:
       "10. ledna 2018 — S Pavlem Fischerem mluvil moderátor Jan Pokorný v cyklu rozhovorů s kandidáty na prezidenta hlavně o zahraniční politice: o pozici Číny…",
-    imageSrc: "https://demagog.cz/data/diskusia/s/1515626285,7435.jpg",
+    imageSrc: "/video-thumbnails/rozhlas-fischer.jpg",
   },
   checks: [
     {

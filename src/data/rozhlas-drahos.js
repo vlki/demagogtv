@@ -30,7 +30,7 @@ export default {
     title: "Debata v Českém rozhlase: Jiří Drahoš",
     summary:
       "4. ledna 2018 — Jiří Drahoš byl jako další prezidentský kandidát hostem Radiožurnálu. Moderátor Jan Pokorný s ním probral širokou paletu témata, ať už jde…",
-    imageSrc: "https://demagog.cz/data/diskusia/s/1515103878,6048.jpg",
+    imageSrc: "/video-thumbnails/rozhlas-drahos.jpg",
   },
   checks: [
     {

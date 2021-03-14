@@ -29,7 +29,7 @@ export default {
     title: "Odpovědi Andreje Babiše",
     summary:
       "11. března 2018 — Andrej Babiš se po roce zúčastnil diskuze v Otázkách Václava Moravce. V roli předsedy vlády hodnotil především aktuální otázky - ať již okolnosti zvolení Zdeňka Ondráčka do čela sněmovní komise pro kontrolu Generální inspekce bezpečnostních sborů, tak formování budoucí koalice či dosavadní jednání. Nevyhnul se ani programovým otázkám, které jeho kabinet zamýšlí prosazovat. Řeč přišla jak na výši penzí, tak i na investice nebo na nápad zavádět výrazné slevy na jízdné.",
-    imageSrc: "https://demagog.cz/data/diskusia/s/1520872581,4713.jpg",
+    imageSrc: "/video-thumbnails/odpovedi-andreje-babise.jpg",
   },
   checks: [
     {

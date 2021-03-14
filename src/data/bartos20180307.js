@@ -30,7 +30,7 @@ export default {
     title: "Bartoš na Seznam Zprávy",
     summary:
       "5. března 2018 — Veřejností i politickou scénou hýbe v posledních dnech volba Zdeňka Ondráčka do čela komise pro kontrolu GIBS. Ten na tuto funkci již stihl rezignovat. Otázky kolem volby Ondráčka i další témata (aktuální situace v Poslanecké sněmovně nebo zákon o obecném referendu) řešil na Seznam zprávy předseda České pirátské strany.",
-    imageSrc: "https://demagog.cz/data/diskusia/s/1520411236,6484.jpg",
+    imageSrc: "/video-thumbnails/bartos-na-seznam-zpravy.jpg",
   },
   checks: [
     {

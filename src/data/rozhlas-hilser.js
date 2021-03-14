@@ -30,7 +30,7 @@ export default {
     title: "Debata v Českém rozhlase: Marek Hilšer",
     summary:
       "8. ledna 2018 — Do 20 minut Radiožurnálu přišel na rozhovor další kandidát na prezidenta, Marek Hilšer. A proto přinášíme ověření i jeho faktických výroků…",
-    imageSrc: "https://demagog.cz/data/diskusia/s/1515445320,6132.jpg",
+    imageSrc: "/video-thumbnails/rozhlas-hilser.jpg",
   },
   checks: [
     {
