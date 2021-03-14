@@ -12,7 +12,7 @@ videozáznamy debat s výroky tak, že v čase vyřčení naskočí hodnocení o
 
 * UI postaveno v Reactu
 * Server je v Express nad Node.js a předrendrovává UI (server-side rendering)
-* Běží na Heroku
+* Běží na DigitalOcean
 
 ## Spuštění lokálně
 
