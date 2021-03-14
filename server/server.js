@@ -16,20 +16,17 @@ const FORCE_HOSTNAME = "demagogtv.cz";
 const app = Express();
 app.server = http.createServer(app);
 
-// app.use((req, res, next) => {
-//   if (
-//     process.env.NODE_ENV === 'production' &&
-//     (
-//       req.headers['x-forwarded-proto'] !== FORCE_PROTOCOL ||
-//       req.hostname !== FORCE_HOSTNAME
-//     )
-//   ) {
+app.use((req, res, next) => {
+  if (
+    process.env.NODE_ENV === "production" &&
+    (req.headers["x-forwarded-proto"] !== FORCE_PROTOCOL ||
+      req.hostname !== FORCE_HOSTNAME)
+  ) {
+    return res.redirect(`${FORCE_PROTOCOL}://${FORCE_HOSTNAME}${req.url}`);
+  }
 
-//     return res.redirect(`${FORCE_PROTOCOL}://${FORCE_HOSTNAME}${req.url}`)
-//   }
-
-//   return next();
-// })
+  return next();
+});
 
 app.use((req, res, next) => {
   // Don't serve index.html on the path /, it will be handled by react router
