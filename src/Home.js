@@ -109,7 +109,7 @@ class Home extends Component {
         <FooterSeparator />
 
         <Footer>
-          © 2017—2018 Demagog.cz, z.s. & Jan Vlček. Kód je{" "}
+          © 2017—{new Date().getFullYear()} Demagog.cz, z.s. & Jan Vlček. Kód je{" "}
           <a href="https://github.com/vlki/demagogtv">opensource</a>.
         </Footer>
       </Container>
