@@ -1,16 +1,16 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import { Helmet } from 'react-helmet'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { Helmet } from "react-helmet";
 
-import PersonResultBadge, { ResultsRow } from './PersonResultBadge'
-import { DEBATES_LIST } from './data'
+import PersonResultBadge, { ResultsRow } from "./PersonResultBadge";
+import { DEBATES_LIST } from "./data";
 
 class Home extends Component {
   render() {
-    const debatesList = DEBATES_LIST.filter(debate => debate.listing)
-    const featuredDebate = debatesList[debatesList.length - 1]
-    const otherDebates = debatesList.slice(0, -1).reverse()
+    const debatesList = DEBATES_LIST.filter((debate) => debate.listing);
+    const featuredDebate = debatesList[debatesList.length - 1];
+    const otherDebates = debatesList.slice(0, -1).reverse();
 
     return (
       <Container className="container-fluid">
@@ -29,9 +29,17 @@ class Home extends Component {
             </LogoTitleWrapper>
             <MainSummary>
               Sledujte rozhovor a&nbsp;zároveň, zda politik říká pravdu či ne.
-              Propojili jsme videozáznamy debat s&nbsp;výroky tak, že v&nbsp;čase vyřčení
-              naskočí hodnocení od <a href="https://demagog.cz/">Demagog.cz</a>.
+              Propojili jsme videozáznamy debat s&nbsp;výroky tak, že
+              v&nbsp;čase vyřčení naskočí hodnocení od{" "}
+              <a href="https://demagog.cz/">Demagog.cz</a>.
             </MainSummary>
+            <OutdatedNote>
+              <strong>
+                Projekt jsme v roce 2019 integrovali do webu{" "}
+                <a href="https://demagog.cz/">demagog.cz</a>, nová propojení
+                tedy hledejte mezi výstupy tam.
+              </strong>
+            </OutdatedNote>
           </div>
         </div>
 
@@ -51,13 +59,18 @@ class Home extends Component {
               <Link to={featuredDebate.path}>
                 <FeaturedTitle>{featuredDebate.listing.title}</FeaturedTitle>
               </Link>
-              <FeaturedSummary>{featuredDebate.listing.summary}</FeaturedSummary>
+              <FeaturedSummary>
+                {featuredDebate.listing.summary}
+              </FeaturedSummary>
               <FeaturedPersonResultBadges>
-                {featuredDebate.speakers.map((speaker, index) =>
+                {featuredDebate.speakers.map((speaker, index) => (
                   <FeaturedPersonResultBadgeWrapper key={index}>
-                    <PersonResultBadge debate={featuredDebate} speaker={speaker} />
+                    <PersonResultBadge
+                      debate={featuredDebate}
+                      speaker={speaker}
+                    />
                   </FeaturedPersonResultBadgeWrapper>
-                )}
+                ))}
               </FeaturedPersonResultBadges>
             </div>
           </div>
@@ -65,7 +78,7 @@ class Home extends Component {
 
         <OtherDebatesSeparator />
 
-        {otherDebates.map(debate =>
+        {otherDebates.map((debate) => (
           <DebateBlock key={debate.path}>
             <div className="row">
               <div className="col-xs-6 col-sm-3">
@@ -83,54 +96,59 @@ class Home extends Component {
                   <DebateTitle>{debate.listing.title}</DebateTitle>
                 </Link>
                 <DebateSummary>{debate.listing.summary}</DebateSummary>
-                {debate.speakers.map((speaker, index) =>
+                {debate.speakers.map((speaker, index) => (
                   <DebateResultsRowWrapper key={index}>
                     <ResultsRow debate={debate} speaker={speaker} />
                   </DebateResultsRowWrapper>
-                )}
+                ))}
               </div>
             </div>
           </DebateBlock>
-        )}
+        ))}
 
         <FooterSeparator />
 
         <Footer>
-          © 2017—2018 Demagog.cz, z.s. & Jan Vlček. Kód je <a href="https://github.com/vlki/demagogtv">opensource</a>.
+          © 2017—2018 Demagog.cz, z.s. & Jan Vlček. Kód je{" "}
+          <a href="https://github.com/vlki/demagogtv">opensource</a>.
         </Footer>
       </Container>
-    )
+    );
   }
 }
 
 const Container = styled.div`
   max-width: 1000px;
   padding-top: 35px;
-`
+`;
 
 const LogoTitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
-`
+`;
 
 const LogoImg = styled.img`
   height: 48px;
-`
+`;
 
 const Title = styled.h1`
   margin: 5px 0 0 12px;
   font-family: LatoLatinWebHeavy, sans-serif;
   font-size: 32px;
-  color: #3C325C;
-`
+  color: #3c325c;
+`;
 
 const MainSummary = styled.p`
   margin-top: 28px;
-`
+`;
+
+const OutdatedNote = styled.p`
+  margin-top: 16px;
+`;
 
 const FeaturedBlock = styled.div`
   margin-top: 45px;
-`
+`;
 
 const FeaturedTitle = styled.h2`
   margin: 3px 0 0 0;
@@ -139,38 +157,38 @@ const FeaturedTitle = styled.h2`
   font-size: 24px;
   line-height: 1.25;
 
-  @media(max-width:767px) {
+  @media (max-width: 767px) {
     margin-top: 18px;
   }
-`
+`;
 
 const FeaturedSummary = styled.p`
   margin: 13px 0 0 0;
-`
+`;
 
 const DebateImgWrapper = styled.div`
   img {
     width: 100%;
     overflow: hidden;
   }
-`
+`;
 
 const FeaturedPersonResultBadges = styled.div`
   display: flex;
   flex-wrap: wrap;
-`
+`;
 
 const FeaturedPersonResultBadgeWrapper = styled.div`
   margin-top: 15px;
   flex: 0 0 300px;
-`
+`;
 
 const OtherDebatesSeparator = styled.hr`
-  color: #D8E1E8;
-  background-color: #D8E1E8;
+  color: #d8e1e8;
+  background-color: #d8e1e8;
   height: 2px;
   margin-top: 55px;
-`
+`;
 
 const DebateTitle = styled.h2`
   margin: 0;
@@ -179,33 +197,33 @@ const DebateTitle = styled.h2`
   font-size: 24px;
   line-height: 1.25;
 
-  @media(max-width:767px) {
+  @media (max-width: 767px) {
     margin-top: 15px;
   }
-`
+`;
 
 const DebateSummary = styled.p`
   margin: 9px 0 0 0;
-`
+`;
 
 const DebateResultsRowWrapper = styled.div`
   margin-top: 12px;
-`
+`;
 
 const DebateBlock = styled.div`
   margin-top: 45px;
-`
+`;
 
 const FooterSeparator = styled.hr`
-  color: #D8E1E8;
-  background-color: #D8E1E8;
+  color: #d8e1e8;
+  background-color: #d8e1e8;
   height: 2px;
   margin-top: 45px;
-`
+`;
 
 const Footer = styled.p`
   margin-top: 20px;
   margin-bottom: 100px;
-`
+`;
 
-export default Home
+export default Home;
