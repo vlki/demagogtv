@@ -28,8 +28,8 @@
     "react-dom": "^16.0.0",
     "react-facebook-player": "^0.1.0",
     "react-helmet": "^5.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.14",
+    "react-router-dom": "^5.3.4",
+    "react-scripts": "2.1.8",
     "react-tooltip": "^3.3.1",
     "react-youtube": "^7.5.0",
     "smoothscroll-polyfill": "^0.4.0",
@@ -44,5 +44,11 @@
   },
   "engines": {
     "node": "14.x"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
