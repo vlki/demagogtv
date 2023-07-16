@@ -1,27 +1,33 @@
-import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
-import styled, { injectGlobal } from 'styled-components'
+import React, { useEffect } from "react";
+import { Route, Switch, useLocation } from "react-router-dom";
+import styled, { injectGlobal } from "styled-components";
+import { useMatomo } from "@datapunt/matomo-tracker-react";
 
-import Home from './Home'
-import Debate from './Debate'
-import PageNotFound from './PageNotFound'
-import { DEBATES_LIST } from './data'
+import Home from "./Home";
+import Debate from "./Debate";
+import PageNotFound from "./PageNotFound";
+import { DEBATES_LIST } from "./data";
 
-class App extends Component {
-  render() {
-    return (
-      <AppContainer>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          {DEBATES_LIST.map(debate =>
-            <Route key={debate.path} path={debate.path} component={Debate} />
-          )}
-          <Route component={PageNotFound} />
-        </Switch>
-      </AppContainer>
-    )
-  }
-}
+const App = () => {
+  const { trackPageView } = useMatomo();
+  const location = useLocation();
+
+  useEffect(() => {
+    trackPageView();
+  }, [location]);
+
+  return (
+    <AppContainer>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        {DEBATES_LIST.map((debate) => (
+          <Route key={debate.path} path={debate.path} component={Debate} />
+        ))}
+        <Route component={PageNotFound} />
+      </Switch>
+    </AppContainer>
+  );
+};
 
 injectGlobal`
   body {
@@ -29,7 +35,7 @@ injectGlobal`
     font-family: LatoLatinWeb, sans-serif;
     color: #3C325C;
   }
-`
+`;
 
 const AppContainer = styled.div`
   p {
@@ -37,11 +43,11 @@ const AppContainer = styled.div`
     font-size: 16px;
     letter-spacing: 0.025em;
     line-height: 1.5;
-    color: #3C325C;
+    color: #3c325c;
   }
 
   a {
-    color: #F26538;
+    color: #f26538;
     text-decoration: none;
 
     &:focus {
@@ -54,6 +60,6 @@ const AppContainer = styled.div`
       text-decoration: none;
     }
   }
-`
+`;
 
-export default App
+export default App;
