@@ -1,9 +1,12 @@
+"use client";
+
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import ReactTooltip from 'react-tooltip'
+import Link from 'next/link'
+import { Tooltip } from 'react-tooltip'
 import styled, { css } from 'styled-components'
 import debounce from 'lodash/debounce'
-import { Helmet } from 'react-helmet'
+
+import 'react-tooltip/dist/react-tooltip.css'
 
 import { DEBATES_BY_PATH } from './data'
 import { RESULT_COLOR, RESULT_LABEL } from './metadata'
@@ -46,8 +49,8 @@ class Debate extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { match } = this.props
-    const debate = DEBATES_BY_PATH[match.path]
+    const { slug } = this.props
+    const debate = DEBATES_BY_PATH[`/${slug}`]
 
     if (prevState.time !== this.state.time && this.state.time !== null) {
       const checkIndex = debate.checks.findIndex(check =>
@@ -120,10 +123,10 @@ class Debate extends Component {
   updateVideoSizeDebounced = debounce(this.updateVideoSize, 1000)
 
   render() {
-    const { match } = this.props
+    const { slug } = this.props
     const { shownExplanations, highlightStatement, videoWidth } = this.state
 
-    const debate = DEBATES_BY_PATH[match.path]
+    const debate = DEBATES_BY_PATH[`/${slug}`]
 
     let Player = null
     switch (debate.player.type) {
@@ -144,27 +147,16 @@ class Debate extends Component {
         break
     }
 
-    let ogImage = debate.listing ? debate.listing.imageSrc : ''
-    if (!ogImage.startsWith('http')) {
-      ogImage = `https://demagogtv.cz${ogImage}`
-    }
-
     return (
       <div>
-        <Helmet>
-          <title>{debate.title} – DemagogTV</title>
-          <meta property="og:image" content={ogImage} />
-          <meta property="og:image:alt" content={debate.title} />
-        </Helmet>
-
         <TopBar>
           <TopBarContainer className="container-fluid">
-            <Link to="/">
+            <Link href="/">
               <TopBarTitle>
                 <TopBarLogoImg src="/logo.svg" alt="Logo Demagog.cz" /> DemagogTV
               </TopBarTitle>
             </Link>
-            <TopBarLink to="/">Přehled všech debat</TopBarLink>
+            <TopBarLink href="/">Přehled všech debat</TopBarLink>
             <TopBarOuterLink href="http://demagog.cz/jak-hodnotime-metodika">Jak hodnotíme?</TopBarOuterLink>
 
             <SupportLinkWrapper>
@@ -177,7 +169,7 @@ class Debate extends Component {
         <Container className="container-fluid">
           <div className="row">
             <div className="col-xs-6 col-lg-7" ref={container => this.videoContainer = container}>
-              <VideoAndLabelsContainer videoWidth={videoWidth} >
+              <VideoAndLabelsContainer $videoWidth={videoWidth} >
                 {Player !== null &&
                   <Player
                     debate={debate}
@@ -187,7 +179,7 @@ class Debate extends Component {
                   />
                 }
 
-                <LabelsContainer videoHeight={videoWidth * VIDEO_ASPECT_RATIO}>
+                <LabelsContainer $videoHeight={videoWidth * VIDEO_ASPECT_RATIO}>
                   <DebateTitle>{debate.title}</DebateTitle>
 
                   <DebateSubtitle>{debate.subtitle}</DebateSubtitle>
@@ -219,20 +211,20 @@ class Debate extends Component {
                 {debate.checks.map((check, index) =>
                   <StatementContainer
                     key={index}
-                    innerRef={container => this.statementContainers[index] = container}
-                    showingExplanation={shownExplanations.indexOf(index) !== -1}
-                    higlighted={highlightStatement === index}
+                    ref={container => this.statementContainers[index] = container}
+                    $showingExplanation={shownExplanations.indexOf(index) !== -1}
+                    $higlighted={highlightStatement === index}
                     className="clearfix"
                   >
                     <StatementTime>
                       <StatementTimeButton
                         className="btn btn-link"
                         onClick={() => this.playerGoToCheck(check)}
-                        data-tip={`Kliknutím skočte na čas ${formatTime(parseTime(check.highlightStart))}`}
-                        data-for={`statement-${index}`}
+                        data-tooltip-content={`Kliknutím skočte na čas ${formatTime(parseTime(check.highlightStart))}`}
+                        data-tooltip-id={`statement-${index}`}
                       >{formatTime(parseTime(check.highlightStart))}</StatementTimeButton>
 
-                      <ReactTooltip place="top" id={`statement-${index}`} effect="solid" />
+                      <Tooltip place="top" id={`statement-${index}`} />
 
                       {index < (debate.checks.length - 1) && <StatementTimeline />}
                     </StatementTime>
@@ -338,12 +330,12 @@ const VideoAndLabelsContainer = styled.div`
   position: fixed;
   top: 72px;
   bottom: 0;
-  width: ${props => `${props.videoWidth}px`};
+  width: ${props => `${props.$videoWidth}px`};
 `
 
 const LabelsContainer = styled.div`
   position: absolute;
-  top: ${props => `${props.videoHeight}px`};
+  top: ${props => `${props.$videoHeight}px`};
   bottom: 0;
   left: 0;
   right: 0;
@@ -359,11 +351,11 @@ const StatementContainer = styled.div`
   padding: 13px 15px 18px 0;
   margin-bottom: 15px;
 
-  ${props => props.showingExplanation && css`
+  ${props => props.$showingExplanation && css`
     background-color: #E1EBF3;
   `}
 
-  ${props => props.higlighted && css`
+  ${props => props.$higlighted && css`
     background-color: #FAE4DD;
   `}
 `
@@ -413,8 +405,8 @@ const StatementText = styled.p`
 
 const StatementResultBadge = ({ result }) =>
   <StatementResultBadgeWrapper>
-    <ResultIcon result={result} color={RESULT_COLOR[result]} />
-    <StatementResultBadgeLabel color={RESULT_COLOR[result]}>
+    <ResultIcon $result={result} $color={RESULT_COLOR[result]} />
+    <StatementResultBadgeLabel $color={RESULT_COLOR[result]}>
       {RESULT_LABEL[result]}
     </StatementResultBadgeLabel>
   </StatementResultBadgeWrapper>
@@ -428,7 +420,7 @@ const StatementResultBadgeLabel = styled.span`
   text-transform: uppercase;
   font-size: 16px;
   font-weight: bold;
-  color: ${props => props.color};
+  color: ${props => props.$color};
   margin-left: 8px;
 `
 

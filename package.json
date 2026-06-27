@@ -12,43 +12,22 @@
     "email": "jan.vlcek@vlki.cz"
   },
   "dependencies": {
-    "@datapunt/matomo-tracker-react": "^0.5.1",
-    "babel-core": "^6.26.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-require-ignore": "^0.1.1",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "bootstrap": "^3.3.7",
-    "express": "^4.16.1",
-    "lodash": "^4.17.4",
-    "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-facebook-player": "^0.1.0",
-    "react-helmet": "^5.2.0",
-    "react-router-dom": "^5.3.4",
-    "react-scripts": "2.1.8",
-    "react-tooltip": "^3.3.1",
-    "react-youtube": "^7.5.0",
-    "smoothscroll-polyfill": "^0.4.0",
-    "styled-components": "^2.2.1"
+    "bootstrap": "^3.4.1",
+    "lodash": "^4.17.21",
+    "next": "^16.2.9",
+    "prop-types": "^15.8.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-tooltip": "^6.0.8",
+    "react-youtube": "^10.1.0",
+    "styled-components": "^6.4.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "server": "node ./server/index.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "engines": {
-    "node": "14.x"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "node": ">=24"
+  }
 }

@@ -1,7 +1,8 @@
+"use client";
+
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import styled from "styled-components";
-import { Helmet } from "react-helmet";
 
 import PersonResultBadge, { ResultsRow } from "./PersonResultBadge";
 import { DEBATES_LIST } from "./data";
@@ -14,13 +15,6 @@ class Home extends Component {
 
     return (
       <Container className="container-fluid">
-        <Helmet>
-          <title>DemagogTV</title>
-          {/* TODO: update the image to respect new visual */}
-          {/* <meta property="og:image" content="https://demagogtv.cz/demagogtv.png" /> */}
-          {/* <meta property="og:image:alt" content="DemagogTV" /> */}
-        </Helmet>
-
         <div className="row">
           <div className="col-xs-12 col-sm-9">
             <LogoTitleWrapper>
@@ -46,7 +40,7 @@ class Home extends Component {
         <FeaturedBlock>
           <div className="row">
             <div className="col-xs-12 col-sm-4">
-              <Link to={featuredDebate.path}>
+              <Link href={featuredDebate.path}>
                 <DebateImgWrapper>
                   <img
                     src={featuredDebate.listing.imageSrc}
@@ -56,7 +50,7 @@ class Home extends Component {
               </Link>
             </div>
             <div className="col-xs-12 col-sm-8">
-              <Link to={featuredDebate.path}>
+              <Link href={featuredDebate.path}>
                 <FeaturedTitle>{featuredDebate.listing.title}</FeaturedTitle>
               </Link>
               <FeaturedSummary>
@@ -82,7 +76,7 @@ class Home extends Component {
           <DebateBlock key={debate.path}>
             <div className="row">
               <div className="col-xs-6 col-sm-3">
-                <Link to={debate.path}>
+                <Link href={debate.path}>
                   <DebateImgWrapper>
                     <img
                       src={debate.listing.imageSrc}
@@ -92,7 +86,7 @@ class Home extends Component {
                 </Link>
               </div>
               <div className="col-xs-12 col-sm-9">
-                <Link to={debate.path}>
+                <Link href={debate.path}>
                   <DebateTitle>{debate.listing.title}</DebateTitle>
                 </Link>
                 <DebateSummary>{debate.listing.summary}</DebateSummary>

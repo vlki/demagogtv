@@ -57,8 +57,8 @@ const Result = ({ result, count }) => {
 
   return (
     <span>
-      <ResultIcon result={result} color={color} />
-      <ResultLabel color={color}>{count}</ResultLabel>
+      <ResultIcon $result={result} $color={color} />
+      <ResultLabel $color={color}>{count}</ResultLabel>
     </span>
   )
 }
@@ -72,27 +72,27 @@ export const ResultIcon = styled.span`
   height: 24px;
   border-radius: 1.3em;
   background-repeat: no-repeat;
-  background-color: ${props => props.color};
+  background-color: ${props => props.$color};
 
-  ${props => props.result === RESULT_TRUTH && css`
+  ${props => props.$result === RESULT_TRUTH && css`
     background-image: url(/true-symbol.svg);
     background-position: 48% 55%;
     background-size: 12px 12px;
   `}
 
-  ${props => props.result === RESULT_UNTRUTH && css`
+  ${props => props.$result === RESULT_UNTRUTH && css`
     background-image: url(/untrue-symbol.svg);
     background-position: 50% 53%;
     background-size: 10px 10px;
   `}
 
-  ${props => props.result === RESULT_MISLEADING && css`
+  ${props => props.$result === RESULT_MISLEADING && css`
     background-image: url(/misleading-symbol.svg);
     background-position: 50% 50%;
     background-size: 12px 12px;
   `}
 
-  ${props => props.result === RESULT_UNVERIFIABLE && css`
+  ${props => props.$result === RESULT_UNVERIFIABLE && css`
     background-image: url(/unverifiable-symbol.svg);
     background-position: 50% 50%;
     background-size: 12px 12px;
@@ -103,7 +103,7 @@ const ResultLabel = styled.span`
   font-family: LatoLatinWeb, sans-serif;
   font-weight: bold;
   font-size: 18px;
-  color: ${props => props.color};
+  color: ${props => props.$color};
   margin-left: 5px;
   margin-right: 10px;
 `

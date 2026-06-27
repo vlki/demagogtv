@@ -10,30 +10,35 @@ videozáznamy debat s výroky tak, že v čase vyřčení naskočí hodnocení o
 
 ## Technologie
 
-* UI postaveno v Reactu
-* Server je v Express nad Node.js a předrendrovává UI (server-side rendering)
-* Běží na DigitalOcean
+* UI postaveno v Reactu (React 19) a [Next.js](https://nextjs.org/) (App Router)
+* Web je staticky generovaný (`next build` s `output: 'export'`) — žádný běžící
+  server není potřeba, výstupem je adresář `out/` se statickým HTML/JS
+* Vyžaduje Node.js 24 (viz `.nvmrc`)
 
 ## Spuštění lokálně
 
-Pouze klient:
+Vývojový server:
 
 ```
 git clone git@github.com:vlki/demagogtv.git
 cd demagogtv
-yarn install
-yarn run start
+nvm use            # Node 24
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-I se serverem:
+Produkční statický build:
 
 ```
-git clone git@github.com:vlki/demagogtv.git
-cd demagogtv
-yarn install
-yarn run build
-yarn run server
+npm run build      # vygeneruje statický web do out/
 ```
+
+## Nasazení
+
+`npm run build` vyprodukuje plně statický web do adresáře `out/`. Ten stačí
+naservírovat jako statické soubory (libovolný statický hosting / CDN — např.
+Netlify, Vercel, GitHub Pages, S3, Nginx). Oproti původní verzi už není potřeba
+provozovat Node.js/Express server.
 
 ## Licence
 
