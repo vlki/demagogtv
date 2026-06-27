@@ -40,5 +40,5 @@ jobs:
         run: |
           rsync -az --delete \
             -e "ssh -i ~/.ssh/id_ed25519 -p 22" \
-            public/ \
+            out/ \
             "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}/"
